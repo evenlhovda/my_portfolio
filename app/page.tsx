@@ -1,101 +1,213 @@
-import Image from "next/image";
+'use client'
+
+import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import Image from "next/image"
+import { Calendar, Users, Linkedin, Mail } from 'lucide-react'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const projects = [
+    {
+      id: 1,
+      title: "Bryne Kitefestival",
+      description: "Det som startet med 3 venner som dro til danmark for å kite, er nå en festival med 50+ årlige deltagere.",
+      image: "/images/snowkiter.jpg",
+      tags: ["Sport", "Community", "Event"],
+      role: "Medarrangør & økonomiansvarlig",
+      year: "2021-",
+      client: "Bryne Kitefestival",
+      contributors: [
+        { name: "Ole Jørgen Grønli", image: "/placeholder.svg" },
+        { name: "Nora Markussen", image: "/placeholder.svg" },
+      ]
+    },
+    {
+      id: 2,
+      title: '"Strava for motorsyklister" – app for MC-miljøet i Norge',
+      description: "En digitalt samlingssted for motorsyklister å planlegge turer, bygget på lavkodeplattformen Bubble",
+      image: "/placeholder.svg",
+      tags: ["Innovasjon og validering", "Lavkodeutvikling"],
+      role: "Technical Lead",
+      year: "2021-2023",
+      client: "NAF - Norges Automobil Forbund",
+      contributors: [
+        { name: "Christer Dalsbøe", image: "/placeholder.svg" },
+        { name: "Ole Jørgen Grønli", image: "/placeholder.svg" },
+      ]
+    },
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-orange-100 flex flex-col">
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section className="container px-4 py-24 mx-auto">
+          <div className="grid gap-8 md:grid-cols-2 items-center">
+            <div className="space-y-6">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                Even Lømo Hovda
+              </h1>
+              <div className="space-y-4">
+                <p className="text-2xl font-semibold text-orange-600">
+                  Innovasjon og digital produkter
+                </p>
+                <p className="text-xl text-muted-foreground">
+                  Brenner for å skape gode opplevelser og produkter som løser relle problemer. Fokus på utforske behov og raskt validere løsningsforslag. Aller helst med no code verktøy og AI.
+                </p>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="relative w-64 h-64 md:w-80 md:h-80">
+                <Image
+                  src="/images/Profilbilde_lue_rund2.png"
+                  alt="Even Lømo Hovda"
+                  className="object-cover rounded-full border-4 border-orange-200"
+                  fill
+                  sizes="(max-width: 768px) 256px, 320px"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section className="container px-4 py-12 mx-auto">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-12">Featured Projects</h2>
+          <div className="grid gap-8 md:grid-cols-2">
+            {projects.map((project) => (
+              <Dialog key={project.id}>
+                <DialogTrigger asChild>
+                  <Card className="cursor-pointer hover:bg-muted/50 transition-colors border border-orange-200">
+                    <CardHeader className="relative aspect-video">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        className="object-cover rounded-t-lg"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </CardHeader>
+                    <CardContent className="pt-4">
+                      <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
+                      <p className="text-muted-foreground mb-4">{project.description}</p>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <Badge key={tag} variant="secondary">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </DialogTrigger>
+                <DialogContent className="max-w-2xl">
+                  <DialogHeader>
+                    <DialogTitle className="text-2xl">{project.title}</DialogTitle>
+                  </DialogHeader>
+                  <div className="grid gap-4">
+                    <div className="relative aspect-video">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        className="object-cover rounded-lg"
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      />
+                    </div>
+                    <div className="space-y-4">
+                      <p className="text-muted-foreground">{project.description}</p>
+                      <div className="grid gap-2">
+                        <div className="flex items-center gap-2">
+                          <Users className="h-4 w-4" />
+                          <span className="font-medium">Client:</span> {project.client}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Calendar className="h-4 w-4" />
+                          <span className="font-medium">Timeline:</span> {project.year}
+                        </div>
+                      </div>
+                      <div>
+                        <h3 className="font-medium mb-2">Contributors</h3>
+                        <div className="flex gap-2">
+                          {project.contributors.map((contributor, i) => (
+                            <div key={i} className="flex items-center gap-2">
+                              <div className="relative w-8 h-8">
+                                <Image
+                                  src={contributor.image}
+                                  alt={contributor.name}
+                                  className="rounded-full"
+                                  fill
+                                  sizes="32px"
+                                />
+                              </div>
+                              <span className="text-sm">{contributor.name}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {project.tags.map((tag) => (
+                          <Badge key={tag} variant="secondary">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            ))}
+          </div>
+        </section>
+
+        {/* Get in Touch Section */}
+        <section className="container px-4 py-12 mx-auto">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-12">Get in Touch</h2>
+          <Card className="border border-orange-200">
+            <CardContent className="pt-6">
+              <form className="space-y-4">
+                <div className="space-y-2">
+                  <label htmlFor="email" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    Your Email
+                  </label>
+                  <Input id="email" type="email" placeholder="Enter your email" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="message" className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                    Message
+                  </label>
+                  <Textarea id="message" placeholder="Enter your message" />
+                </div>
+                <Button type="submit" className="w-full">Send Message</Button>
+              </form>
+            </CardContent>
+          </Card>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="border-t border-orange-200 bg-orange-50">
+        <div className="container px-4 py-6 mx-auto flex flex-col sm:flex-row justify-between items-center">
+          <p className="text-sm text-gray-600">
+            © {new Date().getFullYear()} Your Name. All rights reserved.
+          </p>
+          <div className="flex items-center space-x-4 mt-4 sm:mt-0">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
+              <span className="sr-only">LinkedIn</span>
+              <Linkedin className="h-6 w-6" />
+            </a>
+            <a href="mailto:your.email@example.com" className="text-gray-600 hover:text-gray-900">
+              <span className="sr-only">Email</span>
+              <Mail className="h-6 w-6" />
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
