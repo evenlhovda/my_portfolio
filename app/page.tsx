@@ -19,25 +19,17 @@ export default function Home() {
       tags: ["Sport", "Community", "Event"],
       role: "Medarrangør & økonomiansvarlig",
       year: "2021-",
-      client: "Bryne Kitefestival",
-      contributors: [
-        { name: "Ole Jørgen Grønli", image: "/placeholder.svg" },
-        { name: "Nora Markussen", image: "/placeholder.svg" },
-      ]
+      client: "Bryne Kitefestival"
     },
     {
       id: 2,
-      title: '"Strava for motorsyklister" – app for MC-miljøet i Norge',
-      description: "En digitalt samlingssted for motorsyklister å planlegge turer, bygget på lavkodeplattformen Bubble",
-      image: "/placeholder.svg",
-      tags: ["Innovasjon og validering", "Lavkodeutvikling"],
-      role: "Technical Lead",
-      year: "2021-2023",
-      client: "NAF - Norges Automobil Forbund",
-      contributors: [
-        { name: "Christer Dalsbøe", image: "/placeholder.svg" },
-        { name: "Ole Jørgen Grønli", image: "/placeholder.svg" },
-      ]
+      title: "Sosial betting app for fotball EM",
+      description: "En web app der spillere kan tippe på utfallet av fotball EM i lukkede grupper, bygget på lavkodeplattformen Bubble og lansert for bruk i til EM 2024.",
+      image: "/images/fotball.jpg",
+      tags: ["No code", "Spill", "REST API", "Backend"],
+      role: "Initiativtager og utvikler",
+      year: "Våren 2024",
+      client: "Pappaperm-prosjekter"
     },
   ]
 
@@ -124,30 +116,15 @@ export default function Home() {
                       <div className="grid gap-2">
                         <div className="flex items-center gap-2">
                           <Users className="h-4 w-4" />
+                          <span className="font-medium">Role:</span> {project.role}
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Users className="h-4 w-4" />
                           <span className="font-medium">Client:</span> {project.client}
                         </div>
                         <div className="flex items-center gap-2">
                           <Calendar className="h-4 w-4" />
                           <span className="font-medium">Timeline:</span> {project.year}
-                        </div>
-                      </div>
-                      <div>
-                        <h3 className="font-medium mb-2">Contributors</h3>
-                        <div className="flex gap-2">
-                          {project.contributors.map((contributor, i) => (
-                            <div key={i} className="flex items-center gap-2">
-                              <div className="relative w-8 h-8">
-                                <Image
-                                  src={contributor.image}
-                                  alt={contributor.name}
-                                  className="rounded-full"
-                                  fill
-                                  sizes="32px"
-                                />
-                              </div>
-                              <span className="text-sm">{contributor.name}</span>
-                            </div>
-                          ))}
                         </div>
                       </div>
                       <div className="flex flex-wrap gap-2">
