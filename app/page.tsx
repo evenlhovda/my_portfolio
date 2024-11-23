@@ -41,7 +41,7 @@ export default function Home() {
       id: 4,
       title: "Sosial betting app for fotball EM",
       description: "En web app der spillere kan tippe på utfallet av fotball EM i lukkede grupper, bygget på lavkodeplattformen Bubble og lansert for bruk i til EM 2024.",
-      image: "/images/fotball.jpg",
+      image: "/images/Fotball.jpg",
       tags: ["No code", "Spill", "REST API", "Backend"],
       role: "Initiativtager og utvikler",
       year: "Våren 2024",
