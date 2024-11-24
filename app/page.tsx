@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
-import { Calendar, Users, Linkedin, Mail, Building, CheckCircle, Clock } from 'lucide-react'
+import { Calendar, Users, Linkedin, Mail, Building } from 'lucide-react'
 
 export default function Home() {
   const projects = [
