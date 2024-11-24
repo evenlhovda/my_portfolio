@@ -4,15 +4,50 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
-import { Calendar, Users, Linkedin, Mail } from 'lucide-react'
+import { Calendar, Users, Linkedin, Mail, Building, CheckCircle, Clock } from 'lucide-react'
 
 export default function Home() {
   const projects = [
     {
       id: 1,
       title: "Automatisering av dataflyt for bedre kundehåndtering",
-      description: "Sikrer at en rekke ulike systemer deler data effektivt slik at vi kan ta bedre og mer effektive beslutninger i det kommersielle arbeidet. Fokuset er på å gjøre relevante data tilgjengelig for effektive prosesser knyttet til salg, fakturering, support og Customer Success. Vesentlige suksesskriterier er at nye strukturer skal være robuste, enkle å tilpasse, tilgjengelig for alle i selskapet og kreve minimalt vedlikehold. Prosjektet har ført til at all kundekontakt, på tvers av ulike verktøy (Hubspot, Intercom, personlig mail og support-mail) snakker sammen og er samlet i CRM. Onboarding har blitt mer effektiv med ny, autiomatisert onboardingflyt. Innkommende support-henvendelser krever mindre manuell innsats, med en dedikert AI-assistent på førstelinje. Relevant produkt-data er tilgjengelig via egne BI-dashbord og verktøy. Behovet for manuell overføring av data mellom systemer er drastisk redusert.",
-      image: "/images/kommersiell_rigg_3.png",
+      description: (
+        <div className="prose">
+          <p className="mb-2">
+            Jeg leder et strategisk prosjekt som 
+            fokuserer på å gjøre data mer tilgjengelig for beslutningsgrunnlag og automatisering. Målet med prosjektet 
+            er å sikre at ulike systemer deler data effektivt, slik at vi kan ta bedre og mer informerte beslutninger 
+            i vårt kommersielle arbeid. Dette innebærer å tilgjengeliggjøre relevant informasjon for prosesser 
+            innen salg, fakturering, support og Customer Success. Prosjektet er designet for å levere robuste, fleksible 
+            strukturer som er brukervennlige, lett tilgjengelige for hele selskapet og krever minimalt vedlikehold.
+          </p>
+          <p className="mb-2">
+            <strong>Mål:</strong>
+          </p>
+          <ul className="list-disc pl-5 mb-2">
+            <li className="mb-2">
+              <strong>Bedre oversikt over kundekontakt:</strong> All kommunikasjon med kunder – fra verktøy som 
+              Hubspot, Intercom, personlig e-post og support-e-post – er nå knyttet til CRM-systemet for enkel oversikt.
+            </li>
+            <li className="mb-2">
+              <strong>Ny onboardingsflyt:</strong> En ny, automatisert onboarding emailflyt sikrer grunnleggende oppfølging uten å trekke ressurser fra CS-teamet.
+            </li>
+            <li className="mb-2">
+              <strong>Effektivisering av support:</strong> En AI-assistent på førstelinje settes opp for å håndtere innkommende 
+              supporthenvendelser og redusere behovet for manuell oppfølging av enkle supportsaker.
+            </li>
+            <li className="mb-2">
+              <strong>Produktdata tilgjengeliggjøres for daglige beslutninger:</strong> Relevante produktdata tilgjengeliggjøres via 
+              BI-dashbord og tilknyttede verktøy (Big Query og Looker), for raskt å kunne ta datadrevne beslutninger i det daglige.
+            </li>
+            <li className="mb-2">
+              <strong>Redusert manuelt arbeid:</strong> Behovet for manuell overføring av data mellom systemer 
+              er drastisk redusert, noe som frigjør tid til mer verdiskapende aktiviteter.
+            </li>
+          </ul>
+        </div>
+      ),
+        image: "/images/kommersiell_rigg_3.png",
       tags: ["Automatisering", "Big Query", "Looker studio", "Hubspot", "Stripe", "Intercom"],
       role: "Prosjektleder",
       year: "2024",
@@ -21,17 +56,22 @@ export default function Home() {
     {
       id: 2,
       title: "Privat investorportefølje",
-      description: "Som eier i unoterte selskaper som bruker OwnersRoom får du full kontroll på ditt eierskap og nyheter fra selskapene i porteføljen. Dette var et stort steg i å ta OwnersRoom fra å være et verktøy for selskapets ledelse, til å være plattform for samhandling mellom selskap og eierne.",
+      description: "Som eier i unoterte selskaper som bruker OwnersRoom får du full kontroll på ditt eierskap og nyheter fra selskapene i porteføljen. Dette var et stort steg i å ta OwnersRoom fra å være et administrativt verktøy for selskapets ledelse, til en plattform for samhandling mellom selskaper og deres eiere.",
       image: "/images/Portfolio.gif",
       tags: ["Produktledelse", "Scoping"],
-      role: "Product manager",
+      role: "Produktleder",
       year: "2023-2024",
-      client: "OwnersRoom as"
+      client: "OwnersRoom AS"
     },{
       id: 3,
       title: "Bryne Kitefestival",
-      description: "Det som startet med 3 venner som dro til danmark for å kite, er nå en festival med 50+ årlige deltagere.",
-      image: "/images/snowkiter.jpg",
+      description: (
+        <>
+          <p className="mb-2"> Det startet med 3 venner som dro til danmark for å kite. Nå er det 2 årlige festivaler med 50+ ivrige deltagere som samles for å kite. </p>
+          <p> Jeg er medarrangører og styrer økonomien for vinterfestivalen som er en lukket, all inclusiv snø-kite-festival over fire dager.</p>
+        </>
+        ),
+      image: "/images/snowkiting.webp",
       tags: ["Sport", "Community", "Event"],
       role: "Medarrangør & økonomiansvarlig",
       year: "2021-",
@@ -42,7 +82,7 @@ export default function Home() {
       title: "Sosial betting app for fotball EM",
       description: "En web app der spillere kan tippe på utfallet av fotball EM i lukkede grupper, bygget på lavkodeplattformen Bubble og lansert for bruk i til EM 2024.",
       image: "/images/Fotball.jpg",
-      tags: ["No code", "Spill", "REST API", "Backend"],
+      tags: ["No code", "Bubble.io", "Lavkode", "Spill", "REST API", "Backend"],
       role: "Initiativtager og utvikler",
       year: "Våren 2024",
       client: "Sideprosjekt i pappaperm"
@@ -50,22 +90,34 @@ export default function Home() {
     {
       id: 5,
       title: "Validering av idé: Digital investorportal",
-      description: "Er det et marked for en digital investorportal? Idéen om å digitalisere det private kapitalmarkedet for å øke informasjonsflyt, prosesshåndtering og likviditet måtte testes. Vi gjennomførte intervjuer, analyserte statistikk, NOU-rapporter og gjennomførte spørreundersøkelser mot norske gründere og investorer for å finne ut om idéen var verdt å forfølge. I dag har OwnersRoom flere tusen registrerte brukere, mer enn 200 kunder og har digitalisert kapitalutvidelser på ca 2 mrd NOK! Som forretningsutvikler var jeg med å bygge selsakpet fra start og har bidratt til prototype-utvikling, kommersielle eksperimenter, brukerintervjuer, strategi-utvikling, rekruttering av pilotkunder, sikre finansiering ++",
+      description: (
+        <>
+          <p className="mb-2">Idéen om å øke effektiviteten i det private kapitalmarkedet med digital einvestorportaler ble testet våren 2017. Vi gjennomførte intervjuer, analyserte statistikk, NOU-rapporter og gjennomførte spørreundersøkelser mot norske gründere og investorer. Det var ingen tvil om at det var store muligheter for forbedre informasjonsflyt, prosesshåndtering og øke likviditet i unoterte aksjer. Konklusjonen var at her var det vært å satse videre.</p>
+          <p className="mb-2">I dag har OwnersRoom flere tusen registrerte brukere, mer enn 200 kunder og har digitalisert kapitalutvidelser på ca 2 mrd NOK! Som forretningsutvikler var jeg med å bygge selskapet fra start og har bidratt til prototype-utvikling, kommersielle eksperimenter, brukerintervjuer, strategi-utvikling, rekruttering av pilotkunder, sikre finansiering ++.</p>
+          <p>For mer informasjon om OwnersRoom, se <a href="https://ownersroom.com">https://ownersroom.com</a>.</p>
+        </>
+      ),
       image: "/images/OwnersRoom_illustrasjon02.png",
       tags: [ "Entreprenørskap", "Markedsundersøkelse", "Forretningsutvikling", "SaaS"],
       role: "Forretningsutvikler",
       year: "2018-2019",
-      client: "OwnersRoom"
+      client: "OwnersRoom AS"
     },
     {
       id: 6,
       title: "FOU prosjekt: Investor Relationship Management og digitalt emisjonsverktøy",
-      description: "Forsknings- og utviklingsporsjekt med støtte fra Skattefunn og Innovasjon Norge der vi uviklet nye løsninger for å hjelpe selskaper gjennomføre effektive kapitalprosesser og understøtte effektive selskap-investor relasjoner. Prosjektet resluterte i innsikt og utvikling av første versjon av et digitalt emisjonsverktøy. Dette er i dag en helt sentral del av OwnersRoom sitt verdiforslag. Min rolle var å lede søknads-prosessen til både Innovasjon Norge og Skattefunn, samt følge opp fremdrift og ressursbruk i prosjektet.",
-      image: "/images/OwnersRoom_illustrasjon01.png",
+      description:  (
+        <>
+          <p className="mb-2">Forsknings- og utviklingsporsjekt med støtte fra Skattefunn og Innovasjon Norge der vi uviklet nye løsninger for å hjelpe selskaper gjennomføre effektive kapitalprosesser og understøtte effektive selskap-investor relasjoner.</p>
+          <p className="mb-2">Prosjektet resluterte i innsikt og utvikling av første versjon av et digitalt emisjonsverktøy. Dette er i dag en helt sentral del av OwnersRoom sitt verdiforslag.</p>
+          <p>Min rolle var å lede søknads-prosessen til både Innovasjon Norge og Skattefunn, samt følge opp fremdrift og ressursbruk i prosjektet.</p>
+        </>
+      ),
+        image: "/images/OwnersRoom_illustrasjon01.png",
       tags: [ "Prosjektledelse", "SkatteFunn", "Innovasjon Norge", "Søknad", "Innovasjon"],
       role: "Prosjektleder",
       year: "2019-2020",
-      client: "OwnersRoom"
+      client: "OwnersRoom AS"
     },
     {
       id: 7,
@@ -178,15 +230,15 @@ export default function Home() {
                         <div className="grid gap-2">
                           <div className="flex items-center gap-2">
                             <Users className="h-4 w-4" />
-                            <span className="font-medium">Role:</span> {project.role}
+                            <span className="font-medium">Rolle:</span> {project.role}
                           </div>
                           <div className="flex items-center gap-2">
-                            <Users className="h-4 w-4" />
-                            <span className="font-medium">Client:</span> {project.client}
+                            <Building className="h-4 w-4" />
+                            <span className="font-medium">Klient:</span> {project.client}
                           </div>
                           <div className="flex items-center gap-2">
                             <Calendar className="h-4 w-4" />
-                            <span className="font-medium">Timeline:</span> {project.year}
+                            <span className="font-medium">Når:</span> {project.year}
                           </div>
                         </div>
                         <div className="flex flex-wrap gap-2">
