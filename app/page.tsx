@@ -71,7 +71,7 @@ export default function Home() {
           <p> Jeg er medarrangører og styrer økonomien for vinterfestivalen som er en lukket, all inclusiv snø-kite-festival over fire dager.</p>
         </>
         ),
-      image: "/images/snowkiting.webp",
+      image: "/images/Snowkiting.webp",
       tags: ["Sport", "Community", "Event"],
       role: "Medarrangør & økonomiansvarlig",
       year: "2021-",
