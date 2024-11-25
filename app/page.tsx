@@ -79,8 +79,8 @@ export default function Home() {
     },
     {
       id: 4,
-      title: "Sosial betting app for fotball EM",
-      description: "En web app der spillere kan tippe på utfallet av fotball EM i lukkede grupper, bygget på lavkodeplattformen Bubble og lansert for bruk i til EM 2024.",
+      title: "Sosial betting-app for fotball-EM",
+      description: "En web-app der spillere kan tippe på utfallet av fotball-EM i lukkede grupper, bygget på lavkodeplattformen Bubble og lansert for bruk i til EM 2024.",
       image: "/images/Fotball.jpg",
       tags: ["No code", "Bubble.io", "Lavkode", "Spill", "REST API", "Backend"],
       role: "Initiativtager og utvikler",
@@ -105,12 +105,12 @@ export default function Home() {
     },
     {
       id: 6,
-      title: "FOU prosjekt: Investor Relationship Management og digitalt emisjonsverktøy",
+      title: "FOU-prosjekt: Investor Relationship Management og digitalt emisjonsverktøy",
       description:  (
         <>
-          <p className="mb-2">Forsknings- og utviklingsporsjekt med støtte fra Skattefunn og Innovasjon Norge der vi uviklet nye løsninger for å hjelpe selskaper gjennomføre effektive kapitalprosesser og understøtte effektive selskap-investor relasjoner.</p>
-          <p className="mb-2">Prosjektet resluterte i innsikt og utvikling av første versjon av et digitalt emisjonsverktøy. Dette er i dag en helt sentral del av OwnersRoom sitt verdiforslag.</p>
-          <p>Min rolle var å lede søknads-prosessen til både Innovasjon Norge og Skattefunn, samt følge opp fremdrift og ressursbruk i prosjektet.</p>
+          <p className="mb-2">Forsknings- og utviklingsporsjekt med støtte fra Skattefunn og Innovasjon Norge der vi utviklet nye løsninger for å hjelpe selskaper gjennomføre effektive kapitalprosesser og økt tillit i relasjonen mellom selskap og investor.</p>
+          <p className="mb-2">Prosjektet resulterte i innsikt og utvikling av første versjon av et digitalt emisjonsverktøy. Dette er i dag en helt sentral del av OwnersRoom sitt verdiforslag.</p>
+          <p>Min rolle var å lede prosjektet, søke støtte fra Innovasjon Norge og Skattefunn, samt følge opp og rapportere fremdrift og ressursbruk i prosjektet.</p>
         </>
       ),
         image: "/images/OwnersRoom_illustrasjon01.png",
@@ -121,7 +121,7 @@ export default function Home() {
     },
     {
       id: 7,
-      title: "AI basert web-utvikling: Denne nettsiden",
+      title: "AI-basert web-utvikling: Denne nettsiden",
       description: "Denne nettsiden ble til som et resultat av ønsket om å mestre AI-basert utvikling. Den er utviklet ved bruk av AI-verktøyene V0 og Cursor, samt bug testing, bildegenerering og tekstbehandling med ChatGPT og Claude. ",
       image: "/images/AI_code_project.webp",
       tags: [ "AI", "V0", "Cursor", "Next.JS", "Webutvikling"],
