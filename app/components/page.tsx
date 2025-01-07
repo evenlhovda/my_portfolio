@@ -1,5 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { ContrastButton, SecondaryButton, OutlineContrastButton } from "@/components/ui/button-variants"
+import { 
+  PrimaryButton,
+  ContrastButton, 
+  SecondaryButton, 
+  OutlineContrastButton 
+} from "@/components/ui/button-variants"
 
 export default function ComponentsDemo() {
   return (
