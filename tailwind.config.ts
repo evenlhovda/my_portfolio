@@ -10,52 +10,60 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			background: 'hsl(var(--background))',
-  			foreground: 'hsl(var(--foreground))',
-  			card: {
-  				DEFAULT: 'hsl(var(--card))',
-  				foreground: 'hsl(var(--card-foreground))'
-  			},
-  			popover: {
-  				DEFAULT: 'hsl(var(--popover))',
-  				foreground: 'hsl(var(--popover-foreground))'
-  			},
   			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
+  				DEFAULT: '#4F46E5',
+  				hover: '#4338CA',
   			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
-  			muted: {
-  				DEFAULT: 'hsl(var(--muted))',
-  				foreground: 'hsl(var(--muted-foreground))'
+  			background: {
+  				DEFAULT: '#1F2937',
+  				surface: '#374151',
   			},
   			accent: {
-  				DEFAULT: 'hsl(var(--accent))',
-  				foreground: 'hsl(var(--accent-foreground))'
+  				DEFAULT: '#818CF8',
+  				foreground: '#C7D2FE',
+  			},
+  			contrast: {
+  				DEFAULT: '#F97316',
+  				hover: '#EA580C',
+  				light: '#FB923C',
+  			},
+  			card: {
+  				DEFAULT: '#1F2937',
+  				foreground: '#F9FAFB',
+  			},
+  			popover: {
+  				DEFAULT: '#1F2937',
+  				foreground: '#F9FAFB',
+  			},
+  			secondary: {
+  				DEFAULT: '#374151',
+  				foreground: '#F9FAFB',
+  			},
+  			muted: {
+  				DEFAULT: '#374151',
+  				foreground: '#9CA3AF',
   			},
   			destructive: {
-  				DEFAULT: 'hsl(var(--destructive))',
-  				foreground: 'hsl(var(--destructive-foreground))'
+  				DEFAULT: '#DC2626',
+  				foreground: '#FEE2E2',
   			},
-  			border: 'hsl(var(--border))',
-  			input: 'hsl(var(--input))',
-  			ring: 'hsl(var(--ring))',
-  			chart: {
-  				'1': 'hsl(var(--chart-1))',
-  				'2': 'hsl(var(--chart-2))',
-  				'3': 'hsl(var(--chart-3))',
-  				'4': 'hsl(var(--chart-4))',
-  				'5': 'hsl(var(--chart-5))'
-  			}
+  			border: '#374151',
+  			input: '#374151',
+  			ring: '#4F46E5',
   		},
   		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
-  		}
+  			lg: '0.5rem',
+  			md: '0.375rem',
+  			sm: '0.25rem',
+  		},
+  		fontFamily: {
+  			inter: ['Inter', 'sans-serif'],
+  		},
+  		spacing: {
+  			'4': '1rem',
+  			'6': '1.5rem',
+  			'8': '2rem',
+  		},
   	}
   },
   plugins: [require("tailwindcss-animate")],

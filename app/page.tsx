@@ -5,6 +5,9 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import { Calendar, Users, Linkedin, Mail, Building } from 'lucide-react'
+import Link from 'next/link'
+import { PrimaryButton, ContrastButton, OutlineContrastButton } from "@/components/ui/button-variants"
+import { Icon } from "@/components/ui/icon"
 
 export default function Home() {
   const projects = [
@@ -13,17 +16,17 @@ export default function Home() {
       title: "Automatisering av dataflyt for bedre kundehåndtering",
       description: (
         <div className="prose">
-          <p className="mb-2">
+          <div className="mb-2">
             Jeg leder et strategisk prosjekt som 
             fokuserer på å gjøre data mer tilgjengelig for beslutningsgrunnlag og automatisering. Målet med prosjektet 
             er å sikre at ulike systemer deler data effektivt, slik at vi kan ta bedre og mer informerte beslutninger 
             i vårt kommersielle arbeid. Dette innebærer å tilgjengeliggjøre relevant informasjon for prosesser 
             innen salg, fakturering, support og Customer Success. Prosjektet er designet for å levere robuste, fleksible 
             strukturer som er brukervennlige, lett tilgjengelige for hele selskapet og krever minimalt vedlikehold.
-          </p>
-          <p className="mb-2">
+          </div>
+          <div className="mb-2">
             <strong>Mål:</strong>
-          </p>
+          </div>
           <ul className="list-disc pl-5 mb-2">
             <li className="mb-2">
               <strong>Bedre oversikt over kundekontakt:</strong> All kommunikasjon med kunder – fra verktøy som 
@@ -66,11 +69,15 @@ export default function Home() {
       id: 3,
       title: "Bryne Kitefestival",
       description: (
-        <>
-          <p className="mb-2"> Det startet med 3 venner som dro til danmark for å kite. Nå er det 2 årlige festivaler med 50+ ivrige deltagere som samles for å kite. </p>
-          <p> Jeg er medarrangører og styrer økonomien for vinterfestivalen som er en lukket, all inclusiv snø-kite-festival over fire dager.</p>
-        </>
-        ),
+        <div className="space-y-2">
+          <div className="mb-2">
+            Det startet med 3 venner som dro til danmark for å kite. Nå er det 2 årlige festivaler med 50+ ivrige deltagere som samles for å kite.
+          </div>
+          <div>
+            Jeg er medarrangører og styrer økonomien for vinterfestivalen som er en lukket, all inclusiv snø-kite-festival over fire dager.
+          </div>
+        </div>
+      ),
       image: "/images/Snowkiting.webp",
       tags: ["Sport", "Community", "Event"],
       role: "Medarrangør & økonomiansvarlig",
@@ -91,14 +98,20 @@ export default function Home() {
       id: 5,
       title: "Validering av idé: Digital investorportal",
       description: (
-        <>
-          <p className="mb-2">Idéen om å øke effektiviteten i det private kapitalmarkedet med digital einvestorportaler ble testet våren 2017. Vi gjennomførte intervjuer, analyserte statistikk, NOU-rapporter og gjennomførte spørreundersøkelser mot norske gründere og investorer. Det var ingen tvil om at det var store muligheter for forbedre informasjonsflyt, prosesshåndtering og øke likviditet i unoterte aksjer. Konklusjonen var at her var det vært å satse videre.</p>
-          <p className="mb-2">I dag har OwnersRoom flere tusen registrerte brukere, mer enn 200 kunder og har digitalisert kapitalutvidelser på ca 2 mrd NOK! Som forretningsutvikler var jeg med å bygge selskapet fra start og har bidratt til prototype-utvikling, kommersielle eksperimenter, brukerintervjuer, strategi-utvikling, rekruttering av pilotkunder, sikre finansiering ++.</p>
-          <p>For mer informasjon om OwnersRoom, se <a href="https://ownersroom.com">https://ownersroom.com</a>.</p>
-        </>
+        <div className="space-y-2">
+          <div className="mb-2">
+            Idéen om å øke effektiviteten i det private kapitalmarkedet med digital einvestorportaler ble testet våren 2017. Vi gjennomførte intervjuer, analyserte statistikk, NOU-rapporter og gjennomførte spørreundersøkelser mot norske gründere og investorer. Det var ingen tvil om at det var store muligheter for forbedre informasjonsflyt, prosesshåndtering og øke likviditet i unoterte aksjer. Konklusjonen var at her var det vært å satse videre.
+          </div>
+          <div className="mb-2">
+            I dag har OwnersRoom flere tusen registrerte brukere, mer enn 200 kunder og har digitalisert kapitalutvidelser på ca 2 mrd NOK! Som forretningsutvikler var jeg med å bygge selskapet fra start og har bidratt til prototype-utvikling, kommersielle eksperimenter, brukerintervjuer, strategi-utvikling, rekruttering av pilotkunder, sikre finansiering ++.
+          </div>
+          <div>
+            For mer informasjon om OwnersRoom, se <a href="https://ownersroom.com" className="text-blue-400 hover:text-blue-300">https://ownersroom.com</a>.
+          </div>
+        </div>
       ),
       image: "/images/OwnersRoom_illustrasjon02.png",
-      tags: [ "Entreprenørskap", "Markedsundersøkelse", "Forretningsutvikling", "SaaS"],
+      tags: ["Entreprenørskap", "Markedsundersøkelse", "Forretningsutvikling", "SaaS"],
       role: "Forretningsutvikler",
       year: "2018-2019",
       client: "OwnersRoom AS"
@@ -106,15 +119,21 @@ export default function Home() {
     {
       id: 6,
       title: "FOU-prosjekt: Investor Relationship Management og digitalt emisjonsverktøy",
-      description:  (
-        <>
-          <p className="mb-2">Forsknings- og utviklingsporsjekt med støtte fra Skattefunn og Innovasjon Norge der vi utviklet nye løsninger for å hjelpe selskaper gjennomføre effektive kapitalprosesser og økt tillit i relasjonen mellom selskap og investor.</p>
-          <p className="mb-2">Prosjektet resulterte i innsikt og utvikling av første versjon av et digitalt emisjonsverktøy. Dette er i dag en helt sentral del av OwnersRoom sitt verdiforslag.</p>
-          <p>Min rolle var å lede prosjektet, søke støtte fra Innovasjon Norge og Skattefunn, samt følge opp og rapportere fremdrift og ressursbruk i prosjektet.</p>
-        </>
+      description: (
+        <div className="space-y-2">
+          <div className="mb-2">
+            Forsknings- og utviklingsporsjekt med støtte fra Skattefunn og Innovasjon Norge der vi utviklet nye løsninger for å hjelpe selskaper gjennomføre effektive kapitalprosesser og økt tillit i relasjonen mellom selskap og investor.
+          </div>
+          <div className="mb-2">
+            Prosjektet resulterte i innsikt og utvikling av første versjon av et digitalt emisjonsverktøy. Dette er i dag en helt sentral del av OwnersRoom sitt verdiforslag.
+          </div>
+          <div>
+            Min rolle var å lede prosjektet, søke støtte fra Innovasjon Norge og Skattefunn, samt følge opp og rapportere fremdrift og ressursbruk i prosjektet.
+          </div>
+        </div>
       ),
         image: "/images/OwnersRoom_illustrasjon01.png",
-      tags: [ "Prosjektledelse", "SkatteFunn", "Innovasjon Norge", "Søknad", "Innovasjon"],
+      tags: ["Prosjektledelse", "SkatteFunn", "Innovasjon Norge", "Søknad", "Innovasjon"],
       role: "Prosjektleder",
       year: "2019-2020",
       client: "OwnersRoom AS"
@@ -132,16 +151,28 @@ export default function Home() {
   ]
 
   return (
-    <div 
-      className="min-h-screen flex flex-col relative"
-      style={{
-        backgroundImage: 'url("/images/Background_image02.webp")',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundAttachment: 'fixed'
-      }}
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-50/95 to-orange-200/85" />
+    <div className="min-h-screen flex flex-col bg-background">
+      {/* Header */}
+      <header className="sticky top-0 z-50 w-full border-b border-secondary bg-background/75 backdrop-blur">
+        <div className="container mx-auto px-4 py-4">
+          <nav className="flex items-center justify-between">
+            <Link href="/" className="text-xl font-bold text-slate-100 hover:text-slate-50">
+              Even L Hovda
+            </Link>
+            <div className="flex gap-6">
+              <Link href="/projects" className="text-slate-300 hover:text-slate-100 transition-colors">
+                Projects
+              </Link>
+              <Link href="/about" className="text-slate-300 hover:text-slate-100 transition-colors">
+                About
+              </Link>
+              <Link href="/contact" className="text-slate-300 hover:text-slate-100 transition-colors">
+                Contact
+              </Link>
+            </div>
+          </nav>
+        </div>
+      </header>
       
       <div className="relative flex-grow">
         <main className="flex-grow">
@@ -149,14 +180,14 @@ export default function Home() {
           <section className="container px-4 py-16 mx-auto">
             <div className="grid gap-4 md:grid-cols-3 items-center">
               <div className="space-y-4 md:col-span-2">
-                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                <h1 className="text-4xl font-bold tracking-tighter text-slate-100 sm:text-5xl xl:text-6xl/none">
                   Even Lømo Hovda
                 </h1>
                 <div className="space-y-3">
-                  <p className="text-2xl font-semibold text-orange-600">
+                  <p className="text-2xl font-semibold text-accent">
                     Innovasjon og digital produktledelse.
                   </p>
-                  <p className="text-xl text-muted-foreground">
+                  <p className="text-xl text-slate-300">
                     Brenner for å skape gode digitale produkter som løser relle problemer. Flere års erfaring med forretningsutvikling, customer success og produktledelse. Elsker å bygge ting selv med lavkode/ AI-baserte verktøy.
                   </p>
                 </div>
@@ -166,7 +197,7 @@ export default function Home() {
                   <Image
                     src="/images/Profilbilde_lue_rund2.png"
                     alt="Even Lømo Hovda"
-                    className="object-cover rounded-full border-4 border-orange-200"
+                    className="object-cover rounded-full border-4 border-accent"
                     fill
                     sizes="(max-width: 768px) 192px, 256px"
                     priority
@@ -176,34 +207,62 @@ export default function Home() {
             </div>
           </section>
 
+          {/* Category Divider */}
+          <div className="w-full bg-secondary/30 py-16">
+            <div className="container px-4 mx-auto">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div className="flex flex-col items-center gap-3 group">
+                  <Icon name="ai" className="text-primary transition-transform group-hover:scale-110" size={64} />
+                  <span className="text-slate-300 font-medium">AI & Automatisering</span>
+                </div>
+                <div className="flex flex-col items-center gap-3 group">
+                  <Icon name="data" className="text-contrast transition-transform group-hover:scale-110" size={64} />
+                  <span className="text-slate-300 font-medium">Data & Integrasjoner</span>
+                </div>
+                <div className="flex flex-col items-center gap-3 group">
+                  <Icon name="analytics" className="text-primary transition-transform group-hover:scale-110" size={64} />
+                  <span className="text-slate-300 font-medium">Analyse & Innsikt</span>
+                </div>
+                <div className="flex flex-col items-center gap-3 group">
+                  <Icon name="settings" className="text-contrast transition-transform group-hover:scale-110" size={64} />
+                  <span className="text-slate-300 font-medium">Utvikling</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Projects Section */}
           <section className="container px-4 py-12 mx-auto">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-12">Utvalgte prosjekter</h2>
+            <h2 className="text-3xl font-bold tracking-tighter text-slate-100 sm:text-4xl mb-12">
+              Utvalgte prosjekter
+            </h2>
+            
+            {/* Existing projects grid */}
             <div className="grid gap-8 md:grid-cols-2">
               {projects.map((project) => (
                 <Dialog key={project.id}>
                   <DialogTrigger asChild>
-                    <Card className="cursor-pointer transition-all duration-200 hover:translate-y-[-4px] hover:shadow-lg border border-orange-200">
-                      <CardHeader className="relative aspect-video">
+                    <Card className="cursor-pointer transition-all duration-200 hover:translate-y-[-4px] hover:shadow-lg bg-secondary border-secondary overflow-hidden">
+                      <CardHeader className="relative aspect-video p-0">
                         <Image
                           src={project.image}
                           alt={project.title}
-                          className="object-cover rounded-t-lg"
+                          className="object-cover"
                           fill
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </CardHeader>
                       <CardContent className="pt-4">
-                        <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
+                        <CardTitle className="text-xl mb-2 text-slate-100">{project.title}</CardTitle>
                         <div className="relative">
-                          <p className="text-muted-foreground mb-4 line-clamp-2">
+                          <p className="text-slate-300 mb-4 line-clamp-2">
                             {project.description}
                           </p>
-                          <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-background to-transparent" />
+                          <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-secondary to-transparent" />
                         </div>
                         <div className="flex flex-wrap gap-2">
                           {project.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary">
+                            <Badge key={tag} variant="secondary" className="bg-accent text-accent-foreground">
                               {tag}
                             </Badge>
                           ))}
@@ -211,7 +270,7 @@ export default function Home() {
                       </CardContent>
                     </Card>
                   </DialogTrigger>
-                  <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col">
+                  <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col bg-secondary text-slate-100">
                     <DialogHeader>
                       <DialogTitle className="text-2xl">{project.title}</DialogTitle>
                     </DialogHeader>
@@ -226,24 +285,24 @@ export default function Home() {
                         />
                       </div>
                       <div className="space-y-4">
-                        <p className="text-muted-foreground">{project.description}</p>
+                        <p className="text-slate-300">{project.description}</p>
                         <div className="grid gap-2">
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 text-slate-300">
                             <Users className="h-4 w-4" />
-                            <span className="font-medium">Rolle:</span> {project.role}
+                            <span className="font-medium text-slate-100">Rolle:</span> {project.role}
                           </div>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 text-slate-300">
                             <Building className="h-4 w-4" />
-                            <span className="font-medium">Klient:</span> {project.client}
+                            <span className="font-medium text-slate-100">Klient:</span> {project.client}
                           </div>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-2 text-slate-300">
                             <Calendar className="h-4 w-4" />
-                            <span className="font-medium">Når:</span> {project.year}
+                            <span className="font-medium text-slate-100">Når:</span> {project.year}
                           </div>
                         </div>
                         <div className="flex flex-wrap gap-2">
                           {project.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary">
+                            <Badge key={tag} variant="secondary" className="bg-accent text-accent-foreground">
                               {tag}
                             </Badge>
                           ))}
@@ -258,33 +317,38 @@ export default function Home() {
 
           {/* Get in Touch Section */}
           <section className="container px-4 py-12 mx-auto text-center">
-            <p className="text-xl text-muted-foreground">
+            <ContrastButton asChild>
               <a 
                 href="mailto:evenlhovda+web@gmail.com" 
-                className="text-orange-600 hover:text-orange-700 hover:underline ml-2"
+                className="inline-flex items-center gap-2"
               >
-                 Interessert i en prat? 📮
+                <Mail className="h-4 w-4" />
+                Interessert i en prat? 📮
               </a>
-            </p>
+            </ContrastButton>
           </section>
         </main>
       </div>
 
       {/* Footer */}
-      <footer className="relative border-t border-orange-200 bg-orange-50/95">
+      <footer className="border-t border-secondary bg-secondary/50">
         <div className="container px-4 py-6 mx-auto flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-sm text-gray-600">
+          <p className="text-sm text-slate-400">
             © {new Date().getFullYear()} Even Lømo Hovda. Reserverte rettigheter og sånne ting...
           </p>
           <div className="flex items-center space-x-4 mt-4 sm:mt-0">
-            <a href="https://www.linkedin.com/in/evenhovda" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900">
-              <span className="sr-only">LinkedIn</span>
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a href="mailto:evenlhovda+web@gmail.com" className="text-gray-600 hover:text-gray-900">
-              <span className="sr-only">Email</span>
-              <Mail className="h-6 w-6" />
-            </a>
+            <OutlineContrastButton asChild size="icon">
+              <a href="https://www.linkedin.com/in/evenhovda" target="_blank" rel="noopener noreferrer">
+                <span className="sr-only">LinkedIn</span>
+                <Linkedin className="h-4 w-4" />
+              </a>
+            </OutlineContrastButton>
+            <OutlineContrastButton asChild size="icon">
+              <a href="mailto:evenlhovda+web@gmail.com">
+                <span className="sr-only">Email</span>
+                <Mail className="h-4 w-4" />
+              </a>
+            </OutlineContrastButton>
           </div>
         </div>
       </footer>
