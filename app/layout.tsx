@@ -34,6 +34,7 @@ export default function RootLayout({
       >
         {children}
         <Script
+          id="flowise-chatbot"
           strategy="afterInteractive"
           type="module"
           dangerouslySetInnerHTML={{
