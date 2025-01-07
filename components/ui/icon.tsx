@@ -1,4 +1,5 @@
-import Image from 'next/image'
+'use client'
+
 import { cn } from '@/lib/utils'
 
 type IconName = 'ai' | 'data' | 'analytics' | 'settings'

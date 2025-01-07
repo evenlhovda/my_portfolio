@@ -1,5 +1,6 @@
 'use client'
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -15,8 +16,8 @@ export default function Home() {
       id: 1,
       title: "Automatisering av dataflyt for bedre kundehåndtering",
       description: (
-        <div className="prose">
-          <div className="mb-2">
+        <div className="prose prose-invert">
+          <div className="mb-2 text-slate-300">
             Jeg leder et strategisk prosjekt som 
             fokuserer på å gjøre data mer tilgjengelig for beslutningsgrunnlag og automatisering. Målet med prosjektet 
             er å sikre at ulike systemer deler data effektivt, slik at vi kan ta bedre og mer informerte beslutninger 
@@ -255,9 +256,15 @@ export default function Home() {
                       <CardContent className="pt-4">
                         <CardTitle className="text-xl mb-2 text-slate-100">{project.title}</CardTitle>
                         <div className="relative">
-                          <p className="text-slate-300 mb-4 line-clamp-2">
-                            {project.description}
-                          </p>
+                          {typeof project.description === 'string' ? (
+                            <p className="text-slate-300 mb-4 line-clamp-2">
+                              {project.description}
+                            </p>
+                          ) : (
+                            <div className="text-slate-300 mb-4 line-clamp-2">
+                              {project.description}
+                            </div>
+                          )}
                           <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-secondary to-transparent" />
                         </div>
                         <div className="flex flex-wrap gap-2">
@@ -285,7 +292,13 @@ export default function Home() {
                         />
                       </div>
                       <div className="space-y-4">
-                        <p className="text-slate-300">{project.description}</p>
+                        <div className="space-y-4">
+                          {typeof project.description === 'string' ? (
+                            <p className="text-slate-300">{project.description}</p>
+                          ) : (
+                            <div className="text-slate-300">{project.description}</div>
+                          )}
+                        </div>
                         <div className="grid gap-2">
                           <div className="flex items-center gap-2 text-slate-300">
                             <Users className="h-4 w-4" />
