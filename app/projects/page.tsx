@@ -12,30 +12,7 @@ import { projects } from "@/lib/data" // We'll create this next
 export default function ProjectsPage() {
   return (
     <SiteLayout>
-      {/* Category Divider */}
-      <div className="w-full bg-secondary/30 py-16">
-        <div className="container px-4 mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="flex flex-col items-center gap-3 group">
-              <Icon name="ai" className="text-primary transition-transform group-hover:scale-110" size={64} />
-              <span className="text-slate-300 font-medium">AI & Automatisering</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 group">
-              <Icon name="data" className="text-contrast transition-transform group-hover:scale-110" size={64} />
-              <span className="text-slate-300 font-medium">Data & Integrasjoner</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 group">
-              <Icon name="analytics" className="text-primary transition-transform group-hover:scale-110" size={64} />
-              <span className="text-slate-300 font-medium">Analyse & Innsikt</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 group">
-              <Icon name="settings" className="text-contrast transition-transform group-hover:scale-110" size={64} />
-              <span className="text-slate-300 font-medium">Utvikling</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      
       {/* Projects Section */}
       <section className="container px-4 py-12 mx-auto">
         <h2 className="text-3xl font-bold tracking-tighter text-slate-100 sm:text-4xl mb-12">

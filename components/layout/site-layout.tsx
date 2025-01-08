@@ -23,7 +23,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
                 Prosjekter
               </Link>
               <Link href="/about" className="text-slate-300 hover:text-slate-100 transition-colors">
-                Om oss
+                Om meg
               </Link>
               <Link href="/contact" className="text-slate-300 hover:text-slate-100 transition-colors">
                 Kontakt

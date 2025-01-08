@@ -143,14 +143,8 @@ export default function ContactPage() {
                   </a>
                 </div>
                 <div className="flex items-center gap-3 text-slate-300">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <a href="tel:+4792223344" className="hover:text-slate-100">
-                    +47 922 23 344
-                  </a>
-                </div>
-                <div className="flex items-center gap-3 text-slate-300">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span>Stavanger, Norge</span>
+                  <span>Oslo, Norge</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-300">
                   <Linkedin className="h-5 w-5 text-primary" />

@@ -43,14 +43,7 @@ export default function HomePage() {
             </div>
             <div className="relative">
               <div className="relative w-full aspect-square md:aspect-[4/3]">
-                <Image
-                  src="/images/Profilbilde_lue_rund2.png"
-                  alt="Even Lømo Hovda"
-                  className="object-cover rounded-2xl border-4 border-accent"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
+              <NetworkAnimation className="w-full h-full text-primary p-8" />
               </div>
             </div>
           </div>
@@ -123,11 +116,16 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="grid gap-6">
-            <div className="aspect-[3/2] flex items-center justify-center bg-secondary/30 rounded-lg overflow-hidden">
-              <NetworkAnimation className="w-full h-full text-primary p-8" />
+            <div className="relative w-full aspect-square md:aspect-[4/3]">
+            <Image
+                    src="/images/generic_consulting_company_AI.png"
+                    alt="Generic consulting firm"
+                    className="object-cover rounded-2xl border-4 border-accent"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
             </div>
-          </div>
         </div>
       </section>
     </SiteLayout>
