@@ -12,7 +12,6 @@ declare global {
 
 export default function FlowiseChat() {
   useEffect(() => {
-    // Load Flowise script
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js';
     script.type = 'module';
@@ -24,65 +23,86 @@ export default function FlowiseChat() {
         apiHost: "https://flowise-p9jk.onrender.com",
         theme: {
           button: {
-            backgroundColor: '#3B81F6',
+            backgroundColor: '#374151', // primary color
             right: 20,
             bottom: 20,
-            size: 48,
+            size: 58,
             dragAndDrop: true,
             iconColor: 'white',
-            customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+            customIconSrc: '/icons/chat-icon2.svg', 
             autoWindowOpen: {
-              autoOpen: true,
+              autoOpen: false,
               openDelay: 2,
               autoOpenOnMobile: false
-            }
+            },
+            className: 'rounded-full shadow-lg transition-transform transform hover:scale-110 hover:bg-primary-hover'
           },
+          tooltip: {
+            showTooltip: true,
+            tooltipMessage: 'Heisann! 👋',
+            tooltipBackgroundColor: '#4F46E5',
+            tooltipTextColor: 'white',
+            tooltipFontSize: 16
+        },
           chatWindow: {
             showTitle: true,
             showAgentMessages: true,
-            title: 'Flowise Bot',
-            titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
-            welcomeMessage: 'Hello! This is custom welcome message',
-            errorMessage: 'This is a custom error message',
-            backgroundColor: '#ffffff',
+            title: 'Rune, Evens assistent',
+            titleAvatarSrc: '/icons/bot-icon.svg', 
+            welcomeMessage: 'Hei! Jeg er Rune, Evens AI-assistent som kan hjelpe deg med spørsmål om Even og hans prosjekter.',
+            errorMessage: 'Beklager, noe gikk galt. Vennligst prøv igjen eller send en e-post direkte.',
+            backgroundColor: '#374151', // bg-background
             height: 700,
             width: 400,
             fontSize: 16,
-            fontFamily: 'var(--font-geist-sans)', // Using your custom font
+            fontFamily: 'var(--font-geist-sans)',
             starterPrompts: [
-              "What is a bot?",
-              "Who are you?"
+              "Hva slags prosjekter jobber du med?",
+              "Hvordan kan jeg ta kontakt?"
             ],
             botMessage: {
-              backgroundColor: '#f7f8ff',
-              textColor: '#303235',
+              backgroundColor: '#4338CA', // primary hover
+              textColor: '#E2E8F0', // text-slate-200
               showAvatar: true,
-              avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png',
+              avatarSrc: '/icons/bot-icon.svg', // We'll create this
               fontFamily: 'var(--font-geist-sans)'
             },
             userMessage: {
-              backgroundColor: '#3B81F6',
+              backgroundColor: '#4F46E5', // primary
               textColor: '#ffffff',
               showAvatar: true,
-              avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png',
+              avatarSrc: '/icons/user-icon.svg', // We'll create this
               fontFamily: 'var(--font-geist-sans)'
             },
             textInput: {
-              placeholder: 'Type your question',
-              backgroundColor: '#ffffff',
-              textColor: '#303235',
-              sendButtonColor: '#3B81F6',
+              placeholder: 'Skriv din melding her...',
+              backgroundColor: '#1E293B', // bg-secondary
+              textColor: '#E2E8F0', // text-slate-200
+              sendButtonColor: '#F97316', // contrast color
               fontFamily: 'var(--font-geist-sans)'
+            },
+            feedback: {
+                color: '#1F2937'
+            },
+            dateTimeToggle: {
+                date: true,
+                time: true
+            },
+            footer: {
+                textColor: '#1F2937',
+                text: 'Made by',
+                company: 'Even L Hovda',
+                companyLink: 'https://www.evenlhovda.com'
             }
           },
           disclaimer: {
             title: 'Disclaimer',
-            message: "By using this chatbot, you agree to the <a target=\"_blank\" href=\"https://flowiseai.com/terms\">Terms & Condition</a>",
-            textColor: '#303235',
-            buttonColor: '#3b82f6',
-            buttonText: 'Start Chatting',
+            message: "Ved å bruke denne chatboten godtar du at svarene er AI-genererte og kan inneholde feil.",
+            textColor: '#E2E8F0', // text-slate-200
+            buttonColor: '#F97316', // contrast
+            buttonText: 'Start Chat',
             buttonTextColor: 'white',
-            backgroundColor: 'white',
+            backgroundColor: '#1E293B', // bg-secondary
             fontFamily: 'var(--font-geist-sans)'
           }
         }
@@ -91,11 +111,10 @@ export default function FlowiseChat() {
 
     document.body.appendChild(script);
 
-    // Cleanup
     return () => {
       document.body.removeChild(script);
     };
   }, []);
 
-  return null; // This component doesn't render anything directly
+  return null;
 }
