@@ -9,6 +9,7 @@ import { Calendar, Users, Linkedin, Mail, Building } from 'lucide-react'
 import Link from 'next/link'
 import { PrimaryButton, ContrastButton, OutlineContrastButton } from "@/components/ui/button-variants"
 import { Icon } from "@/components/ui/icon"
+import { AnimatedLogo } from "@/components/ui/animated-logo"
 
 export default function Home() {
   const projects = [
@@ -157,18 +158,21 @@ export default function Home() {
       <header className="sticky top-0 z-50 w-full border-b border-secondary bg-background/75 backdrop-blur">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
-            <Link href="/" className="text-xl font-bold text-slate-100 hover:text-slate-50">
-              Even L Hovda
+            <Link href="/" className="flex items-center gap-2 group">
+              <AnimatedLogo className="text-primary group-hover:text-primary/80 transition-colors" size={60} />
+              <span className="text-xl font-bold text-slate-100 group-hover:text-slate-50">
+                Even L Hovda
+              </span>
             </Link>
             <div className="flex gap-6">
               <Link href="/projects" className="text-slate-300 hover:text-slate-100 transition-colors">
-                Projects
+                Prosjekter
               </Link>
               <Link href="/about" className="text-slate-300 hover:text-slate-100 transition-colors">
-                About
+                Om oss
               </Link>
               <Link href="/contact" className="text-slate-300 hover:text-slate-100 transition-colors">
-                Contact
+                Kontakt
               </Link>
             </div>
           </nav>
@@ -189,7 +193,7 @@ export default function Home() {
                     Innovasjon og digital produktledelse.
                   </p>
                   <p className="text-xl text-slate-300">
-                    Brenner for å skape gode digitale produkter som løser relle problemer. Flere års erfaring med forretningsutvikling, customer success og produktledelse. Elsker å bygge ting selv med lavkode/ AI-baserte verktøy.
+                    Utvikler digitale produkter som skaper reel verdi. Spesielt fokus på utviklig av automatiserte KI-agenter. Kan både utvikle løsninger på egenhånd, som del av et team eller som prosjektleder. Flere års erfaring med produktledelse, produktstrategi og customer success.
                   </p>
                 </div>
               </div>
