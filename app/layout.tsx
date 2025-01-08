@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Script from 'next/script'
 import { Inter } from 'next/font/google'
+import FlowiseChat from './components/FlowiseChat'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,7 +15,6 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-// Initialize Inter font
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
@@ -40,20 +39,7 @@ export default function RootLayout({
         className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <Script
-          id="flowise-chatbot"
-          strategy="afterInteractive"
-          type="module"
-          dangerouslySetInnerHTML={{
-            __html: `
-              import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
-              Chatbot.init({
-                chatflowid: "6f8d1f97-79e5-4d23-82c9-16150f0134ea",
-                apiHost: "https://flowise-p9jk.onrender.com",
-              })
-            `
-          }}
-        />
+        <FlowiseChat />
       </body>
     </html>
   );
