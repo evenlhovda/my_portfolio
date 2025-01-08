@@ -141,7 +141,7 @@ export default function FlowiseChat() {
             welcomeMessage: 'Hei! Jeg er Rune, Evens AI-assistent som kan hjelpe deg med spørsmål om Even og hans prosjekter.',
             errorMessage: 'Beklager, noe gikk galt. Vennligst prøv igjen eller send en e-post direkte.',
             backgroundColor: '#374151',
-            height: 700,
+            height: 600,
             width: 400,
             fontSize: 16,
             fontFamily: 'var(--font-geist-sans)',

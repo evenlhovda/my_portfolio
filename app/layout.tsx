@@ -23,6 +23,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Even L Hovda",
   description: "Even L. Hovdas nettside",
+  icons: {
+    icon: [
+      {
+        url: "/favicon3.svg",
+        type: "image/svg+xml",
+      }
+    ]
+  }
 };
 
 export default function RootLayout({
@@ -32,9 +40,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon2.ico"/>
-      </head>
       <body
         className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
