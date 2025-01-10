@@ -5,13 +5,14 @@ import { ProjectDescriptions } from '@/components/project-descriptions'
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Automatisering av dataflyt for bedre kundehåndtering",
-    description: ProjectDescriptions.automatisering,
-    image: "/images/kommersiell_rigg_3.png",
-    tags: ["Automatisering", "Big Query", "Looker studio", "Hubspot", "Stripe", "Intercom"],
-    role: "Prosjektleder",
+    title: "Randi fakturaansvarlig AI agent",
+    description: "En AI-agent som automatisk prosesserer og analyserer fakturaer. Randi kan lese ut viktig informasjon som beløp, MVA, kontonummer og forfallsdato, og returnere dette i et format som enkelt kan deles med andre systemer. Dette er ett eksempel på hvordan AI kan effektivisere administrative oppgaver og inngå som ett ledd i en større automatisert prosess.",
+    image: "/images/randi-fakturatolk.png",
+    tags: ["AI", "LangChain", "Flowise", "Next.js", "OCR", "Automatisering"],
+    role: "Utvikler",
     year: "2024",
-    client: "OwnersRoom AS"
+    client: "Demo",
+    demoUrl: "/pdf-analysis"
   },
   {
     id: 2,
@@ -72,5 +73,15 @@ export const projects: Project[] = [
     role: "Utvikler",
     year: "2024",
     client: "Me, Myself & I"
+  },
+  {
+    id: 8,
+    title: "Rune AI-Assistent",
+    description: "Rune er en AI-assistent som er spesialisert på å svare på spørsmål om Even og hans prosjekter. Ved å kombinere LangChain-rammeverket med en kunnskapsbase om Evens bakgrunn og erfaringer, kan Rune gi relevante og presise svar på henvendelser. Du kan snakke med Rune ved å klikke på chat-ikonet nederst til høyre på siden. Dette er et eksempel på hvordan AI kan brukes til å gi personlig tilpasset kundeservice og informasjon.",
+    image: "/images/rune-avatar.png",
+    tags: ["AI", "LangChain", "Flowise", "Next.js", "ChatBot", "Kundeservice"],
+    role: "Utvikler",
+    year: "2024",
+    client: "Demo"
   }
 ] 

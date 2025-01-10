@@ -95,7 +95,14 @@ declare global {
   interface Window {
     Chatbot: {
       init: (config: FlowiseConfig) => void;
+      open?: () => void;
     };
+  }
+}
+
+export function openChat() {
+  if (window.Chatbot?.open) {
+    window.Chatbot.open()
   }
 }
 

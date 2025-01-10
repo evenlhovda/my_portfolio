@@ -1,12 +1,13 @@
 import { ReactNode } from 'react'
 
-export interface Project {
+export type Project = {
   id: number
   title: string
-  description: string | ReactNode
+  description: string | React.ReactNode
   image: string
   tags: string[]
   role: string
   year: string
   client: string
+  demoUrl?: string
 } 
