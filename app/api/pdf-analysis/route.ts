@@ -1,11 +1,30 @@
 import { NextResponse } from 'next/server'
 
-// In-memory storage (you might want to use a proper database in production)
-let analysisResults: any = null
+interface AnalysisResult {
+  json: {
+    KID: number;
+    Fakturanummer: number;
+    Konto: string;
+    Sum: number;
+    Valuta: string;
+    MVA: number;
+    Avsender_Mva_nr: string;
+    Avsender: string;
+    Forfallsdato: string;
+  };
+  question: string;
+  chatId: string;
+  chatMessageId: string;
+  isStreamValid: boolean;
+  sessionId: string;
+}
+
+// In-memory storage with proper typing
+let analysisResults: AnalysisResult | null = null
 
 export async function POST(request: Request) {
   try {
-    const data = await request.json()
+    const data = await request.json() as AnalysisResult
     analysisResults = data
     
     return NextResponse.json({ 

@@ -336,7 +336,7 @@ export default function PdfAnalysisPage() {
               <div>
                 <h3 className="text-lg font-medium text-slate-200 mb-2">Teknologi</h3>
                 <p>
-                  Randi er bygget på LangChain-rammeverket med Flowise, og bruker for tiden språkmodellen 'gpt-4o-mini' som sin hjerne. Dette er en billig modell, som har visse begrensninger. Ønsker du å teste Randi hva Randi kan få til når hun har den siste og beste språkmodellen fra Open AI, ta kontakt.
+                  Randi er bygget på LangChain-rammeverket med Flowise, og bruker for tiden språkmodellen &apos;gpt-4o-mini&apos; som sin hjerne. Dette er en billig modell, som har visse begrensninger. Ønsker du å teste Randi hva Randi kan få til når hun har den siste og beste språkmodellen fra Open AI, ta kontakt.
                 </p>
               </div>
 
