@@ -64,6 +64,47 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Technology Section */}
+        <section>
+          <Divider className="mb-16">Teknologi</Divider>
+          <div className="space-y-12">
+            <div className="prose prose-invert prose-lg max-w-none">
+              <p className="text-lg leading-relaxed text-slate-200">
+                Jeg tester og bruker ulike AI-verktøy for å raskt utvikle første versjon av frontend (v0 er brukt for denne nettsiden). 
+                Generell utvikling gjøres med Cursor med Claude Sonnet som "AI-motor". AI-applikasjonene utvikles med flowise, 
+                som gjør det veldig raskt å bruke LangChain-rammeverket for å lage relativt kompliserte applikasjoner der språkmodeller er motor.
+              </p>
+            </div>
+            
+            <div className="flex flex-wrap justify-center items-center gap-12">
+              <a href="https://flowiseai.com" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
+                <Image src="/images/tech/flowise.png" alt="Flowise" width={200} height={60} className="w-auto h-6" />
+              </a>
+              <a href="https://cursor.sh" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
+                <Image src="/images/tech/cursor.jpeg" alt="Cursor" width={200} height={60} className="w-auto h-6" />
+              </a>
+              <a href="https://v0.dev" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
+                <Image src="/images/tech/v0.jpeg" alt="V0" width={200} height={60} className="w-auto h-6" />
+              </a>
+              <a href="https://postgresql.org" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
+                <Image src="/images/tech/postgresql.png" alt="PostgreSQL" width={200} height={60} className="w-auto h-6" />
+              </a>
+              <a href="https://cloud.google.com/bigquery" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
+                <Image src="/images/tech/bigquery.png" alt="Big Query" width={200} height={60} className="w-auto h-6" />
+              </a>
+              <a href="https://openai.com" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
+                <Image src="/images/tech/openai.jpeg" alt="OpenAI" width={200} height={60} className="w-auto h-6" />
+              </a>
+              <a href="https://anthropic.com" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
+                <Image src="/images/tech/anthropic.jpeg" alt="Anthropic" width={200} height={60} className="w-auto h-6" />
+              </a>
+              <a href="https://bubble.io" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
+                <Image src="/images/tech/bubble.jpeg" alt="Bubble.io" width={200} height={60} className="w-auto h-6" />
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* About Section */}
         <section>
           <Divider className="mb-16">Om meg</Divider>
