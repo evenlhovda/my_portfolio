@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { AnimatedLogo } from "@/components/ui/animated-logo"
 import { Linkedin, Mail } from 'lucide-react'
 import { OutlineContrastButton } from "@/components/ui/button-variants"
 
@@ -13,7 +12,6 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2 group">
-              <AnimatedLogo className="text-primary group-hover:text-primary/80 transition-colors" size={60} />
               <span className="text-xl font-bold text-slate-100 group-hover:text-slate-50">
                 Even L Hovda
               </span>
