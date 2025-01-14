@@ -71,7 +71,7 @@ export default function HomePage() {
             <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-lg leading-relaxed text-slate-200">
                 Jeg tester og bruker ulike AI-verktøy for å raskt utvikle første versjon av frontend (v0 er brukt for denne nettsiden). 
-                Generell utvikling gjøres med Cursor med Claude Sonnet som "AI-motor". AI-applikasjonene utvikles med flowise, 
+                Generell utvikling gjøres med Cursor med Claude Sonnet som &ldquo;AI-motor&rdquo;. AI-applikasjonene utvikles med flowise, 
                 som gjør det veldig raskt å bruke LangChain-rammeverket for å lage relativt kompliserte applikasjoner der språkmodeller er motor.
               </p>
             </div>
