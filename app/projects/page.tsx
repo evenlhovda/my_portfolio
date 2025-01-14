@@ -11,8 +11,11 @@ import { projects } from "@/lib/data"
 import { DemoButton } from "@/components/ui/demo-button"
 
 // Separate ongoing and previous projects
-const ongoingProjects = projects.filter(p => [1, 7, 8].includes(p.id)) // AI website project
-const previousProjects = projects.filter(p => ![1, 7, 8].includes(p.id)) // All other projects
+const ongoingProjects = projects
+  .filter(p => [9, 1, 7, 8].includes(p.id)) // Added 9 at the start
+  .sort((a, b) => [9, 1, 7, 8].indexOf(a.id) - [9, 1, 7, 8].indexOf(b.id)) // Sort by the order in the array
+
+const previousProjects = projects.filter(p => ![9, 1, 7, 8].includes(p.id))
 
 export default function ProjectsPage() {
   return (

@@ -83,5 +83,15 @@ export const projects: Project[] = [
     role: "Utvikler",
     year: "2025",
     client: "Demo"
+  },
+  {
+    id: 9,
+    title: "Mina Mailassistent (under utvikling)",
+    description: "Mina er en AI-agent som effektiviserer e-posthåndtering ved å automatisk prosessere, kategorisere og distribuere innkommende e-poster. Hun sender produktinnspill til bedriftens feedback-system, videresender fakturaer til regnskapsavdelingen og oppretter support-saker i kundeservicesystemet. Dette reduserer manuelt arbeid og sikrer at informasjon når riktig mottaker raskt og effektivt.",
+    image: "/images/mina-mailassistent.jpg",
+    tags: ["AI", "LangChain", "Flowise", "Next.js", "Email-automatisering", "Integrasjoner"],
+    role: "Utvikler",
+    year: "2025",
+    client: "Demo"
   }
 ] 
