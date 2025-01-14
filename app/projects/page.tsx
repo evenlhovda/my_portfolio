@@ -112,6 +112,14 @@ export default function ProjectsPage() {
                           </Badge>
                         ))}
                       </div>
+                      {project.demoUrl && (
+                        <div className="pt-4">
+                          <DemoButton 
+                            projectId={project.id} 
+                            demoUrl={project.demoUrl}
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </DialogContent>

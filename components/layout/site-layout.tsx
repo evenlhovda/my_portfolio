@@ -20,9 +20,6 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               <Link href="/projects" className="text-slate-300 hover:text-slate-100 transition-colors">
                 Prosjekter
               </Link>
-              <Link href="/about" className="text-slate-300 hover:text-slate-100 transition-colors">
-                Om meg
-              </Link>
               <Link href="/contact" className="text-slate-300 hover:text-slate-100 transition-colors">
                 Kontakt
               </Link>

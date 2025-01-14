@@ -10,7 +10,7 @@ export const projects: Project[] = [
     image: "/images/randi-fakturatolk.png",
     tags: ["AI", "LangChain", "Flowise", "Next.js", "OCR", "Automatisering"],
     role: "Utvikler",
-    year: "2024",
+    year: "2025",
     client: "Demo",
     demoUrl: "/pdf-analysis"
   },
@@ -71,17 +71,17 @@ export const projects: Project[] = [
     image: "/images/AI_code_project.webp",
     tags: [ "AI", "V0", "Cursor", "Next.JS", "Webutvikling"],
     role: "Utvikler",
-    year: "2024",
+    year: "2025",
     client: "Me, Myself & I"
   },
   {
     id: 8,
     title: "Rune AI-Assistent",
-    description: "Rune er en AI-assistent som er spesialisert på å svare på spørsmål om Even og hans prosjekter. Ved å kombinere LangChain-rammeverket med en kunnskapsbase om Evens bakgrunn og erfaringer, kan Rune gi relevante og presise svar på henvendelser. Du kan snakke med Rune ved å klikke på chat-ikonet nederst til høyre på siden. Dette er et eksempel på hvordan AI kan brukes til å gi personlig tilpasset kundeservice og informasjon.",
+    description: "Rune er en AI-assistent som er spesialisert på å svare på spørsmål om min erfaring. Ved å kombinere LangChain-rammeverket med en kunnskapsbase om min bakgrunn og erfaringer, kan Rune gi relevante og presise svar på henvendelser. Du kan snakke med Rune ved å klikke på chat-ikonet nederst til høyre på siden. Dette er et eksempel på hvordan AI kan brukes til å gi personlig tilpasset kundeservice og informasjon.",
     image: "/images/rune-avatar.png",
     tags: ["AI", "LangChain", "Flowise", "Next.js", "ChatBot", "Kundeservice"],
     role: "Utvikler",
-    year: "2024",
+    year: "2025",
     client: "Demo"
   }
 ] 

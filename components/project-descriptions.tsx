@@ -4,9 +4,8 @@ export const ProjectDescriptions = {
   automatisering: (
     <div className="prose prose-invert">
       <div className="mb-2 text-slate-300">
-        Jeg leder et strategisk prosjekt som 
-        fokuserer på å gjøre data mer tilgjengelig for beslutningsgrunnlag og automatisering. Målet med prosjektet 
-        er å sikre at ulike systemer deler data effektivt, slik at vi kan ta bedre og mer informerte beslutninger 
+        Jeg ledet et strategisk prosjekt med mål om å gjøre data mer tilgjengelig for beslutningsgrunnlag og automatisering. Ved å sikre
+         at ulike systemer deler data effektivt kan det tas bedre og mer informerte beslutninger 
         i vårt kommersielle arbeid. Dette innebærer å tilgjengeliggjøre relevant informasjon for prosesser 
         innen salg, fakturering, support og Customer Success. Prosjektet er designet for å levere robuste, fleksible 
         strukturer som er brukervennlige, lett tilgjengelige for hele selskapet og krever minimalt vedlikehold.

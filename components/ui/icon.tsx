@@ -2,7 +2,7 @@
 
 import { cn } from '@/lib/utils'
 
-type IconName = 'ai' | 'data' | 'analytics' | 'settings'
+type IconName = 'ai' | 'data' | 'analytics' | 'settings' | 'file' | 'logo'
 
 interface IconProps {
   name: IconName
@@ -15,6 +15,8 @@ const iconPositions = {
   data: '-60px 0',
   analytics: '-120px 0',
   settings: '-180px 0',
+  file: '-240px 0',
+  logo: '-300px 0'
 }
 
 export function Icon({ name, className, size = 40 }: IconProps) {

@@ -19,8 +19,8 @@ export default {
   				surface: '#374151',
   			},
   			accent: {
-  				DEFAULT: '#818CF8',
-  				foreground: '#C7D2FE',
+  				DEFAULT: "hsl(var(--accent))",
+  				foreground: "hsl(var(--accent-foreground))",
   			},
   			contrast: {
   				DEFAULT: '#F97316',
