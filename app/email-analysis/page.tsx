@@ -16,6 +16,24 @@ import { User } from 'lucide-react'
 import { ConfirmationModal } from "@/components/ui/confirmation-modal"
 import Image from "next/image"
 
+type Category = {
+  generated_header: string
+  relevance_score: number
+  selected_content_snippet: string
+  sub_categories: string[]
+}
+
+type AnalysisResult = {
+  metadata: {
+    original_title: string
+    original_body: string
+  }
+  main_category: {
+    product_feedback: Category
+    support_inquiries: Category
+  }
+}
+
 const previousFeedback = [
   {
     id: 1,
@@ -43,7 +61,7 @@ export default function EmailAnalysisPage() {
   const [title, setTitle] = useState("Fantastisk lasersverd, men trenger litt veiledning")
   const [body, setBody] = useState("Kjære support-team, kraften i deres lasersverd er virkelig imponerende, det er det beste verktøyet jeg noensinne har brukt! Spesielt liker jeg balansen i håndtaket og den strålende grønne lysstrålen – det føles som om sverdet er en forlengelse av min egen vilje. Imponerende håndverk, det er! Men en utfordring møter jeg, ja. Bruksanvisningen nevner en meditasjonsmodus for å kalibrere sverdet med min indre kraft, men jeg finner ikke ut hvordan jeg aktiverer denne funksjonen. Kan dere forklare hvordan jeg bruker denne modusen? Takknemlig er jeg for deres fantastiske produkter og hjelp. Med vennlig hilsen, Yoda 🧘")
   const [isLoading, setIsLoading] = useState(false)
-  const [result, setResult] = useState<any>(null)
+  const [result, setResult] = useState<AnalysisResult | null>(null)
   const [showModal, setShowModal] = useState(false)
   const [modalMessage, setModalMessage] = useState("")
   const resultsRef = useRef<HTMLDivElement>(null)
