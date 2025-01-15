@@ -24,7 +24,7 @@ export default function ProjectsPage() {
         {/* Ongoing Projects Section */}
         <section>
           <h2 className="text-3xl font-bold tracking-tighter text-slate-100 sm:text-4xl mb-8">
-            Pågående prosjekter
+            Prosjekter 2025
           </h2>
           <div className="grid gap-8 md:grid-cols-2">
             {ongoingProjects.map((project) => (

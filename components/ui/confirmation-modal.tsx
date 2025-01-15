@@ -21,7 +21,7 @@ export function ConfirmationModal({ isOpen, onClose }: ConfirmationModalProps) {
         </DialogHeader>
         <div className="text-center space-y-4 text-slate-300">
           <p>
-            Takk for at du tester denne flyten! Fakturaen din er hverken lagret eller lagt til betaling noe sted, dette er bare et eksempel.
+            Takk for at du tester denne flyten! Denne demoen stopper dessverre her. Ingen data blir lagret eller sendt til noe sted, men det kunne vært interessant å se hvordan dette kunne vært implementert.
           </p>
           <p>
             Ta gjerne kontakt om du vil vite mer om hvordan lignende løsninger kan være av verdi for deg!

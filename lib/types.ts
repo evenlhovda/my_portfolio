@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 export type Project = {
   id: number
   title: string
-  description: string | React.ReactNode
+  description: string | ReactNode
   image: string
   tags: string[]
   role: string
