@@ -102,13 +102,13 @@ export default function EmailAnalysisPage() {
                 Mina tar imot mailer, plukker ut relevant info og legger det inn i selskapets dedikerte systemer. 
                 Prøv å sende henne mail og test selv! 👇
               </p>
-              <p className="text-slate-300">
+              <div className="text-slate-300">
                 Mina har foreløpig tilgang til følgende systemer:
-                <ul className="list-disc pl-5 mb-2">
-                  <li>Product Feedback System</li>
-                  <li>Support System</li>
-                </ul>
-              </p>
+              </div>
+              <ul className="list-disc pl-5 text-slate-300">
+                <li>Product Feedback System</li>
+                <li>Support System</li>
+              </ul>
               <p className="text-slate-300">
                 Bygget med Flowise.
               </p>
