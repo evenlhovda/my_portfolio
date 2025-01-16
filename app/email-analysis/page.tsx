@@ -117,11 +117,11 @@ export default function EmailAnalysisPage() {
                 Mina Mailassistent
               </h1>
               <p className="text-slate-300">
-                Mina tar imot mailer, plukker ut relevant info og legger det inn i selskapets dedikerte systemer. 
+                Mina leser innkommene mailer fra kunder, plukker ut supporthenvendelser og produkt-feedback og registrerer dette i selskapets dedikerte systemer. 
                 Prøv å sende henne mail og test selv! 👇
               </p>
               <div className="text-slate-300">
-                Mina har foreløpig tilgang til følgende systemer:
+                Mina har foreløpig tilgang til følgende (fiktive) systemer:
               </div>
               <ul className="list-disc pl-5 text-slate-300">
                 <li>Product Feedback System</li>

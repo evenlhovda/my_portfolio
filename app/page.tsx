@@ -18,7 +18,7 @@ export default function HomePage() {
               Even L. Hovda
             </h1>
             <p className="text-xl text-slate-300">
-              Produktleder og utvikler med fokus på AI og automatisering
+              Jeg løser problemer og leder digital produktutvikling.
             </p>
             <div className="flex gap-4">
               <Link href="/projects">
@@ -50,8 +50,8 @@ export default function HomePage() {
             <Card className="p-6 bg-secondary/50 border-secondary">
               <h3 className="text-lg font-medium text-slate-100 mb-2">AI & Automatisering</h3>
               <p className="text-slate-300 text-sm">
-                Spesialisert på å utvikle og implementere AI-løsninger for å automatisere 
-                prosesser og forbedre brukeropplevelser.
+                Kunstig intelligens gir enorme muligheter for automatisering og effektivering. Med tilgjengelig hyllevare 
+                 automatiserer og effektiviserer jeg arbeidsflyter.
               </p>
             </Card>
             <Card className="p-6 bg-secondary/50 border-secondary">
@@ -63,16 +63,49 @@ export default function HomePage() {
             </Card>
           </div>
         </section>
-
+        {/* About Section */}
+        <section>
+          <Divider className="mb-16">Om meg</Divider>
+          <div className="grid gap-16 md:grid-cols-[2fr,1fr]">
+            <div className="prose prose-invert prose-lg max-w-none space-y-8">
+              <p className="text-lg leading-relaxed text-slate-200">
+                Jeg er en lidenskapelig teknologientusiast og produktleder med over åtte års erfaring innen SaaS og fintech. 
+              </p>
+              <p className="text-lg leading-relaxed text-slate-200">
+                Som en av de første ansatte i OwnersRoom var jeg med på å bygge selskapet fra grunnen av, med fokus på produktutvikling, forretningsstrategi og customer success. Denne reisen ga meg verdifull innsikt i hvordan teknologi kan brukes til å skape varig verdi for selskaper og deres kunder.
+              </p>
+              <p className="text-lg leading-relaxed text-slate-200">
+                Den siste tiden har jeg rettet oppmerksomheten mot de nye forretningsmulighetene som muliggjøres av fremskrittene innen kunstig intelligens. Jeg jobber med å finne konkrete behov og abreidsoopgaver som kan løses med AI, uten at det kreves store implementeringer. Blant annet har jeg utviklet AI-assistenten Randi, som leser og håndterer innkommende fakturaer, og Rune, en intelligent chatbot som bruker RAG (Retrieval-Augmented Generation) for å levere skreddersydd informasjon.
+              </p>
+              <p className="text-lg leading-relaxed text-slate-200">
+              Disse verktøyene er eksempler på hvordan teknologi kan løse kjedelige oppgaver effektivt. Fordelen er at de er raske å utvikle og integrere med eksisterende systemer!
+              </p>
+              <p className="text-lg leading-relaxed text-slate-200">
+                Mitt engasjement handler om å bruke teknologi til å løse reelle problemer og bidra til forretningsmessig verdi. Jeg brenner for å utvikle verktøy som ikke bare fungerer, men som virkelig gjør en forskjell for brukerne.
+              </p>
+              <p className="text-lg leading-relaxed text-slate-200">
+                Utforsk gjerne mine prosjekter, og ta kontakt hvis du ønsker å diskutere hvordan vi kan bruke AI og teknologi for å skape meningsfulle løsninger sammen.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="sticky top-24 aspect-square overflow-hidden rounded-full border-4 border-accent/10">
+                <Image
+                  src="/images/Profilbilde_lue_rund2.png"
+                  alt="Even L. Hovda"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Technology Section */}
         <section>
           <Divider className="mb-16">Teknologi</Divider>
           <div className="space-y-12">
             <div className="prose prose-invert prose-lg max-w-none">
               <p className="text-lg leading-relaxed text-slate-200">
-                Jeg tester og bruker ulike AI-verktøy for å raskt utvikle første versjon av frontend (v0 er brukt for denne nettsiden). 
-                Generell utvikling gjøres med Cursor med Claude Sonnet som &ldquo;AI-motor&rdquo;. AI-applikasjonene utvikles med flowise, 
-                som gjør det veldig raskt å bruke LangChain-rammeverket for å lage relativt kompliserte applikasjoner der språkmodeller er motor.
+                Jeg er opptatt av mulighetene til å bruke teknologi effektivt for å løse problemer. Jeg følger med på de nyeste utviklingene innen AI og teknologi, for å kunne bruke de til å løse problemer. Det er dog ikke i teknologien at verdien skapes, men i hvordan det brukes. Mitt fokus vil alltid være å forstå brukernes behov og finne effektive løsninger - ikke teknologien i seg selv. En typisk rigg som jeg er kjent med er Flowise for å lage AI-applikasjoner, Cursor for generell utvikling, V0 / Replit / Windsurf for å raskt utvikle nettsider, Pinecone for vektordatabaser (for RAG) og PostgreSQL for databaser.
               </p>
             </div>
             
@@ -101,43 +134,6 @@ export default function HomePage() {
               <a href="https://bubble.io" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
                 <Image src="/images/tech/bubble.jpeg" alt="Bubble.io" width={200} height={60} className="w-auto h-6" />
               </a>
-            </div>
-          </div>
-        </section>
-
-        {/* About Section */}
-        <section>
-          <Divider className="mb-16">Om meg</Divider>
-          <div className="grid gap-16 md:grid-cols-[2fr,1fr]">
-            <div className="prose prose-invert prose-lg max-w-none space-y-8">
-              <p className="text-lg leading-relaxed text-slate-200">
-                Jeg er en lidenskapelig teknologientusiast og entreprenør med over åtte års erfaring innen SaaS og fintech. 
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-                Som en av de første ansatte i OwnersRoom var jeg med på å bygge selskapet fra grunnen av, med fokus på produktutvikling, forretningsstrategi og customer success. Denne reisen ga meg verdifull innsikt i hvordan teknologi kan brukes til å skape varig verdi for selskaper og deres kunder.
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-                Den siste tiden har jeg rettet oppmerksomheten mot de transformative forretningsmulighetene innen kunstig intelligens. Jeg jobber med å effektivisere arbeidsprosesser og øke produktivitet ved bruk av kunstig intelligens. Blant annet har jeg utviklet AI-assistenten Randi, som leser og håndterer innkommende fakturaer, og Rune, en intelligent chatbot som bruker RAG (Retrieval-Augmented Generation) for å levere skreddersydd informasjon.
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-              Disse verktøyene er eksempler på hvordan teknologi kan gjøre komplekse oppgaver enklere og mer tilgjengelige for både enkeltpersoner og organisasjoner. Fordelen er at de er raske å utvikle og integrere med eksisterende systemer!
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-                Mitt engasjement handler om å bruke teknologi til å løse reelle problemer og bidra til forretningsmessig vekst. Jeg brenner for å utvikle verktøy som ikke bare fungerer, men som virkelig gjør en forskjell for brukerne.
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-                Utforsk gjerne mine prosjekter, og ta kontakt hvis du ønsker å diskutere hvordan vi kan bruke AI og teknologi for å skape meningsfulle løsninger sammen.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="sticky top-24 aspect-square overflow-hidden rounded-full border-4 border-accent/10">
-                <Image
-                  src="/images/Profilbilde_lue_rund2.png"
-                  alt="Even L. Hovda"
-                  fill
-                  className="object-cover"
-                />
-              </div>
             </div>
           </div>
         </section>

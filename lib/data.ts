@@ -87,7 +87,7 @@ export const projects: Project[] = [
   {
     id: 9,
     title: "Mina Mailassistent",
-    description: "Mina tar imot mailer, plukker ut relevant info og legger det inn i selskapets dedikerte systemer. Bygget med Flowise.",
+    description: "Mina leser innkommene mailer fra kunder, sorterer ut relevant info og legger det inn i selskapets interne support- og feedback-systemer. Bygget med Flowise.",
     image: "/images/mina-mailassistent.jpg",
     year: "2025",
     client: "Demo",

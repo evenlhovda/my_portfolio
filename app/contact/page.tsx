@@ -165,7 +165,7 @@ export default function ContactPage() {
                 Interessert i en prat?
               </h2>
               <p className="text-slate-300 mb-6">
-                Ta gjerne kontakt for en uforpliktende prat om hvordan jeg kan bidra til ditt prosjekt.
+                Jeg tar gjerne en prat om hvordan jeg kan hjelpe deg med ditt prosjekt.
               </p>
               <ContrastButton asChild>
                 <a 
