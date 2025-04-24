@@ -94,5 +94,15 @@ export const projects: Project[] = [
     role: "Utvikler",
     tags: ["AI", "Flowise", "LangChain", "Claude"],
     demoUrl: "/email-analysis"
+  },
+  {
+    id: 10,
+    title: "Innovasjonsagent",
+    description: "Belron Solutions er opptatt av innovasjon. Innovasjonsagentens rolle er å ta imot og tydeliggjøre nye idéer, før de lagres i idédatabasen for videre prioritering og utvikling. For å gjøre det så enkelt som mulig å dele idéer, er boten tilgjengelig for alle ansatte direkte i MS Teams. Ved å skrive til den får man hjelp til å definere idéen. Boten stiller spørsmål for å tydeliggjøre hvem som vil dra nytte av idéen, hvordan det vil være bedre enn dagens løsning etc og når idéen er tydelig definert, lagres den i selskapets idé-database, slik at den enkelt kan prioriteres for videre utvikling.",
+    image: "/images/innovasjons-agent.jpg",
+    year: "2025",
+    client: "Belron Solutions",
+    role: "Utvikler",
+    tags: ["AI", "Flowise", "LangChain", "MS Teams", "Innovasjon"]
   }
 ] 

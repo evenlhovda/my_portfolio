@@ -147,7 +147,7 @@ export default function PdfAnalysisPage() {
     <SiteLayout>
       <div className="container px-4 py-16 mx-auto space-y-12">
         <h1 className="text-4xl font-bold tracking-tighter text-slate-100 sm:text-5xl">
-          Randi Fakturaansvarlig
+          Randi Fakturaansvarlig (demo)
         </h1>
 
         <div className="grid gap-8 md:grid-cols-2">
@@ -175,7 +175,7 @@ export default function PdfAnalysisPage() {
                 >
                   <Upload className="h-8 w-8 text-contrast" />
                   <span className="text-slate-300">
-                    Klikk for å laste opp eller dra og slipp
+                    Test Randi ved å laste opp eller dra og slipp en faktura.
                   </span>
                   <span className="text-sm text-slate-400">
                     Kun PDF-filer

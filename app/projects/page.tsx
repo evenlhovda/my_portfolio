@@ -12,10 +12,10 @@ import { DemoButton } from "@/components/ui/demo-button"
 
 // Separate ongoing and previous projects
 const ongoingProjects = projects
-  .filter(p => [9, 1, 7, 8].includes(p.id)) // Added 9 at the start
-  .sort((a, b) => [9, 1, 7, 8].indexOf(a.id) - [9, 1, 7, 8].indexOf(b.id)) // Sort by the order in the array
+  .filter(p => [9, 1, 7, 8, 10].includes(p.id)) // Added 10 to the array
+  .sort((a, b) => [10,9, 1, 7, 8].indexOf(a.id) - [10,9, 1, 7, 8].indexOf(b.id)) // Added 10 to the sort order
 
-const previousProjects = projects.filter(p => ![9, 1, 7, 8].includes(p.id))
+const previousProjects = projects.filter(p => ![9, 1, 7, 8, 10].includes(p.id))
 
 export default function ProjectsPage() {
   return (

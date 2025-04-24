@@ -18,7 +18,7 @@ export default function HomePage() {
               Even L. Hovda
             </h1>
             <p className="text-xl text-slate-300">
-              Jeg løser problemer og leder digital produktutvikling.
+              AI, automatisering og forretningsutvikling.
             </p>
             <div className="flex gap-4">
               <Link href="/projects">
@@ -26,32 +26,31 @@ export default function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="relative aspect-square">
+          <div className="relative aspect-square w-64 h-64 ml-auto">
             <Image
-              src="/images/snowkiting.jpg"
-              alt="Snowkiter - Photo by NRK beta"
+              src="/images/Profilbilde_lue_rund2.png"
+              alt="Even L. Hovda"
               fill
-              className="object-cover rounded-lg"
+              className="object-cover rounded-full border-4 border-accent/10"
             />
           </div>
         </section>
 
         {/* Core Concepts Section */}
         <section>
-          <Divider className="mb-16">Kjernekompetanse</Divider>
+          <Divider className="mb-16">Kjerneområder</Divider>
           <div className="grid gap-8 md:grid-cols-3">
             <Card className="p-6 bg-secondary/50 border-secondary">
               <h3 className="text-lg font-medium text-slate-100 mb-2">Produktutvikling</h3>
               <p className="text-slate-300 text-sm">
-                Erfaring med å ta produkter fra idé til marked. Fokus på brukeropplevelse, 
+                Erfaring med å ta digitale produkter fra idé til marked. Fokus på brukeropplevelse, 
                 teknisk gjennomførbarhet og forretningsverdi.
               </p>
             </Card>
             <Card className="p-6 bg-secondary/50 border-secondary">
               <h3 className="text-lg font-medium text-slate-100 mb-2">AI & Automatisering</h3>
               <p className="text-slate-300 text-sm">
-                Kunstig intelligens gir enorme muligheter for automatisering og effektivering. Med tilgjengelig hyllevare 
-                 automatiserer og effektiviserer jeg arbeidsflyter.
+                Utvikler løsninger som tar i bruk kunstig intelligens i automatiserte arbeidsflyter.
               </p>
             </Card>
             <Card className="p-6 bg-secondary/50 border-secondary">
@@ -65,50 +64,19 @@ export default function HomePage() {
         </section>
         {/* About Section */}
         <section>
-          <Divider className="mb-16">Om meg</Divider>
-          <div className="grid gap-16 md:grid-cols-[2fr,1fr]">
+          <Divider className="mb-16">Hvor jeg kan bidra</Divider>
             <div className="prose prose-invert prose-lg max-w-none space-y-8">
               <p className="text-lg leading-relaxed text-slate-200">
-                Jeg er en lidenskapelig teknologientusiast og produktleder med over åtte års erfaring innen SaaS og fintech. 
+                Hvis du ønsker å ta i bruk kunstig intelligens i automatiserte oppgaver, f.eks knyttet til å strukturere utstruktrert innhold (f.eks. automatisere fakturavlesing, eller automatisk sortere dokumenter, mailer, etc. basert på innhold) så kan jeg hjelpe deg.
               </p>
               <p className="text-lg leading-relaxed text-slate-200">
-                Som en av de første ansatte i OwnersRoom var jeg med på å bygge selskapet fra grunnen av, med fokus på produktutvikling, forretningsstrategi og customer success. Denne reisen ga meg verdifull innsikt i hvordan teknologi kan brukes til å skape varig verdi for selskaper og deres kunder.
+              Det å identifisere muligheter for automatisering med bruk av kunstig intelligens er ikke alltid enkelt, og jeg hjelper gjerne til med mulighetsvurderinger. Min styrke er å koble mulightsrommet innen kunstig intelligens til konkrete behov og oppgaver med forretningsbehov.
               </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-                Den siste tiden har jeg rettet oppmerksomheten mot de nye forretningsmulighetene som muliggjøres av fremskrittene innen kunstig intelligens. Jeg jobber med å finne konkrete behov og abreidsoopgaver som kan løses med AI, uten at det kreves store implementeringer. Blant annet har jeg utviklet AI-assistenten Randi, som leser og håndterer innkommende fakturaer, og Rune, en intelligent chatbot som bruker RAG (Retrieval-Augmented Generation) for å levere skreddersydd informasjon.
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-              Disse verktøyene er eksempler på hvordan teknologi kan løse kjedelige oppgaver effektivt. Fordelen er at de er raske å utvikle og integrere med eksisterende systemer!
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-                Mitt engasjement handler om å bruke teknologi til å løse reelle problemer og bidra til forretningsmessig verdi. Jeg brenner for å utvikle verktøy som ikke bare fungerer, men som virkelig gjør en forskjell for brukerne.
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-                Utforsk gjerne mine prosjekter, og ta kontakt hvis du ønsker å diskutere hvordan vi kan bruke AI og teknologi for å skape meningsfulle løsninger sammen.
-              </p>
-            </div>
-            <div className="relative">
-              <div className="sticky top-24 aspect-square overflow-hidden rounded-full border-4 border-accent/10">
-                <Image
-                  src="/images/Profilbilde_lue_rund2.png"
-                  alt="Even L. Hovda"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
           </div>
         </section>
         {/* Technology Section */}
         <section>
-          <Divider className="mb-16">Teknologi</Divider>
-          <div className="space-y-12">
-            <div className="prose prose-invert prose-lg max-w-none">
-              <p className="text-lg leading-relaxed text-slate-200">
-                Jeg er opptatt av mulighetene til å bruke teknologi effektivt for å løse problemer. Jeg følger med på de nyeste utviklingene innen AI og teknologi, for å kunne bruke de til å løse problemer. Det er dog ikke i teknologien at verdien skapes, men i hvordan det brukes. Mitt fokus vil alltid være å forstå brukernes behov og finne effektive løsninger - ikke teknologien i seg selv. En typisk rigg som jeg er kjent med er Flowise for å lage AI-applikasjoner, Cursor for generell utvikling, V0 / Replit / Windsurf for å raskt utvikle nettsider, Pinecone for vektordatabaser (for RAG) og PostgreSQL for databaser.
-              </p>
-            </div>
-            
+          <div className="space-y-12">            
             <div className="flex flex-wrap justify-center items-center gap-12">
               <a href="https://flowiseai.com" target="_blank" rel="noopener noreferrer" className="grayscale hover:grayscale-0 transition-all">
                 <Image src="/images/tech/flowise.png" alt="Flowise" width={200} height={60} className="w-auto h-6" />
