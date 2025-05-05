@@ -64,13 +64,16 @@ export default function HomePage() {
         </section>
         {/* About Section */}
         <section>
-          <Divider className="mb-16">Hvor jeg kan bidra</Divider>
+          <Divider className="mb-16">Om meg</Divider>
             <div className="prose prose-invert prose-lg max-w-none space-y-8">
               <p className="text-lg leading-relaxed text-slate-200">
-                Hvis du ønsker å ta i bruk kunstig intelligens i automatiserte oppgaver, f.eks knyttet til å strukturere utstruktrert innhold (f.eks. automatisere fakturavlesing, eller automatisk sortere dokumenter, mailer, etc. basert på innhold) så kan jeg hjelpe deg.
+                Jeg jobber med å skape teknologiske løsninger på forretningsproblemer. Jeg elsker problemer og mener at det å virkelig forstå problemet man ønsker løst, er halvparten av løsningen.
               </p>
               <p className="text-lg leading-relaxed text-slate-200">
-              Det å identifisere muligheter for automatisering med bruk av kunstig intelligens er ikke alltid enkelt, og jeg hjelper gjerne til med mulighetsvurderinger. Min styrke er å koble mulightsrommet innen kunstig intelligens til konkrete behov og oppgaver med forretningsbehov.
+              Jeg har den siste tiden primært fokusert på hvordan kunstig intelligens skaper nye muligheter for verdiskaping. Spesielt når kunstig intelligens blir integrert i automatiserte arbeidsflyter. Prosjekter jeg har jobbet på inkluderer ulike chatbot-løsninger, automatisering av datainnsamling fra ustrukturerte kilder (noe som feks er supernyttig i mange onboardingsflyter), stemmestyrte agenter, funksjonskall (feks bruke MCP / API-kall for å løse oppgaver), RAG (Retrieval-Augmented Generation), TTS (Text-to-Speech) og ASR (Automatic Speech Recognition).
+              </p>
+              <p className="text-lg leading-relaxed text-slate-200">
+              Har du et problem som du tror kunstig intelligens kan løse? Jeg hjelper gjerne til med å se på mulighetene.
               </p>
           </div>
         </section>

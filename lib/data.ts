@@ -96,6 +96,26 @@ export const projects: Project[] = [
     demoUrl: "/email-analysis"
   },
   {
+    id: 11,
+    title: "Stemmestyrt forsikringsagent",
+    description: "En intelligent agent for skadebehandling av bilglassforsikring. Agenten kan via naturlig samtale svare på vanlige spørsmål, hente ut informasjon om kundens forsikring, verifisere viktige detaljer og booke verkstedstimer. Løsningen integrerer flere APIer og benytter OpenAI's API for sanntidsprosessering av tale. Dette pilotprosjektet demonstrerer hvordan taleteknologi kan effektivisere kundeservice i forsikringsbransjen.",
+    image: "/images/voice-insurance-agent.png",
+    tags: ["AI", "Voice", "OpenAI", "Kundeservice", "Forsikring", "API-integrasjon"],
+    role: "Utvikler",
+    year: "2025",
+    client: "Belron Solutions"
+  },
+  {
+    id: 12,
+    title: "Integrert fakturaagent",
+    description: "En spesialisert fakturaagent som automatisk leser fakturaer, ekstraherer relevant informasjon og leverer dette i strukturert format. Dataene mates direkte inn i en automatisert prosessflyt som utfører priskontroll mot forsikringsselskapets tariffer. Ved hjelp av fine-tuning har agenten oppnådd ekstraordinær presisjon uten å påføre høye kostnader, noe som muliggjør skalerbar og pålitelig automatisering av fakturabehandling.",
+    image: "/images/invoice-insurance-agent.png",
+    tags: ["AI", "Fine-tuning", "Dokumentanalyse", "Automatisering", "Forsikring", "Kostnadskontroll"],
+    role: "Utvikler",
+    year: "2025",
+    client: "Belron Solutions"
+  },
+  {
     id: 10,
     title: "Innovasjonsagent",
     description: "Belron Solutions er opptatt av innovasjon. Innovasjonsagentens rolle er å ta imot og tydeliggjøre nye idéer, før de lagres i idédatabasen for videre prioritering og utvikling. For å gjøre det så enkelt som mulig å dele idéer, er boten tilgjengelig for alle ansatte direkte i MS Teams. Ved å skrive til den får man hjelp til å definere idéen. Boten stiller spørsmål for å tydeliggjøre hvem som vil dra nytte av idéen, hvordan det vil være bedre enn dagens løsning etc og når idéen er tydelig definert, lagres den i selskapets idé-database, slik at den enkelt kan prioriteres for videre utvikling.",
