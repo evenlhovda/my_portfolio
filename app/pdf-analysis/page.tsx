@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card"
 import { ContrastButton } from "@/components/ui/button-variants"
 import { Upload, FileText, Loader2, Building2, CreditCard, Receipt } from 'lucide-react'
 import { useState } from 'react'
-import { ConfirmationModal } from "@/components/ui/confirmation-modal"
+import { ConfirmationModal } from "@/components/shared/confirmation-modal"
 
 interface InvoiceData {
   KID: number;

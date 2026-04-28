@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/collapsible"
 import { ChevronDown } from 'lucide-react'
 import { User } from 'lucide-react'
-import { ConfirmationModal } from "@/components/ui/confirmation-modal"
+import { ConfirmationModal } from "@/components/shared/confirmation-modal"
 import Image from "next/image"
 
 type Category = {
