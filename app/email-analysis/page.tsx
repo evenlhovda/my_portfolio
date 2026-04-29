@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/collapsible"
 import { ChevronDown } from 'lucide-react'
 import { User } from 'lucide-react'
-import { ConfirmationModal } from "@/components/ui/confirmation-modal"
+import { ConfirmationModal } from "@/components/shared/confirmation-modal"
 import Image from "next/image"
 
 type Category = {
@@ -69,7 +69,7 @@ export default function EmailAnalysisPage() {
   const analyzeEmail = async () => {
     setIsLoading(true)
     try {
-      const response = await fetch('https://flowise-p9jk.onrender.com/api/v1/prediction/c75c8149-8648-4ac8-9ff5-7b74c1b43b80', {
+      const response = await fetch('/api/flowise/api/v1/prediction/email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

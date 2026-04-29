@@ -6,7 +6,7 @@ import { ContrastButton, PrimaryButton } from "@/components/ui/button-variants"
 import { Mail, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { NetworkAnimation } from "@/components/ui/network-animation"
+import { NetworkAnimation } from "@/components/shared/network-animation"
 
 export default function ConsultingPage() {
   return (
@@ -31,13 +31,13 @@ export default function ConsultingPage() {
                   </Link>
                 </PrimaryButton>
                 <ContrastButton asChild>
-                  <a 
-                    href="mailto:evenlhovda+web@gmail.com"
+                  <Link 
+                    href="/contact"
                     className="inline-flex items-center gap-2"
                   >
                     <Mail className="h-4 w-4" />
                     Ta kontakt
-                  </a>
+                  </Link>
                 </ContrastButton>
               </div>
             </div>

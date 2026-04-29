@@ -1,6 +1,6 @@
 import React from 'react'
 import { Project } from './types'
-import { ProjectDescriptions } from '@/components/project-descriptions'
+import { ProjectDescriptions } from '@/components/projects/project-descriptions'
 
 export const projects: Project[] = [
   {
