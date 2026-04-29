@@ -49,10 +49,10 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
               </a>
             </OutlineContrastButton>
             <OutlineContrastButton asChild size="icon">
-              <a href="mailto:evenlhovda+web@gmail.com">
-                <span className="sr-only">Email</span>
+              <Link href="/contact">
+                <span className="sr-only">Contact</span>
                 <Mail className="h-4 w-4" />
-              </a>
+              </Link>
             </OutlineContrastButton>
           </div>
         </div>

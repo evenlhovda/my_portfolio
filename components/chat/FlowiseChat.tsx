@@ -115,8 +115,8 @@ export default function FlowiseChat() {
 
     script.onload = () => {
       window.Chatbot?.init({
-        chatflowid: "cda3cd72-96e4-4c29-8622-630484eba075",
-        apiHost: "https://flowise-p9jk.onrender.com",
+        chatflowid: "assistant",
+        apiHost: "/api/flowise",
         theme: {
           button: {
             backgroundColor: '#374151',

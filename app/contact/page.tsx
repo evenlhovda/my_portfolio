@@ -138,9 +138,7 @@ export default function ContactPage() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3 text-slate-300">
                   <Mail className="h-5 w-5 text-primary" />
-                  <a href="mailto:evenlhovda+web@gmail.com" className="hover:text-slate-100">
-                    evenlhovda@gmail.com
-                  </a>
+                  <span>Bruk skjemaet nedenfor</span>
                 </div>
                 <div className="flex items-center gap-3 text-slate-300">
                   <MapPin className="h-5 w-5 text-primary" />
@@ -169,11 +167,11 @@ export default function ContactPage() {
               </p>
               <ContrastButton asChild>
                 <a 
-                  href="mailto:evenlhovda+web@gmail.com"
+                  href="#contact-form"
                   className="inline-flex items-center gap-2"
                 >
                   <Mail className="h-4 w-4" />
-                  Send meg en mail
+                  Bruk skjema
                 </a>
               </ContrastButton>
             </Card>
@@ -184,7 +182,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold text-slate-100 mb-6">
               Send meg en melding
             </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-1">
                   Navn

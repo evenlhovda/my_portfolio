@@ -31,13 +31,13 @@ export default function ConsultingPage() {
                   </Link>
                 </PrimaryButton>
                 <ContrastButton asChild>
-                  <a 
-                    href="mailto:evenlhovda+web@gmail.com"
+                  <Link 
+                    href="/contact"
                     className="inline-flex items-center gap-2"
                   >
                     <Mail className="h-4 w-4" />
                     Ta kontakt
-                  </a>
+                  </Link>
                 </ContrastButton>
               </div>
             </div>
