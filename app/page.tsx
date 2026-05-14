@@ -14,7 +14,7 @@ export default function HomePage() {
         {/* Hero Section */}
         <section className="grid gap-8 md:grid-cols-2 items-center">
           <div className="space-y-6">
-            <h1 className="text-4xl font-bold tracking-tighter text-slate-100 sm:text-5xl">
+            <h1 className="text-4xl font-serif font-medium tracking-tight text-slate-100 sm:text-5xl">
               Even L. Hovda
             </h1>
             <p className="text-xl text-slate-300">
@@ -31,7 +31,7 @@ export default function HomePage() {
               src="/images/Profilbilde_lue_rund2.png"
               alt="Even L. Hovda"
               fill
-              className="object-cover rounded-full border-4 border-accent/10"
+              className="object-cover rounded-2xl border-4 border-slate-700/50 grayscale hover:grayscale-0 transition-all duration-500"
             />
           </div>
         </section>

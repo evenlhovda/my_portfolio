@@ -31,7 +31,7 @@ export const projects: Project[] = [
     image: "/images/Snowkiting.webp",
     tags: ["Sport", "Community", "Event"],
     role: "Medarrangør & økonomiansvarlig",
-    year: "2021-",
+    year: "2026",
     client: "Bryne Kitefestival"
   },
   {
@@ -124,5 +124,35 @@ export const projects: Project[] = [
     client: "Belron Solutions",
     role: "Utvikler",
     tags: ["AI", "Flowise", "LangChain", "MS Teams", "Innovasjon"]
+  },
+  {
+    id: 13,
+    title: "VM predictions game",
+    description: "Fundraising for Belron's technical team through a social predictions game for the World Cup.",
+    image: "/images/Fotball.jpg",
+    tags: ["App", "Fundraising", "Gamification"],
+    role: "Initiativtaker og utvikler",
+    year: "2026",
+    client: "Belron Technical Team"
+  },
+  {
+    id: 14,
+    title: "Rapid Repair POC",
+    description: "Et Proof of Concept prosjekt med Carglass Slovenia for å teste og rulle ut 'Rapid repair' konsepter og verktøy.",
+    image: "/images/placeholder.jpg",
+    tags: ["POC", "Forretningsutvikling", "Innovasjon"],
+    role: "Prosjektleder",
+    year: "2026",
+    client: "Carglass Slovenia"
+  },
+  {
+    id: 15,
+    title: "POC Voice AI",
+    description: "Proof of Concept for stemmestyrt AI i samarbeid med Carglass Hellas. Utforskning av hvordan taleteknologi kan forbedre kundereisen.",
+    image: "/images/placeholder.jpg",
+    tags: ["AI", "Voice", "POC", "Innovasjon"],
+    role: "Utvikler / Prosjektleder",
+    year: "2026",
+    client: "Carglass Hellas"
   }
 ] 

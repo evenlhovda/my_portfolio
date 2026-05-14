@@ -11,9 +11,12 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <header className="sticky top-0 z-50 w-full border-b border-secondary bg-background/75 backdrop-blur">
         <div className="container mx-auto px-4 py-4">
           <nav className="flex items-center justify-between">
-            <Link href="/" className="flex items-center gap-2 group">
-              <span className="text-xl font-bold text-slate-100 group-hover:text-slate-50">
-                Even L Hovda
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-900 transition-colors group-hover:bg-slate-300">
+                <span className="text-lg font-bold tracking-tighter">EH</span>
+              </div>
+              <span className="text-xl font-bold text-slate-100 group-hover:text-slate-50 tracking-tight">
+                Even L. Hovda
               </span>
             </Link>
             <div className="flex gap-6">
