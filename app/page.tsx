@@ -31,7 +31,7 @@ export default function HomePage() {
               src="/images/Profilbilde_lue_rund2.png"
               alt="Even L. Hovda"
               fill
-              className="object-cover rounded-2xl border-4 border-slate-700/50 grayscale hover:grayscale-0 transition-all duration-500"
+              className="object-cover rounded-2xl grayscale hover:grayscale-0 transition-all duration-500"
             />
           </div>
         </section>
@@ -67,13 +67,7 @@ export default function HomePage() {
           <Divider className="mb-16">Om meg</Divider>
             <div className="prose prose-invert prose-lg max-w-none space-y-8">
               <p className="text-lg leading-relaxed text-slate-200">
-                Jeg jobber med å skape teknologiske løsninger på forretningsproblemer. Jeg elsker problemer og mener at det å virkelig forstå problemet man ønsker løst, er halvparten av løsningen.
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-              Jeg har den siste tiden primært fokusert på hvordan kunstig intelligens skaper nye muligheter for verdiskaping. Spesielt når kunstig intelligens blir integrert i automatiserte arbeidsflyter. Prosjekter jeg har jobbet på inkluderer ulike chatbot-løsninger, automatisering av datainnsamling fra ustrukturerte kilder (noe som feks er supernyttig i mange onboardingsflyter), stemmestyrte agenter, funksjonskall (feks bruke MCP / API-kall for å løse oppgaver), RAG (Retrieval-Augmented Generation), TTS (Text-to-Speech) og ASR (Automatic Speech Recognition).
-              </p>
-              <p className="text-lg leading-relaxed text-slate-200">
-              Har du et problem som du tror kunstig intelligens kan løse? Jeg hjelper gjerne til med å se på mulighetene.
+                Hei! Jeg er Even Lømo Hovda, en 34 år gammel innovasjonsleder og prosjektleder basert i Oslo. Til daglig jobber jeg som Leader of Innovation i Belron Solutions, hvor jeg fokuserer på å bygge effektive verktøy, smidige prosesser og implementere ny teknologi for bilglass-bransjen. Jeg brenner for å ta komplekse konsepter – fra AI-stemmeagenter til nye operasjonelle rutiner – og gjøre dem om til praktiske løsninger som fungerer i virkeligheten. Enten det er å lede tekniske proofs-of-concept for globale markeder eller planlegge en kitefestival fra bunnen av, trives jeg best der teknologi, struktur og mennesker møtes.
               </p>
           </div>
         </section>

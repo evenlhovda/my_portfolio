@@ -25,16 +25,6 @@ export const projects: Project[] = [
     client: "OwnersRoom AS"
   },
   {
-    id: 3,
-    title: "Bryne Kitefestival",
-    description: ProjectDescriptions.kitefestival,
-    image: "/images/Snowkiting.webp",
-    tags: ["Sport", "Community", "Event"],
-    role: "Medarrangør & økonomiansvarlig",
-    year: "2026",
-    client: "Bryne Kitefestival"
-  },
-  {
     id: 4,
     title: "Sosial betting-app for fotball-EM",
     description: "En web-app der spillere kan tippe på utfallet av fotball-EM i lukkede grupper, bygget på lavkodeplattformen Bubble og lansert for bruk i til EM 2024.",
@@ -126,33 +116,43 @@ export const projects: Project[] = [
     tags: ["AI", "Flowise", "LangChain", "MS Teams", "Innovasjon"]
   },
   {
-    id: 13,
-    title: "VM predictions game",
-    description: "Fundraising for Belron's technical team through a social predictions game for the World Cup.",
-    image: "/images/Fotball.jpg",
-    tags: ["App", "Fundraising", "Gamification"],
-    role: "Initiativtaker og utvikler",
+    id: 15,
+    title: "POC Voice AI",
+    description: "Proof of Concept for stemmestyrt AI i samarbeid med Carglass Hellas. Utforskning av hvordan taleteknologi kan forbedre kundereisen.",
+    image: "/images/poc_voice.jpg",
+    tags: ["AI", "Voice", "POC", "Innovasjon"],
+    role: "Utvikler / Prosjektleder",
     year: "2026",
-    client: "Belron Technical Team"
+    client: "Carglass Hellas"
   },
   {
     id: 14,
     title: "Rapid Repair POC",
     description: "Et Proof of Concept prosjekt med Carglass Slovenia for å teste og rulle ut 'Rapid repair' konsepter og verktøy.",
-    image: "/images/placeholder.jpg",
+    image: "/images/rapid_repair.jpg",
     tags: ["POC", "Forretningsutvikling", "Innovasjon"],
     role: "Prosjektleder",
     year: "2026",
     client: "Carglass Slovenia"
   },
   {
-    id: 15,
-    title: "POC Voice AI",
-    description: "Proof of Concept for stemmestyrt AI i samarbeid med Carglass Hellas. Utforskning av hvordan taleteknologi kan forbedre kundereisen.",
-    image: "/images/placeholder.jpg",
-    tags: ["AI", "Voice", "POC", "Innovasjon"],
-    role: "Utvikler / Prosjektleder",
+    id: 13,
+    title: "VM predictions game",
+    description: "Fundraising for Belron's technical team through a social predictions game for the World Cup.",
+    image: "/images/vm_predictions.jpg",
+    tags: ["App", "Fundraising", "Gamification"],
+    role: "Initiativtaker og utvikler",
     year: "2026",
-    client: "Carglass Hellas"
+    client: "Belron Technical Team"
+  },
+  {
+    id: 3,
+    title: "Bryne Kitefestival",
+    description: ProjectDescriptions.kitefestival,
+    image: "/images/bryne_kite.jpg",
+    tags: ["Sport", "Community", "Event"],
+    role: "Medarrangør & økonomiansvarlig",
+    year: "2026",
+    client: "Bryne Kitefestival"
   }
-] 
+];
