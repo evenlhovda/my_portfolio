@@ -67,7 +67,7 @@ export default function HomePage() {
           <Divider className="mb-16">Om meg</Divider>
             <div className="prose prose-invert prose-lg max-w-none space-y-8">
               <p className="text-lg leading-relaxed text-slate-200">
-                Hei! Jeg er Even Lømo Hovda, en 34 år gammel innovasjonsleder og prosjektleder basert i Oslo. Til daglig jobber jeg som Leader of Innovation i Belron Solutions, hvor jeg fokuserer på å bygge effektive verktøy, smidige prosesser og implementere ny teknologi for bilglass-bransjen. Jeg brenner for å ta komplekse konsepter – fra AI-stemmeagenter til nye operasjonelle rutiner – og gjøre dem om til praktiske løsninger som fungerer i virkeligheten. Enten det er å lede tekniske proofs-of-concept for globale markeder eller planlegge en kitefestival fra bunnen av, trives jeg best der teknologi, struktur og mennesker møtes.
+                Jeg bygger broen mellom komplekse konsepter og operasjonell virkelighet. Som leder for innovasjon spesialiserer jeg meg på å omsette nye teknologier – fra AI-løsninger til smidige verktøy – til praktiske systemer som faktisk skaper verdi. Jeg trives best i skjæringspunktet mellom teknologi, struktur og mennesker, enten det handler om å lede globale 'proof of concepts' eller optimalisere eksisterende prosesser. Mitt fokus er alltid på hva vi kan bygge for å gjøre driften mer effektiv, skalerbar og brukervennlig.
               </p>
           </div>
         </section>
