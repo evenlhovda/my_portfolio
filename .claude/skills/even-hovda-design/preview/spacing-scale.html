@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Spacing scale</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 22px 28px; box-sizing: border-box; font-family: var(--font-sans); }
+  .row { display: flex; flex-direction: column; gap: 8px; }
+  .item { display: grid; grid-template-columns: 64px 56px 1fr; gap: 14px; align-items: center; font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+  .label { color: var(--fg-1); font-family: var(--font-sans); font-weight: 600; font-size: 12px; }
+  .bar { height: 14px; background: var(--sage-300); border-radius: 3px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="item"><div class="label">space-1</div><div>4&nbsp;px</div><div class="bar" style="width:4px"></div></div>
+    <div class="item"><div class="label">space-2</div><div>8&nbsp;px</div><div class="bar" style="width:8px"></div></div>
+    <div class="item"><div class="label">space-3</div><div>12&nbsp;px</div><div class="bar" style="width:12px"></div></div>
+    <div class="item"><div class="label">space-4</div><div>16&nbsp;px</div><div class="bar" style="width:16px"></div></div>
+    <div class="item"><div class="label">space-5</div><div>24&nbsp;px</div><div class="bar" style="width:24px"></div></div>
+    <div class="item"><div class="label">space-6</div><div>32&nbsp;px</div><div class="bar" style="width:32px"></div></div>
+    <div class="item"><div class="label">space-7</div><div>48&nbsp;px</div><div class="bar" style="width:48px"></div></div>
+    <div class="item"><div class="label">space-8</div><div>64&nbsp;px</div><div class="bar" style="width:64px"></div></div>
+    <div class="item"><div class="label">space-9</div><div>96&nbsp;px</div><div class="bar" style="width:96px"></div></div>
+  </div>
+</body>
+</html>

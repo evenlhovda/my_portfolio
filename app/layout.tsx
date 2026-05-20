@@ -21,16 +21,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Even L Hovda",
-  description: "Even L. Hovdas nettside",
+  title: "Even L. Hovda",
+  description: "Konsulent og AI produktleder. Hjelper små og mellomstore bedrifter utvikle verdifulle løsninger med AI i sentrum.",
   icons: {
     icon: [
-      {
-        url: "/favicon3.svg",
-        type: "image/svg+xml",
-      }
-    ]
-  }
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -39,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="no">
       <body
         className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >

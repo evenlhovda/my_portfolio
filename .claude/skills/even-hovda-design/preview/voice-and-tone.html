@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Voice & tone</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 20px 28px; box-sizing: border-box; font-family: var(--font-sans); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .col { border: 1px solid var(--line-2); border-radius: 12px; padding: 14px 16px; background: var(--bg-surface); }
+  .col.do  { border-left: 4px solid var(--sage-500); }
+  .col.dont{ border-left: 4px solid #C5675B; }
+  .label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; margin: 0 0 6px; }
+  .col.do  .label { color: var(--sage-700); }
+  .col.dont .label { color: #863329; }
+  p.example { margin: 0 0 6px; font-size: 13px; color: var(--fg-1); line-height: 1.5; }
+  p.note { margin: 0; font-size: 11.5px; color: var(--fg-3); line-height: 1.4; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="col do">
+      <p class="label">Slik skriver Even</p>
+      <p class="example">"Jeg jobber med å skape teknologiske løsninger på forretningsproblemer."</p>
+      <p class="note">Første person, problem-først, plainspoken bokmål.</p>
+    </div>
+    <div class="col dont">
+      <p class="label">Unngå</p>
+      <p class="example">"Vi tilbyr banebrytende AI-løsninger som transformerer din virksomhet! 🚀"</p>
+      <p class="note">Ingen "vi", ingen utropstegn, ingen emoji, ingen byrå-floskler.</p>
+    </div>
+    <div class="col do">
+      <p class="label">CTA</p>
+      <p class="example">"Se prosjekter" · "Ta kontakt" · "Send melding"</p>
+      <p class="note">Imperativ, små bokstaver, ett til to ord.</p>
+    </div>
+    <div class="col dont">
+      <p class="label">Unngå</p>
+      <p class="example">"KLIKK HER for å Bestille en Gratis Konsultasjon Nå →"</p>
+      <p class="note">Ingen versaler, ingen "klikk her", ingen aggressiv salgsretorikk.</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Badges & tags</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 22px 28px; box-sizing: border-box; font-family: var(--font-sans); }
+  .group-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-3); margin: 0 0 8px; }
+  .row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+  .badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 12px; font-weight: 500;
+    padding: 4px 10px; border-radius: 999px;
+    background: var(--sage-100); color: var(--sage-800);
+  }
+  .badge.sky { background: var(--sky-100); color: var(--sky-700); }
+  .badge.slate { background: var(--slate-100); color: var(--slate-700); }
+  .badge.spring { background: var(--c-spring); color: var(--sage-800); }
+  .badge.outline { background: transparent; color: var(--fg-2); border: 1px solid var(--line-2); }
+  .badge.solid { background: var(--sage-500); color: #fff; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+  .badge.success { background: #E6F1E1; color: #386B38; }
+  .badge.warning { background: #FBF1DE; color: #815B22; }
+  .badge.danger { background: #F7E1DD; color: #863329; }
+</style>
+</head>
+<body>
+  <p class="group-label">Project tags · Norwegian</p>
+  <div class="row">
+    <span class="badge">AI</span>
+    <span class="badge">LangChain</span>
+    <span class="badge">Flowise</span>
+    <span class="badge sky">Next.js</span>
+    <span class="badge sky">OCR</span>
+    <span class="badge slate">Automatisering</span>
+    <span class="badge slate">Forsikring</span>
+    <span class="badge spring">Innovasjon</span>
+    <span class="badge spring">Produktledelse</span>
+  </div>
+  <p class="group-label">Status pills</p>
+  <div class="row">
+    <span class="badge success"><span class="dot"></span>Levert</span>
+    <span class="badge warning"><span class="dot"></span>Pågående</span>
+    <span class="badge danger"><span class="dot"></span>Stoppet</span>
+    <span class="badge outline">Konsept</span>
+    <span class="badge solid">2025</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Logo explorations — Even L. Hovda</title>
+<link rel="stylesheet" href="../../colors_and_type.css" />
+<style>
+  html, body { margin: 0; height: 100%; background: #f0eee9; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="LogoArtboards.jsx"></script>
+
+<script type="text/babel">
+  const App = () => (
+    <DesignCanvas title="Logo direction — Even L. Hovda" subtitle="Six explorations · spring 2 palette · all marks are real SVG, ready to lift">
+      <DCSection id="marks" title="Six logo directions" subtitle="Click any artboard to focus · drag to reorder · pick one (or steal pieces)">
+        <DCArtboard id="01-fjord" label="01 · Fjord" width={380} height={360}>
+          <window.LogoFjord />
+        </DCArtboard>
+        <DCArtboard id="02-knute" label="02 · Knute" width={380} height={360}>
+          <window.LogoKnute />
+        </DCArtboard>
+        <DCArtboard id="03-drage" label="03 · Drage" width={380} height={360}>
+          <window.LogoDrage />
+        </DCArtboard>
+        <DCArtboard id="04-konst" label="04 · Konstellasjon" width={380} height={360}>
+          <window.LogoKonstellasjon />
+        </DCArtboard>
+        <DCArtboard id="05-linje" label="05 · Linje" width={380} height={360}>
+          <window.LogoLinje />
+        </DCArtboard>
+        <DCArtboard id="06-blom" label="06 · Blom" width={380} height={360}>
+          <window.LogoBlom />
+        </DCArtboard>
+      </DCSection>
+    </DesignCanvas>
+  );
+
+  setTimeout(() => {
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  }, 0);
+</script>
+</body>
+</html>

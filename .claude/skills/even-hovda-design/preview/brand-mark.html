@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Brand mark</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 22px 28px; box-sizing: border-box; font-family: var(--font-sans); display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; align-items: stretch; }
+  .tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; border: 1px solid var(--line-2); border-radius: 16px; padding: 18px 10px; }
+  .tile.surface { background: var(--bg-surface); }
+  .tile.mist    { background: var(--c-mist); }
+  .tile.sage    { background: var(--sage-500); border-color: var(--sage-500); }
+  .tile.dark    { background: var(--slate-800); border-color: var(--slate-800); }
+  .tile.tint    { background: var(--bg-tint-sage); }
+  .label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-3); }
+  .label.inv { color: rgba(255,255,255,0.85); }
+
+  .disc { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font-family: Inter, system-ui, sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -0.04em; }
+  .disc--soft    { background: #E6EDDF; color: #5A6F4C; }
+  .disc--brand   { background: #8FA77C; color: #FFFFFF; }
+  .disc--inverse { background: #FFFFFF; color: #5A6F4C; box-shadow: inset 0 0 0 1px #E6EDDF; }
+  .disc--dark    { background: #232A2F; color: #FFFFFF; }
+  .disc--mist    { background: #F2F2F2; color: #5A6F4C; }
+</style>
+</head>
+<body>
+  <div class="tile surface">
+    <div class="disc disc--soft">EH</div>
+    <div class="label">Soft · default</div>
+  </div>
+  <div class="tile surface">
+    <div class="disc disc--brand">EH</div>
+    <div class="label">Brand</div>
+  </div>
+  <div class="tile sage">
+    <div class="disc disc--inverse">EH</div>
+    <div class="label inv">Inverse</div>
+  </div>
+  <div class="tile dark">
+    <div class="disc disc--dark" style="background:#FFFFFF;color:#5A6F4C">EH</div>
+    <div class="label inv">On dark</div>
+  </div>
+  <div class="tile mist">
+    <div class="disc disc--mist">EH</div>
+    <div class="label">Mist</div>
+  </div>
+</body>
+</html>

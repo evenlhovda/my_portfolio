@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Surfaces</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg-page);
+    color: var(--fg-1);
+    padding: 18px 24px;
+    box-sizing: border-box;
+  }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .tile { border-radius: var(--radius-md); border: 1px solid var(--line-2); overflow: hidden; }
+  .swatch { height: 78px; }
+  .meta { padding: 8px 10px 10px; background: var(--bg-surface); }
+  .name { font-size: 12.5px; font-weight: 600; color: var(--fg-1); }
+  .desc { font-size: 10.5px; color: var(--fg-3); font-family: var(--font-mono); margin-top: 1px; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="tile"><div class="swatch" style="background:#FAFBF8"></div><div class="meta"><div class="name">Page</div><div class="desc">--bg-page</div></div></div>
+    <div class="tile"><div class="swatch" style="background:#FFFFFF"></div><div class="meta"><div class="name">Surface</div><div class="desc">--bg-surface</div></div></div>
+    <div class="tile"><div class="swatch" style="background:#F2F2F2"></div><div class="meta"><div class="name">Subtle</div><div class="desc">--bg-subtle</div></div></div>
+    <div class="tile"><div class="swatch" style="background:#F4F7F1"></div><div class="meta"><div class="name">Sage tint</div><div class="desc">--bg-tint-sage</div></div></div>
+    <div class="tile"><div class="swatch" style="background:#F0F7FC"></div><div class="meta"><div class="name">Sky tint</div><div class="desc">--bg-tint-sky</div></div></div>
+    <div class="tile"><div class="swatch" style="background:#DEF2D5"></div><div class="meta"><div class="name">Spring tint</div><div class="desc">--bg-tint-spring</div></div></div>
+    <div class="tile"><div class="swatch" style="background:#232A2F"></div><div class="meta"><div class="name">Inverse</div><div class="desc">slate-800</div></div></div>
+    <div class="tile"><div class="swatch" style="background:#5A6F4C"></div><div class="meta"><div class="name">Brand fill</div><div class="desc">sage-700</div></div></div>
+  </div>
+</body>
+</html>

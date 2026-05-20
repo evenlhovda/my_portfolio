@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Wordmark</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 0; box-sizing: border-box; font-family: var(--font-sans); display: flex; flex-direction: column; }
+  .stage { padding: 18px 28px; display: flex; align-items: center; gap: 14px; }
+  .stage.alt { background: var(--sage-500); color: #fff; }
+  .stage.mist { background: var(--c-mist); }
+  .stage.dark { background: var(--slate-800); color: #fff; }
+  .word { font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; color: inherit; }
+  .role { margin-left: auto; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-3); font-family: var(--font-mono); }
+  .stage.alt .role, .stage.dark .role { color: rgba(255,255,255,0.78); }
+  .disc { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; font-family: Inter, system-ui, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: -0.04em; flex: 0 0 auto; }
+  .disc--soft    { background: #E6EDDF; color: #5A6F4C; }
+  .disc--inverse { background: #FFFFFF; color: #5A6F4C; }
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="disc disc--soft">EH</div>
+    <div class="word">Even L. Hovda</div>
+    <div class="role">Surface</div>
+  </div>
+  <div class="stage mist">
+    <div class="disc disc--soft">EH</div>
+    <div class="word">Even L. Hovda</div>
+    <div class="role">Mist</div>
+  </div>
+  <div class="stage alt">
+    <div class="disc disc--inverse">EH</div>
+    <div class="word">Even L. Hovda</div>
+    <div class="role">Brand</div>
+  </div>
+  <div class="stage dark">
+    <div class="disc disc--inverse">EH</div>
+    <div class="word">Even L. Hovda</div>
+    <div class="role">Dark</div>
+  </div>
+</body>
+</html>

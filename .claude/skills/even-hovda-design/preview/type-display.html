@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Display type</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg-page);
+    padding: 20px 28px;
+    box-sizing: border-box;
+  }
+  .row { display: flex; flex-direction: column; gap: 18px; }
+  .specimen { display: grid; grid-template-columns: 90px 1fr; align-items: baseline; gap: 18px; }
+  .key { font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-3); padding-top: 0.6em; line-height: 1.4; }
+  .key b { display: block; color: var(--fg-1); font-family: var(--font-sans); font-weight: 600; font-size: 11px; margin-bottom: 1px; }
+  .display-xl { font-family: var(--font-display); font-weight: 700; font-size: 72px; line-height: 1.02; letter-spacing: -0.02em; color: var(--fg-1); }
+  .display    { font-family: var(--font-display); font-weight: 700; font-size: 44px; line-height: 1.05; letter-spacing: -0.02em; color: var(--fg-1); }
+  .h2  { font-family: var(--font-display); font-weight: 700; font-size: 28px; line-height: 1.2; letter-spacing: -0.015em; color: var(--fg-1); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="specimen"><div class="key"><b>Display</b>Inter 700<br/>72 / 1.02 / -0.02em</div><div class="display-xl">Verdifulle&nbsp;løsninger.</div></div>
+    <div class="specimen"><div class="key"><b>H1</b>Inter 700<br/>44 / 1.05 / -0.02em</div><div class="display">AI, automatisering og forretningsutvikling.</div></div>
+    <div class="specimen"><div class="key"><b>H2</b>Inter 700<br/>28 / 1.2 / -0.015em</div><div class="h2">Kjerneområder</div></div>
+  </div>
+</body>
+</html>

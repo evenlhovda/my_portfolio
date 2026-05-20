@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Links</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 22px 28px; box-sizing: border-box; font-family: var(--font-sans); font-size: 14px; color: var(--fg-2); line-height: 1.7; }
+  .group-label { font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-3); margin: 0 0 4px; }
+  .block { margin-bottom: 14px; }
+  p { max-width: 68ch; margin: 0 0 6px; }
+  a.in-text { color: var(--sage-700); border-bottom: 1px solid var(--sage-300); text-decoration: none; transition: color 120ms ease, border-color 120ms ease; }
+  a.in-text:hover { color: var(--sage-800); border-color: var(--sage-500); }
+  a.standalone { color: var(--sky-600); text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 4px; border: 0; }
+  a.standalone:hover { color: var(--sky-700); }
+  a.muted { color: var(--fg-2); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--line-strong); border: 0; }
+  a.muted:hover { color: var(--fg-1); text-decoration-color: var(--fg-2); }
+</style>
+</head>
+<body>
+  <div class="block"><p class="group-label">Inline link</p><p>Bygget med <a class="in-text" href="#">LangChain-rammeverket</a> og en kunnskapsbase om Even sin bakgrunn — <a class="in-text" href="#">les mer her</a>.</p></div>
+  <div class="block"><p class="group-label">Standalone CTA</p><p><a class="standalone" href="#">Se prosjekter →</a> &nbsp; <a class="standalone" href="#">Send meg en e-post →</a></p></div>
+  <div class="block"><p class="group-label">Muted footer link</p><p><a class="muted" href="#">Personvern</a> &nbsp; · &nbsp; <a class="muted" href="#">Vilkår</a> &nbsp; · &nbsp; <a class="muted" href="#">LinkedIn</a></p></div>
+</body>
+</html>

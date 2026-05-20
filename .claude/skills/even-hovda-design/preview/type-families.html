@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Type families</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 22px 28px; box-sizing: border-box; }
+  .row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  .col { border: 1px solid var(--line-2); background: var(--bg-surface); border-radius: var(--radius-md); padding: 18px; }
+  .tag { font-family: var(--font-sans); font-size: 10.5px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-3); margin: 0 0 8px; }
+  .face { font-size: 13px; font-weight: 600; color: var(--fg-1); }
+  .preview-sans { font-family: var(--font-sans); font-size: 38px; font-weight: 700; line-height: 1.05; letter-spacing: -0.02em; color: var(--fg-1); margin: 6px 0 8px; }
+  .preview-serif { font-family: var(--font-serif); font-size: 30px; font-weight: 600; line-height: 1.1; color: var(--fg-1); margin: 6px 0 8px; }
+  .preview-mono { font-family: var(--font-mono); font-size: 22px; font-weight: 500; line-height: 1.2; color: var(--fg-1); margin: 6px 0 8px; }
+  .meta { font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-3); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="col">
+      <p class="tag">Display & UI</p>
+      <div class="face">Inter</div>
+      <div class="preview-sans">Aa Bb Æø</div>
+      <div class="meta">400 / 500 / 600 / 700 / 800</div>
+    </div>
+    <div class="col">
+      <p class="tag">Long-form</p>
+      <div class="face">Source Sans 3</div>
+      <div class="preview-serif">Aa Bb Æø</div>
+      <div class="meta">400 / 600 / 700 (subst.)</div>
+    </div>
+    <div class="col">
+      <p class="tag">Mono / Code</p>
+      <div class="face">Geist Mono</div>
+      <div class="preview-mono">{ AI ⇢ flyt }</div>
+      <div class="meta">400 / 500 (woff)</div>
+    </div>
+  </div>
+</body>
+</html>

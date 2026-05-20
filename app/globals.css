@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-background text-slate-100 font-inter antialiased;
+    @apply bg-page text-fg-1 font-sans antialiased;
   }
 }
 
@@ -58,7 +58,3 @@
   @apply text-slate-300;
 }
 
-:root {
-  --accent: 217.2 91.2% 59.8%;
-  --accent-foreground: 210 40% 98%;
-}

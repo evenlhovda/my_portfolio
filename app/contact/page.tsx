@@ -1,31 +1,24 @@
 'use client'
 
 import { SiteLayout } from "@/components/layout/site-layout"
-import { Card } from "@/components/ui/card"
-import { Mail, Linkedin, MapPin, Phone, Loader2 } from 'lucide-react'
-import { ContrastButton } from "@/components/ui/button-variants"
+import { Divider } from "@/components/ui/divider"
+import { Mail, Linkedin, MapPin, Loader2, Check } from 'lucide-react'
+import { PrimaryButton } from "@/components/ui/button-variants"
 import { useState, FormEvent, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 
-// Validation helpers
-const isValidEmail = (email: string) => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return emailRegex.test(email)
-}
-
+const isValidEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
 const RATE_LIMIT_MINUTES = 5
+
+const inputClasses =
+  "w-full rounded-[8px] border border-line-2 bg-page px-3 py-2.5 text-sm text-fg-1 transition-[border,box-shadow] duration-fast ease-out-soft placeholder:text-fg-3 focus:border-sage-500 focus:shadow-focus focus:outline-none disabled:opacity-60"
 
 export default function ContactPage() {
   useEffect(() => {
     emailjs.init('nprKvlm3Y4eEppTnj')
   }, [])
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
-  
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -34,47 +27,34 @@ export default function ContactPage() {
       setErrorMessage('Vennligst fyll inn navnet ditt')
       return false
     }
-    
     if (!formData.email.trim()) {
       setErrorMessage('Vennligst fyll inn e-postadressen din')
       return false
     }
-    
     if (!isValidEmail(formData.email)) {
       setErrorMessage('Vennligst oppgi en gyldig e-postadresse')
       return false
     }
-    
     if (formData.message.trim().length < 10) {
       setErrorMessage('Meldingen må være minst 10 tegn')
       return false
     }
-
-    // Check rate limit
     const lastSubmission = localStorage.getItem('lastSubmission')
     if (lastSubmission) {
-      const timeSinceLastSubmission = Date.now() - parseInt(lastSubmission)
-      const minutesSinceLastSubmission = timeSinceLastSubmission / (1000 * 60)
-      
-      if (minutesSinceLastSubmission < RATE_LIMIT_MINUTES) {
-        setErrorMessage(`Vennligst vent ${Math.ceil(RATE_LIMIT_MINUTES - minutesSinceLastSubmission)} minutter før du sender en ny melding`)
+      const minutesSince = (Date.now() - parseInt(lastSubmission)) / (1000 * 60)
+      if (minutesSince < RATE_LIMIT_MINUTES) {
+        setErrorMessage(`Vennligst vent ${Math.ceil(RATE_LIMIT_MINUTES - minutesSince)} minutter før du sender en ny melding`)
         return false
       }
     }
-
     return true
   }
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setErrorMessage('')
-    
-    if (!validateForm()) {
-      return
-    }
-
+    if (!validateForm()) return
     setStatus('loading')
-
     try {
       await emailjs.send(
         'service_q881s4s',
@@ -87,21 +67,14 @@ export default function ContactPage() {
         },
         'nprKvlm3Y4eEppTnj'
       )
-
-      // Store submission timestamp for rate limiting
       localStorage.setItem('lastSubmission', Date.now().toString())
-
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
-      
-      setTimeout(() => {
-        setStatus('idle')
-      }, 5000)
+      setTimeout(() => setStatus('idle'), 5000)
     } catch (error) {
       console.error('Error sending email:', error)
       setStatus('error')
       setErrorMessage('Beklager, noe gikk galt. Prøv igjen senere eller send meg en epost direkte.')
-      
       setTimeout(() => {
         setStatus('idle')
         setErrorMessage('')
@@ -111,149 +84,140 @@ export default function ContactPage() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-    // Clear error message when user starts typing
-    if (errorMessage) {
-      setErrorMessage('')
-    }
+    setFormData((prev) => ({ ...prev, [name]: value }))
+    if (errorMessage) setErrorMessage('')
   }
 
   return (
     <SiteLayout>
-      <div className="container px-4 py-16 mx-auto">
-        <h1 className="text-4xl font-bold tracking-tighter text-slate-100 sm:text-5xl mb-12">
-          La oss ta en prat
-        </h1>
+      <div className="mx-auto max-w-[1180px] px-8 py-12">
+        <Divider>La oss ta en prat</Divider>
 
-        <div className="grid gap-8 md:grid-cols-2">
-          {/* Contact Info */}
-          <div className="space-y-8">
-            <Card className="p-6 bg-secondary border-secondary">
-              <h2 className="text-2xl font-semibold text-slate-100 mb-6">
+        <div className="mt-10 grid gap-6 md:grid-cols-[1fr_1.1fr]">
+          {/* Info column */}
+          <div className="flex flex-col gap-4">
+            <div className="rounded-lg border border-line-2 bg-surface px-7 py-6 shadow-xs">
+              <h3 className="mb-3.5 text-lg font-semibold tracking-snug text-fg-1">
                 Kontaktinformasjon
-              </h2>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 text-slate-300">
-                  <Mail className="h-5 w-5 text-primary" />
-                  <a href="mailto:evenlhovda+web@gmail.com" className="hover:text-slate-100">
+              </h3>
+              <ul className="m-0 flex list-none flex-col gap-3 p-0 text-sm text-fg-2">
+                <li className="flex items-center gap-3">
+                  <Mail className="h-4.5 w-4.5 flex-shrink-0 text-sage-600" />
+                  <a
+                    href="mailto:evenlhovda+web@gmail.com"
+                    className="border-b border-transparent text-fg-2 transition-colors hover:border-line-strong hover:text-fg-1"
+                  >
                     evenlhovda@gmail.com
                   </a>
-                </div>
-                <div className="flex items-center gap-3 text-slate-300">
-                  <MapPin className="h-5 w-5 text-primary" />
+                </li>
+                <li className="flex items-center gap-3">
+                  <MapPin className="h-4.5 w-4.5 flex-shrink-0 text-sage-600" />
                   <span>Oslo, Norge</span>
-                </div>
-                <div className="flex items-center gap-3 text-slate-300">
-                  <Linkedin className="h-5 w-5 text-primary" />
-                  <a 
-                    href="https://www.linkedin.com/in/evenhovda" 
-                    target="_blank" 
+                </li>
+                <li className="flex items-center gap-3">
+                  <Linkedin className="h-4.5 w-4.5 flex-shrink-0 text-sage-600" />
+                  <a
+                    href="https://www.linkedin.com/in/evenhovda"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-slate-100"
+                    className="border-b border-transparent text-fg-2 transition-colors hover:border-line-strong hover:text-fg-1"
                   >
                     linkedin.com/in/evenhovda
                   </a>
-                </div>
-              </div>
-            </Card>
+                </li>
+              </ul>
+            </div>
 
-            <Card className="p-6 bg-secondary border-secondary">
-              <h2 className="text-2xl font-semibold text-slate-100 mb-4">
+            <div className="rounded-lg border border-line-2 bg-tint-sage px-7 py-6 shadow-xs">
+              <h3 className="mb-3.5 text-lg font-semibold tracking-snug text-fg-1">
                 Interessert i en prat?
-              </h2>
-              <p className="text-slate-300 mb-6">
+              </h3>
+              <p className="mb-5 text-sm leading-[1.6] text-fg-2">
                 Jeg tar gjerne en prat om hvordan jeg kan hjelpe deg med ditt prosjekt.
               </p>
-              <ContrastButton asChild>
-                <a 
-                  href="mailto:evenlhovda+web@gmail.com"
-                  className="inline-flex items-center gap-2"
-                >
-                  <Mail className="h-4 w-4" />
-                  Send meg en mail
+              <PrimaryButton asChild>
+                <a href="mailto:evenlhovda+web@gmail.com">
+                  <Mail className="h-4 w-4" /> Send meg en mail
                 </a>
-              </ContrastButton>
-            </Card>
+              </PrimaryButton>
+            </div>
           </div>
 
-          {/* Updated Contact Form */}
-          <Card className="p-6 bg-secondary border-secondary">
-            <h2 className="text-2xl font-semibold text-slate-100 mb-6">
+          {/* Form column */}
+          <form
+            onSubmit={handleSubmit}
+            noValidate
+            className="flex flex-col gap-3.5 rounded-lg border border-line-2 bg-surface px-7 py-6 shadow-xs"
+          >
+            <h3 className="mb-1.5 text-lg font-semibold tracking-snug text-fg-1">
               Send meg en melding
-            </h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-1">
-                  Navn
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 bg-background border border-accent rounded-md text-slate-100"
-                  disabled={status === 'loading'}
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-1">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 bg-background border border-accent rounded-md text-slate-100"
-                  disabled={status === 'loading'}
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-1">
-                  Melding
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 bg-background border border-accent rounded-md text-slate-100"
-                  disabled={status === 'loading'}
-                ></textarea>
-              </div>
-              
-              {errorMessage && (
-                <p className="text-red-400 text-sm">{errorMessage}</p>
-              )}
-              
-              {status === 'success' && (
-                <p className="text-green-400 text-sm">Meldingen din er sendt! Jeg tar kontakt snart.</p>
-              )}
+            </h3>
 
-              <ContrastButton 
-                type="submit" 
-                className="w-full"
+            <label className="flex flex-col gap-1.5">
+              <span className="text-[12.5px] font-semibold text-fg-1">Navn</span>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 disabled={status === 'loading'}
-              >
-                {status === 'loading' ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Sender...
-                  </>
-                ) : (
-                  'Send melding'
-                )}
-              </ContrastButton>
-            </form>
-          </Card>
+                placeholder="Hva heter du?"
+                className={inputClasses}
+              />
+            </label>
+
+            <label className="flex flex-col gap-1.5">
+              <span className="text-[12.5px] font-semibold text-fg-1">E-post</span>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                disabled={status === 'loading'}
+                placeholder="din@adresse.no"
+                className={inputClasses}
+              />
+            </label>
+
+            <label className="flex flex-col gap-1.5">
+              <span className="text-[12.5px] font-semibold text-fg-1">Melding</span>
+              <textarea
+                name="message"
+                rows={4}
+                value={formData.message}
+                onChange={handleChange}
+                disabled={status === 'loading'}
+                placeholder="Hva slags problem ønsker du å løse?"
+                className={`${inputClasses} resize-y`}
+              />
+            </label>
+
+            {errorMessage && (
+              <p className="m-0 rounded-sm bg-danger-bg px-2.5 py-2 text-[12.5px] text-[#863329]">
+                {errorMessage}
+              </p>
+            )}
+
+            {status === 'success' && (
+              <p className="m-0 inline-flex items-center gap-1.5 rounded-sm bg-success-bg px-2.5 py-2 text-[12.5px] text-[#386B38]">
+                <Check className="h-3.5 w-3.5" />
+                Meldingen din er sendt — jeg tar kontakt snart.
+              </p>
+            )}
+
+            <PrimaryButton type="submit" className="w-full" disabled={status === 'loading'}>
+              {status === 'loading' ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Sender…
+                </>
+              ) : (
+                'Send melding'
+              )}
+            </PrimaryButton>
+          </form>
         </div>
       </div>
     </SiteLayout>
   )
-} 
+}

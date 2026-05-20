@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Spring 2 — Brand palette</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg-page);
+    color: var(--fg-1);
+    padding: 20px 24px;
+    box-sizing: border-box;
+  }
+  .row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .swatch { border: 1px solid var(--line-2); border-radius: var(--radius-md); overflow: hidden; background: var(--bg-surface); }
+  .chip { height: 78px; }
+  .meta { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 2px; }
+  .meta .name { font-size: 13px; font-weight: 600; color: var(--fg-1); letter-spacing: -0.01em; }
+  .meta .hex  { font-family: var(--font-mono); font-size: 11px; color: var(--fg-3); }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="swatch"><div class="chip" style="background:#BDDEF2"></div><div class="meta"><span class="name">Sky</span><span class="hex">#BDDEF2</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#5F6B73"></div><div class="meta"><span class="name">Slate</span><span class="hex">#5F6B73</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F2F2F2"></div><div class="meta"><span class="name">Mist</span><span class="hex">#F2F2F2</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#DEF2D5"></div><div class="meta"><span class="name">Spring</span><span class="hex">#DEF2D5</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#AABF9B"></div><div class="meta"><span class="name">Sage</span><span class="hex">#AABF9B</span></div></div>
+  </div>
+</body>
+</html>

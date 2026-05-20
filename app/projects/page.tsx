@@ -1,230 +1,135 @@
 'use client'
 
 import { SiteLayout } from "@/components/layout/site-layout"
-import { Icon } from "@/components/ui/icon"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Badge } from "@/components/ui/badge"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import { Calendar, Users, Building } from 'lucide-react'
 import { projects } from "@/lib/data"
+import type { Project } from "@/lib/types"
 import { DemoButton } from "@/components/ui/demo-button"
 
-// Separate ongoing and previous projects
+const ongoingIds = [11, 12, 10, 9, 1, 7, 8]
 const ongoingProjects = projects
-  .filter(p => [11, 12, 10, 9, 1, 7, 8].includes(p.id)) // Added 12 to the array
-  .sort((a, b) => [11, 12, 10, 9, 1, 7, 8].indexOf(a.id) - [11, 12, 10, 9, 1, 7, 8].indexOf(b.id)) // Added 12 as second item
+  .filter((p) => ongoingIds.includes(p.id))
+  .sort((a, b) => ongoingIds.indexOf(a.id) - ongoingIds.indexOf(b.id))
+const previousProjects = projects.filter((p) => !ongoingIds.includes(p.id))
 
-const previousProjects = projects.filter(p => ![11, 12, 10, 9, 1, 7, 8].includes(p.id))
+function ProjectTile({ project }: { project: Project }) {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          className="overflow-hidden rounded-lg border border-line-2 bg-surface p-0 text-left shadow-xs transition-[transform,box-shadow] duration-base ease-out-soft hover:-translate-y-0.5 hover:shadow-md"
+        >
+          <div className="relative aspect-video bg-sage-100">
+            <Image
+              src={project.image}
+              alt={project.title}
+              className="object-cover"
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
+          <div className="px-5 pb-5 pt-4">
+            <h3 className="mb-1.5 text-lg font-semibold tracking-snug text-fg-1">
+              {project.title}
+            </h3>
+            <div className="mb-3.5 line-clamp-2 text-[13.5px] leading-[1.55] text-fg-2">
+              {project.description}
+            </div>
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="flex flex-wrap gap-1.5">
+                {project.tags.slice(0, 4).map((tag) => (
+                  <Badge key={tag}>{tag}</Badge>
+                ))}
+                {project.tags.length > 4 && (
+                  <Badge variant="outline">+{project.tags.length - 4}</Badge>
+                )}
+              </div>
+              {project.demoUrl && (
+                <DemoButton projectId={project.id} demoUrl={project.demoUrl} />
+              )}
+            </div>
+          </div>
+        </button>
+      </DialogTrigger>
+      <DialogContent className="flex max-h-[90vh] max-w-2xl flex-col overflow-hidden rounded-xl border border-line-2 bg-surface p-0 text-fg-1">
+        <div className="relative aspect-video bg-sage-100">
+          <Image
+            src={project.image}
+            alt={project.title}
+            className="object-cover"
+            fill
+            sizes="(max-width: 768px) 100vw, 640px"
+          />
+        </div>
+        <div className="overflow-y-auto px-8 pb-8 pt-7">
+          <DialogHeader>
+            <DialogTitle className="m-0 mb-3.5 font-display text-[26px] font-bold tracking-tight text-fg-1">
+              {project.title}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="text-[15px] leading-[1.6] text-fg-2">
+            {project.description}
+          </div>
+          <ul className="my-5 grid list-none gap-2 p-0 text-[14px] text-fg-2">
+            <li className="flex items-center gap-2">
+              <Users className="h-4 w-4 text-sage-700" />
+              <span><b className="text-fg-1">Rolle:</b> {project.role}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Building className="h-4 w-4 text-sage-700" />
+              <span><b className="text-fg-1">Klient:</b> {project.client}</span>
+            </li>
+            <li className="flex items-center gap-2">
+              <Calendar className="h-4 w-4 text-sage-700" />
+              <span><b className="text-fg-1">Når:</b> {project.year}</span>
+            </li>
+          </ul>
+          <div className="flex flex-wrap gap-1.5">
+            {project.tags.map((tag) => (
+              <Badge key={tag}>{tag}</Badge>
+            ))}
+          </div>
+          {project.demoUrl && (
+            <div className="pt-5">
+              <DemoButton projectId={project.id} demoUrl={project.demoUrl} />
+            </div>
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
+  )
+}
 
 export default function ProjectsPage() {
   return (
     <SiteLayout>
-      <div className="container px-4 py-12 mx-auto space-y-16">
-        {/* Ongoing Projects Section */}
+      <div className="mx-auto max-w-[1180px] px-8 py-12">
         <section>
-          <h2 className="text-3xl font-bold tracking-tighter text-slate-100 sm:text-4xl mb-8">
+          <h2 className="mb-8 font-display text-[32px] font-bold tracking-tight text-fg-1">
             Prosjekter 2025
           </h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            {ongoingProjects.map((project) => (
-              <Dialog key={project.id}>
-                <DialogTrigger asChild>
-                  <Card className="cursor-pointer transition-all duration-200 hover:translate-y-[-4px] hover:shadow-lg bg-secondary border-secondary overflow-hidden">
-                    <CardHeader className="relative aspect-video p-0">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        className="object-cover"
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </CardHeader>
-                    <CardContent className="pt-4">
-                      <CardTitle className="text-xl mb-2 text-slate-100">{project.title}</CardTitle>
-                      <div className="relative">
-                        {typeof project.description === 'string' ? (
-                          <p className="text-slate-300 mb-4 line-clamp-2">
-                            {project.description}
-                          </p>
-                        ) : (
-                          <div className="text-slate-300 mb-4 line-clamp-2">
-                            {project.description}
-                          </div>
-                        )}
-                        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-secondary to-transparent" />
-                      </div>
-                      <div className="flex flex-wrap items-center gap-2 justify-between">
-                        <div className="flex flex-wrap gap-2">
-                          {project.tags.map((tag) => (
-                            <Badge key={tag} variant="secondary" className="bg-accent text-accent-foreground">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                        {project.demoUrl && (
-                          <DemoButton 
-                            projectId={project.id} 
-                            demoUrl={project.demoUrl}
-                          />
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col bg-secondary text-slate-100">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl">{project.title}</DialogTitle>
-                  </DialogHeader>
-                  <div className="grid gap-4 overflow-y-auto pr-2 custom-scrollbar">
-                    <div className="relative aspect-video">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        className="object-cover rounded-lg"
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                    <div className="space-y-4">
-                      <div className="space-y-4">
-                        {typeof project.description === 'string' ? (
-                          <p className="text-slate-300">{project.description}</p>
-                        ) : (
-                          <div className="text-slate-300">{project.description}</div>
-                        )}
-                      </div>
-                      <div className="grid gap-2">
-                        <div className="flex items-center gap-2 text-slate-300">
-                          <Users className="h-4 w-4" />
-                          <span className="font-medium text-slate-100">Rolle:</span> {project.role}
-                        </div>
-                        <div className="flex items-center gap-2 text-slate-300">
-                          <Building className="h-4 w-4" />
-                          <span className="font-medium text-slate-100">Klient:</span> {project.client}
-                        </div>
-                        <div className="flex items-center gap-2 text-slate-300">
-                          <Calendar className="h-4 w-4" />
-                          <span className="font-medium text-slate-100">Når:</span> {project.year}
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary" className="bg-accent text-accent-foreground">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      {project.demoUrl && (
-                        <div className="pt-4">
-                          <DemoButton 
-                            projectId={project.id} 
-                            demoUrl={project.demoUrl}
-                          />
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
+          <div className="grid gap-6 md:grid-cols-2">
+            {ongoingProjects.map((p) => (
+              <ProjectTile key={p.id} project={p} />
             ))}
           </div>
         </section>
 
-        {/* Previous Projects Section */}
-        <section>
-          <h2 className="text-3xl font-bold tracking-tighter text-slate-100 sm:text-4xl mb-8">
+        <section className="mt-20">
+          <h2 className="mb-8 font-display text-[32px] font-bold tracking-tight text-fg-1">
             Tidligere prosjekter
           </h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            {previousProjects.map((project) => (
-              <Dialog key={project.id}>
-                <DialogTrigger asChild>
-                  <Card className="cursor-pointer transition-all duration-200 hover:translate-y-[-4px] hover:shadow-lg bg-secondary border-secondary overflow-hidden">
-                    <CardHeader className="relative aspect-video p-0">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        className="object-cover"
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </CardHeader>
-                    <CardContent className="pt-4">
-                      <CardTitle className="text-xl mb-2 text-slate-100">{project.title}</CardTitle>
-                      <div className="relative">
-                        {typeof project.description === 'string' ? (
-                          <p className="text-slate-300 mb-4 line-clamp-2">
-                            {project.description}
-                          </p>
-                        ) : (
-                          <div className="text-slate-300 mb-4 line-clamp-2">
-                            {project.description}
-                          </div>
-                        )}
-                        <div className="absolute bottom-0 left-0 right-0 h-6 bg-gradient-to-t from-secondary to-transparent" />
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary" className="bg-accent text-accent-foreground">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </DialogTrigger>
-                <DialogContent className="max-w-2xl max-h-[90vh] flex flex-col bg-secondary text-slate-100">
-                  <DialogHeader>
-                    <DialogTitle className="text-2xl">{project.title}</DialogTitle>
-                  </DialogHeader>
-                  <div className="grid gap-4 overflow-y-auto pr-2 custom-scrollbar">
-                    <div className="relative aspect-video">
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        className="object-cover rounded-lg"
-                        fill
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      />
-                    </div>
-                    <div className="space-y-4">
-                      <div className="space-y-4">
-                        {typeof project.description === 'string' ? (
-                          <p className="text-slate-300">{project.description}</p>
-                        ) : (
-                          <div className="text-slate-300">{project.description}</div>
-                        )}
-                      </div>
-                      <div className="grid gap-2">
-                        <div className="flex items-center gap-2 text-slate-300">
-                          <Users className="h-4 w-4" />
-                          <span className="font-medium text-slate-100">Rolle:</span> {project.role}
-                        </div>
-                        <div className="flex items-center gap-2 text-slate-300">
-                          <Building className="h-4 w-4" />
-                          <span className="font-medium text-slate-100">Klient:</span> {project.client}
-                        </div>
-                        <div className="flex items-center gap-2 text-slate-300">
-                          <Calendar className="h-4 w-4" />
-                          <span className="font-medium text-slate-100">Når:</span> {project.year}
-                        </div>
-                      </div>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary" className="bg-accent text-accent-foreground">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </DialogContent>
-              </Dialog>
+          <div className="grid gap-6 md:grid-cols-2">
+            {previousProjects.map((p) => (
+              <ProjectTile key={p.id} project={p} />
             ))}
           </div>
         </section>
       </div>
     </SiteLayout>
   )
-} 
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Type scale</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 18px 28px; box-sizing: border-box; font-family: var(--font-sans); }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  thead th { text-align: left; font-weight: 600; color: var(--fg-3); padding: 4px 8px 8px; border-bottom: 1px solid var(--line-2); font-size: 11px; letter-spacing: 0.04em; text-transform: uppercase; }
+  tbody td { padding: 6px 8px; border-bottom: 1px solid var(--line-1); }
+  td.preview { color: var(--fg-1); font-family: var(--font-sans); letter-spacing: -0.015em; line-height: 1; }
+  td.token { font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-3); }
+  td.px    { font-family: var(--font-mono); font-size: 10.5px; color: var(--fg-2); }
+</style>
+</head>
+<body>
+  <table>
+    <thead><tr><th>Token</th><th>px</th><th>Sample</th></tr></thead>
+    <tbody>
+      <tr><td class="token">--fs-display</td><td class="px">54</td><td class="preview" style="font-size:42px;font-weight:700">Aa Bb Cc</td></tr>
+      <tr><td class="token">--fs-h1</td><td class="px">44</td><td class="preview" style="font-size:34px;font-weight:700">Heading 1</td></tr>
+      <tr><td class="token">--fs-h2</td><td class="px">32</td><td class="preview" style="font-size:26px;font-weight:700">Heading 2</td></tr>
+      <tr><td class="token">--fs-h3</td><td class="px">24</td><td class="preview" style="font-size:20px;font-weight:600">Heading 3</td></tr>
+      <tr><td class="token">--fs-body-lg</td><td class="px">18</td><td class="preview" style="font-size:16px;font-weight:400">Body large — Jeg løser problemer.</td></tr>
+      <tr><td class="token">--fs-body</td><td class="px">16</td><td class="preview" style="font-size:14px;font-weight:400">Body — Standard paragraph text.</td></tr>
+      <tr><td class="token">--fs-body-sm</td><td class="px">14</td><td class="preview" style="font-size:13px;font-weight:400">Body small — Helper, caption text.</td></tr>
+      <tr><td class="token">--fs-caption</td><td class="px">12</td><td class="preview" style="font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase">Caption / Eyebrow</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

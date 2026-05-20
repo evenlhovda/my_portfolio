@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sky & Slate scales</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg-page);
+    color: var(--fg-1);
+    padding: 18px 24px;
+    box-sizing: border-box;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .label { font-size: 11px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 6px; }
+  .scale { display: grid; gap: 4px; }
+  .sky { grid-template-columns: repeat(7, 1fr); }
+  .slate { grid-template-columns: repeat(9, 1fr); }
+  .step { border-radius: 4px; overflow: hidden; }
+  .chip { height: 38px; }
+  .meta { padding: 4px 4px 2px; text-align: center; font-family: var(--font-mono); font-size: 9.5px; color: var(--fg-3); }
+</style>
+</head>
+<body>
+  <div>
+    <div class="label">Sky — accent</div>
+    <div class="scale sky">
+      <div class="step"><div class="chip" style="background:#F0F7FC"></div><div class="meta">50</div></div>
+      <div class="step"><div class="chip" style="background:#DDEDF7"></div><div class="meta">100</div></div>
+      <div class="step"><div class="chip" style="background:#BDDEF2"></div><div class="meta">200 ●</div></div>
+      <div class="step"><div class="chip" style="background:#94C8E7"></div><div class="meta">300</div></div>
+      <div class="step"><div class="chip" style="background:#6BAFD8"></div><div class="meta">400</div></div>
+      <div class="step"><div class="chip" style="background:#4892BF"></div><div class="meta">500</div></div>
+      <div class="step"><div class="chip" style="background:#366F94"></div><div class="meta">600</div></div>
+    </div>
+  </div>
+  <div>
+    <div class="label">Slate — text & neutral</div>
+    <div class="scale slate">
+      <div class="step"><div class="chip" style="background:#F6F7F8"></div><div class="meta">50</div></div>
+      <div class="step"><div class="chip" style="background:#E8EAEC"></div><div class="meta">100</div></div>
+      <div class="step"><div class="chip" style="background:#CFD3D7"></div><div class="meta">200</div></div>
+      <div class="step"><div class="chip" style="background:#ACB3B9"></div><div class="meta">300</div></div>
+      <div class="step"><div class="chip" style="background:#828A91"></div><div class="meta">400</div></div>
+      <div class="step"><div class="chip" style="background:#5F6B73"></div><div class="meta">500 ●</div></div>
+      <div class="step"><div class="chip" style="background:#4A555C"></div><div class="meta">600</div></div>
+      <div class="step"><div class="chip" style="background:#364046"></div><div class="meta">700</div></div>
+      <div class="step"><div class="chip" style="background:#232A2F"></div><div class="meta">800</div></div>
+    </div>
+  </div>
+</body>
+</html>

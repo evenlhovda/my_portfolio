@@ -5,14 +5,14 @@ interface DividerProps {
 
 export function Divider({ children, className = "" }: DividerProps) {
   return (
-    <div className={`flex items-center gap-4 ${className}`}>
-      <div className="h-px flex-1 bg-accent/20" />
+    <div className={`flex items-center gap-6 ${className}`}>
+      <div className="h-px flex-1 bg-line-2" />
       {children && (
-        <h2 className="text-2xl font-bold tracking-tighter text-slate-100 whitespace-nowrap">
+        <h2 className="m-0 whitespace-nowrap font-display text-[28px] font-bold tracking-tight text-fg-1">
           {children}
         </h2>
       )}
-      <div className="h-px flex-1 bg-accent/20" />
+      <div className="h-px flex-1 bg-line-2" />
     </div>
   )
 }

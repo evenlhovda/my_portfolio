@@ -1,0 +1,261 @@
+/* ───────────────────────────────────────────────────────────────
+   Even L. Hovda — Design System
+   "Spring 2" palette × Dialect-style organized structure.
+   A calm, considered light theme for an AI product consultant
+   working with small and medium-sized businesses in Norway.
+   ─────────────────────────────────────────────────────────────── */
+
+/* — Fonts ———————————————————————————————————————————————— */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@font-face {
+  font-family: 'Geist';
+  src: url('assets/fonts/GeistVF.woff') format('woff-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('assets/fonts/GeistMonoVF.woff') format('woff-variations');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  /* ── Spring 2 brand palette ───────────────────────────────── */
+  --c-sky:        #BDDEF2;   /* light blue, calm accent           */
+  --c-slate:      #5F6B73;   /* deep slate gray, primary text     */
+  --c-mist:       #F2F2F2;   /* neutral background                */
+  --c-spring:     #DEF2D5;   /* pale green, soft accent           */
+  --c-sage:       #AABF9B;   /* sage green, primary brand color   */
+
+  /* ── Extended scales (derived from brand palette) ─────────── */
+  --sage-50:  #F4F7F1;
+  --sage-100: #E6EDDF;
+  --sage-200: #D2DEC5;
+  --sage-300: #BCCFA9;
+  --sage-400: #AABF9B;       /* = --c-sage */
+  --sage-500: #8FA77C;
+  --sage-600: #738B61;
+  --sage-700: #5A6F4C;
+  --sage-800: #44563A;
+  --sage-900: #2F3D28;
+
+  --sky-50:   #F0F7FC;
+  --sky-100:  #DDEDF7;
+  --sky-200:  #BDDEF2;       /* = --c-sky */
+  --sky-300:  #94C8E7;
+  --sky-400:  #6BAFD8;
+  --sky-500:  #4892BF;
+  --sky-600:  #366F94;
+  --sky-700:  #29516C;
+
+  --slate-50:  #F6F7F8;
+  --slate-100: #E8EAEC;
+  --slate-200: #CFD3D7;
+  --slate-300: #ACB3B9;
+  --slate-400: #828A91;
+  --slate-500: #5F6B73;      /* = --c-slate */
+  --slate-600: #4A555C;
+  --slate-700: #364046;
+  --slate-800: #232A2F;
+  --slate-900: #131719;
+
+  /* ── Semantic surfaces (light theme default) ──────────────── */
+  --bg-page:        #FAFBF8;
+  --bg-surface:     #FFFFFF;
+  --bg-elevated:    #FFFFFF;
+  --bg-subtle:      var(--c-mist);
+  --bg-tint-sage:   var(--sage-50);
+  --bg-tint-sky:    var(--sky-50);
+  --bg-tint-spring: var(--c-spring);
+
+  /* ── Foreground / text ────────────────────────────────────── */
+  --fg-1: var(--slate-800);   /* primary text                     */
+  --fg-2: var(--slate-600);   /* secondary text                   */
+  --fg-3: var(--slate-400);   /* muted / captions                 */
+  --fg-inv: #FFFFFF;          /* on dark/sage                     */
+
+  /* ── Lines / borders ──────────────────────────────────────── */
+  --line-1: var(--slate-100); /* hairlines, dividers              */
+  --line-2: var(--slate-200); /* card borders                     */
+  --line-strong: var(--slate-300);
+
+  /* ── Accents / brand roles ────────────────────────────────── */
+  --brand:          var(--sage-500);   /* primary brand            */
+  --brand-hover:    var(--sage-600);
+  --brand-soft:     var(--sage-100);
+
+  --accent:         var(--sky-400);    /* info / link accent       */
+  --accent-soft:    var(--sky-100);
+
+  --highlight:      var(--c-spring);   /* highlights, success bg   */
+  --highlight-strong: var(--sage-500);
+
+  /* ── Status colors ────────────────────────────────────────── */
+  --success:  #5F9C5F;
+  --success-bg: #E6F1E1;
+  --warning:  #C99A4C;
+  --warning-bg: #FBF1DE;
+  --danger:   #C5675B;
+  --danger-bg: #F7E1DD;
+  --info:     var(--sky-500);
+  --info-bg:  var(--sky-100);
+
+  /* ── Type families ────────────────────────────────────────── */
+  --font-sans:    'Inter', 'Source Sans 3', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+  --font-display: 'Inter', 'Geist', sans-serif;
+  --font-serif:   'Source Sans 3', Georgia, serif;
+  --font-mono:    'Geist Mono', 'JetBrains Mono', 'SF Mono', Menlo, Consolas, monospace;
+
+  /* ── Type scale ───────────────────────────────────────────── */
+  --fs-display-xl: 96px;
+  --fs-display-lg: 72px;
+  --fs-display:    54px;
+  --fs-h1:         44px;
+  --fs-h2:         32px;
+  --fs-h3:         24px;
+  --fs-h4:         20px;
+  --fs-body-lg:    18px;
+  --fs-body:       16px;
+  --fs-body-sm:    14px;
+  --fs-caption:    12px;
+
+  --lh-tight:   1.05;
+  --lh-snug:    1.2;
+  --lh-normal:  1.5;
+  --lh-relaxed: 1.65;
+
+  --tracking-tight:  -0.02em;
+  --tracking-snug:   -0.01em;
+  --tracking-normal:  0;
+  --tracking-wide:    0.04em;
+
+  /* ── Spacing scale (8pt base) ─────────────────────────────── */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10: 128px;
+
+  /* ── Radii ─────────────────────────────────────────────────── */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  /* ── Elevations (soft, low-contrast) ──────────────────────── */
+  --shadow-xs: 0 1px 2px rgba(47, 61, 40, 0.04);
+  --shadow-sm: 0 1px 2px rgba(47, 61, 40, 0.05), 0 1px 3px rgba(47, 61, 40, 0.04);
+  --shadow-md: 0 4px 12px rgba(47, 61, 40, 0.06), 0 1px 3px rgba(47, 61, 40, 0.04);
+  --shadow-lg: 0 12px 32px rgba(47, 61, 40, 0.08), 0 2px 6px rgba(47, 61, 40, 0.04);
+  --shadow-xl: 0 24px 56px rgba(47, 61, 40, 0.10), 0 4px 12px rgba(47, 61, 40, 0.05);
+  --shadow-inner: inset 0 1px 2px rgba(47, 61, 40, 0.05);
+  --shadow-focus: 0 0 0 3px rgba(170, 191, 155, 0.35);
+
+  /* ── Motion ───────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 120ms;
+  --dur-base: 200ms;
+  --dur-slow: 360ms;
+}
+
+/* ── Semantic element styles ───────────────────────────────── */
+.h-display, h1.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+h1, .h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--fg-1);
+}
+
+h2, .h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--fg-1);
+}
+
+h3, .h3 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tracking-snug);
+  color: var(--fg-1);
+}
+
+h4, .h4 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: var(--fs-h4);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+}
+
+p, .body {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+.body-lg {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+
+.body-sm, small {
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+}
+
+.caption, .eyebrow {
+  font-family: var(--font-sans);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+code, .mono {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  background: var(--bg-subtle);
+  padding: 0.12em 0.36em;
+  border-radius: var(--radius-xs);
+  color: var(--slate-700);
+}
+
+a {
+  color: var(--sage-700);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage-300);
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--sage-800); border-color: var(--sage-500); }

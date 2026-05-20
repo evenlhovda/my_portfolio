@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Header & nav</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 0; box-sizing: border-box; font-family: var(--font-sans); }
+  header {
+    position: sticky; top: 0;
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line-1);
+    padding: 12px 28px;
+  }
+  .nav { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 10px; }
+  .disc { width: 32px; height: 32px; border-radius: 50%; background: #E6EDDF; color: #5A6F4C; display: grid; place-items: center; font-family: Inter, system-ui, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: -0.04em; }
+  .name { font-weight: 700; color: var(--fg-1); letter-spacing: -0.01em; font-size: 15px; }
+  ul { display: flex; gap: 24px; margin: 0; padding: 0; list-style: none; }
+  ul a { color: var(--fg-2); text-decoration: none; border: 0; font-size: 13px; }
+  ul a:hover { color: var(--fg-1); }
+  ul a.active { color: var(--sage-700); font-weight: 600; }
+  .demo { padding: 26px 28px; }
+  .demo h1 { font-size: 28px; font-weight: 700; letter-spacing: -0.02em; margin: 0 0 6px; color: var(--fg-1); }
+  .demo p { font-size: 14px; color: var(--fg-2); max-width: 56ch; line-height: 1.6; margin: 0; }
+</style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="disc">EH</div>
+        <span class="name">Even L. Hovda</span>
+      </div>
+      <ul>
+        <li><a href="#" class="active">Prosjekter</a></li>
+        <li><a href="#">Om meg</a></li>
+        <li><a href="#">Kontakt</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="demo">
+    <h1>La oss ta en prat</h1>
+    <p>Sticky header, 78% white + 8px blur, hairline divider. EH monogram on sage-50 disc.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Favicon set</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 22px 28px; box-sizing: border-box; font-family: var(--font-sans); }
+  .row { display: flex; align-items: flex-end; gap: 28px; flex-wrap: wrap; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .size-label { font-family: var(--font-mono); font-size: 10px; color: var(--fg-3); }
+  .disc {
+    background: #E6EDDF;
+    color: #5A6F4C;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: Inter, system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    box-shadow: 0 1px 2px rgba(47,61,40,0.06);
+  }
+  .b { background: #8FA77C; color: #FFFFFF; }
+  .browser-mock {
+    margin-top: 18px;
+    background: var(--bg-surface);
+    border: 1px solid var(--line-2);
+    border-radius: 8px;
+    padding: 8px 10px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 12px;
+    color: var(--fg-2);
+    box-shadow: var(--shadow-xs);
+  }
+  .browser-mock .url { font-family: var(--font-mono); }
+  .group { display: flex; flex-direction: column; gap: 10px; }
+  h4 { margin: 0; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-3); }
+</style>
+</head>
+<body>
+  <div class="group">
+    <h4>Sage soft · default favicon</h4>
+    <div class="row">
+      <div class="item"><div class="disc" style="width:16px;height:16px;font-size:7.5px">EH</div><span class="size-label">16</span></div>
+      <div class="item"><div class="disc" style="width:24px;height:24px;font-size:10px">EH</div><span class="size-label">24</span></div>
+      <div class="item"><div class="disc" style="width:32px;height:32px;font-size:13px">EH</div><span class="size-label">32</span></div>
+      <div class="item"><div class="disc" style="width:48px;height:48px;font-size:20px">EH</div><span class="size-label">48</span></div>
+      <div class="item"><div class="disc" style="width:64px;height:64px;font-size:27px">EH</div><span class="size-label">64</span></div>
+      <div class="item"><div class="disc" style="width:96px;height:96px;font-size:40px">EH</div><span class="size-label">96</span></div>
+    </div>
+    <div class="browser-mock">
+      <div class="disc" style="width:14px;height:14px;font-size:6.5px">EH</div>
+      <span class="url">evenhovda.no</span>
+    </div>
+  </div>
+</body>
+</html>

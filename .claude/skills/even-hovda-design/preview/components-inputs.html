@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Form inputs</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 22px 28px; box-sizing: border-box; font-family: var(--font-sans); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  label { display: block; font-size: 12px; font-weight: 600; color: var(--fg-1); margin-bottom: 4px; }
+  .input, .select, textarea {
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--fg-1);
+    background: var(--bg-surface);
+    border: 1px solid var(--line-2);
+    border-radius: 8px;
+    padding: 9px 12px;
+    box-sizing: border-box;
+    transition: border 120ms ease, box-shadow 120ms ease;
+  }
+  .input::placeholder, textarea::placeholder { color: var(--fg-3); }
+  .focused {
+    border-color: var(--sage-500);
+    box-shadow: 0 0 0 3px rgba(170,191,155,0.35);
+  }
+  .invalid {
+    border-color: #C5675B;
+    box-shadow: 0 0 0 3px rgba(197,103,91,0.18);
+  }
+  .help { font-size: 11px; color: var(--fg-3); margin-top: 4px; }
+  .err  { font-size: 11px; color: #863329; margin-top: 4px; }
+  .check { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--fg-1); margin-top: 14px; }
+  .check input { accent-color: var(--sage-500); width: 16px; height: 16px; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div>
+      <label>Navn</label>
+      <input class="input" value="Even" />
+      <div class="help">Hvordan vil du bli adressert?</div>
+    </div>
+    <div>
+      <label>E-post</label>
+      <input class="input focused" value="even@example.no" />
+      <div class="help">Fokusert · 3px ring i sage 35%</div>
+    </div>
+    <div style="grid-column: 1 / -1">
+      <label>Melding</label>
+      <textarea class="input invalid" rows="3" placeholder="Skriv noen ord om problemet du vil løse…"></textarea>
+      <div class="err">Meldingen må være minst 10 tegn</div>
+    </div>
+  </div>
+  <div class="check"><input type="checkbox" checked /> Send meg en kopi til e-post</div>
+</body>
+</html>

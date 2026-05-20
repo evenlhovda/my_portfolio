@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Brand imagery</title>
+<link rel="stylesheet" href="../colors_and_type.css" />
+<style>
+  html, body { margin: 0; }
+  body { background: var(--bg-page); padding: 18px 24px; box-sizing: border-box; font-family: var(--font-sans); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+  .tile { aspect-ratio: 1; background-size: cover; background-position: center; border-radius: 10px; position: relative; overflow: hidden; border: 1px solid var(--line-2); }
+  .tile.tall { aspect-ratio: 1; }
+  .tile .label { position: absolute; left: 6px; bottom: 6px; right: 6px; font-size: 10px; font-weight: 600; color: #fff; background: rgba(35,42,47,0.55); padding: 3px 6px; border-radius: 4px; backdrop-filter: blur(4px); }
+  .tile.portrait { background: var(--sage-100); display: grid; place-items: center; }
+  .tile.portrait img { width: 80%; height: 80%; object-fit: cover; border-radius: 50%; border: 4px solid var(--sage-300); }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="tile portrait"><img src="../assets/portrait.png" alt=""><span class="label">Portrait</span></div>
+    <div class="tile" style="background-image:url('../assets/projects/rune-avatar.png')"><span class="label">Rune avatar</span></div>
+    <div class="tile" style="background-image:url('../assets/projects/randi-fakturatolk.png')"><span class="label">Randi</span></div>
+    <div class="tile" style="background-image:url('../assets/projects/snowkiting.webp')"><span class="label">Snowkiting</span></div>
+    <div class="tile" style="background-image:url('../assets/projects/ownersroom-01.png')"><span class="label">OwnersRoom</span></div>
+    <div class="tile" style="background-image:url('../assets/projects/voice-insurance-agent.png')"><span class="label">Voice agent</span></div>
+    <div class="tile" style="background-image:url('../assets/bg-01.webp')"><span class="label">Background 01</span></div>
+    <div class="tile" style="background-image:url('../assets/bg-02.webp')"><span class="label">Background 02</span></div>
+  </div>
+</body>
+</html>
