@@ -1,6 +1,6 @@
 import React from 'react'
 import { Project } from './types'
-import { ProjectDescriptions } from '@/components/project-descriptions'
+import { ProjectDescriptions } from '@/components/projects/project-descriptions'
 
 export const projects: Project[] = [
   {
@@ -23,16 +23,6 @@ export const projects: Project[] = [
     role: "Produktleder",
     year: "2023-2024",
     client: "OwnersRoom AS"
-  },
-  {
-    id: 3,
-    title: "Bryne Kitefestival",
-    description: ProjectDescriptions.kitefestival,
-    image: "/images/Snowkiting.webp",
-    tags: ["Sport", "Community", "Event"],
-    role: "Medarrangør & økonomiansvarlig",
-    year: "2021-",
-    client: "Bryne Kitefestival"
   },
   {
     id: 4,
@@ -124,5 +114,35 @@ export const projects: Project[] = [
     client: "Belron Solutions",
     role: "Utvikler",
     tags: ["AI", "Flowise", "LangChain", "MS Teams", "Innovasjon"]
+  },
+  {
+    id: 15,
+    title: "POC Voice AI",
+    description: "Et strategisk pilotprosjekt for å integrere stemmebasert kunstig intelligens i kundesenteret hos Carglass Hellas. Målet er å sikre 100 % svarrate, selv utenfor normal åpningstid og under trafikktopper. Som prosjektleder og utvikler av den tekniske løsningen, bygger jeg en agent som strukturerer informasjonsinnhenting slik at rådgiverne kan fokusere på verdiøkende kundebehandling i stedet for manuelle registreringer.",
+    image: "/images/poc_voice_minimal.jpg",
+    tags: ["AI", "Voice", "POC", "Innovasjon"],
+    role: "Utvikler / Prosjektleder",
+    year: "2026",
+    client: "Carglass Hellas"
+  },
+  {
+    id: 14,
+    title: "Rapid Repair",
+    description: "En nyskapende tilnærming til bilglassreparasjoner, utviklet som en 'Proof of Concept' for Belron globalt i samarbeid med Carglass Slovenia. Konseptet introduserer samme-dag-reparasjon via en fleksibel, scooter-basert utrykningsmodell – inspirert av moderne on-demand tjenester. Jeg leder prosjektgjennomføringen og sikrer at både tekniske verktøy og operasjonelle rutiner fungerer sømløst sammen i felten.",
+    image: "/images/rapid_repair_minimal.jpg",
+    tags: ["POC", "Forretningsutvikling", "Innovasjon"],
+    role: "Prosjektleder",
+    year: "2026",
+    client: "Carglass Slovenia"
+  },
+  {
+    id: 13,
+    title: "VM Predictions Game",
+    description: "Et internt veldedighetsprosjekt rettet mot Belrons globale tech-miljø. Gjennom en engasjerende prediksjonsplattform samler vi inn midler for å finansiere teknologiutdanning for ungdom i Sør-Afrika. Jeg leder prosjektet fra idé til lansering, med ansvar for plattformutvikling, engasjement og drift.",
+    image: "/images/vm_predictions_minimal.jpg",
+    tags: ["App", "Fundraising", "Gamification"],
+    role: "Initiativtaker og utvikler",
+    year: "2026",
+    client: "Belron Technical Team"
   }
-] 
+];

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { Inter } from 'next/font/google'
-import FlowiseChat from './components/FlowiseChat'
+// import FlowiseChat from '@/components/chat/FlowiseChat'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,7 +41,7 @@ export default function RootLayout({
         className={`${inter.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <FlowiseChat />
+        {/* <FlowiseChat /> */}
       </body>
     </html>
   );

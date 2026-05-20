@@ -4,7 +4,7 @@ import { SiteLayout } from "@/components/layout/site-layout"
 import { ContrastButton, PrimaryButton } from "@/components/ui/button-variants"
 import { Mail, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
-import { NetworkAnimation } from "@/components/ui/network-animation"
+import { NetworkAnimation } from "@/components/shared/network-animation"
 
 export default function ConsultingPage() {
   return (

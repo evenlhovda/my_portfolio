@@ -41,17 +41,6 @@ const coreAreas = [
   },
 ]
 
-const techLogos = [
-  { name: "Flowise",    src: "/images/tech/flowise.png",    href: "https://flowiseai.com" },
-  { name: "Cursor",     src: "/images/tech/cursor.jpeg",    href: "https://cursor.sh" },
-  { name: "V0",         src: "/images/tech/v0.jpeg",        href: "https://v0.dev" },
-  { name: "PostgreSQL", src: "/images/tech/postgresql.png", href: "https://postgresql.org" },
-  { name: "Big Query",  src: "/images/tech/bigquery.png",   href: "https://cloud.google.com/bigquery" },
-  { name: "OpenAI",     src: "/images/tech/openai.jpeg",    href: "https://openai.com" },
-  { name: "Anthropic",  src: "/images/tech/anthropic.jpeg", href: "https://anthropic.com" },
-  { name: "Bubble.io",  src: "/images/tech/bubble.jpeg",    href: "https://bubble.io" },
-]
-
 export default function HomePage() {
   return (
     <SiteLayout>
@@ -120,54 +109,31 @@ export default function HomePage() {
         </section>
 
         {/* Om meg */}
-        <section id="about" className="mt-20 scroll-mt-24">
+        <section id="about" className="mt-20 scroll-mt-24 pb-24">
           <Divider>Om meg</Divider>
-          <div className="mt-10 max-w-[680px]">
+          <div className="mx-auto mt-10 max-w-[680px]">
             <p className="mb-5 text-[17px] leading-[1.7] text-fg-1">
-              Jeg jobber med å skape teknologiske løsninger på forretningsproblemer.
-              Jeg elsker problemer og mener at det å virkelig forstå problemet man
-              ønsker løst, er halvparten av løsningen.
+              Jeg bygger broen mellom komplekse konsepter og operasjonell
+              virkelighet. Som leder for innovasjon spesialiserer jeg meg på
+              å omsette nye teknologier — fra AI-løsninger til smidige verktøy —
+              til praktiske systemer som faktisk skaper verdi.
             </p>
             <p className="mb-5 text-[17px] leading-[1.7] text-fg-1">
-              Jeg har den siste tiden primært fokusert på hvordan kunstig
-              intelligens skaper nye muligheter for verdiskaping — spesielt når den
-              blir integrert i automatiserte arbeidsflyter. Prosjekter jeg har
-              jobbet på inkluderer ulike chatbot-løsninger, automatisering av
-              datainnsamling fra ustrukturerte kilder, stemmestyrte agenter,
-              funksjonskall (MCP / API), RAG, TTS og ASR.
+              Jeg trives best i skjæringspunktet mellom teknologi, struktur og
+              mennesker, enten det handler om å lede globale &lsquo;proof of
+              concepts&rsquo; eller optimalisere eksisterende prosesser. Mitt
+              fokus er alltid på hva vi kan bygge for å gjøre driften mer
+              effektiv, skalerbar og brukervennlig.
             </p>
-            <p className="mb-5 text-[17px] leading-[1.7] text-fg-1">
+            <p className="mb-0 text-[17px] leading-[1.7] text-fg-1">
               Har du et problem som du tror kunstig intelligens kan løse?{" "}
               <a
                 href="mailto:evenlhovda+web@gmail.com"
                 className="border-b border-sage-300 text-sage-700 transition-colors hover:border-sage-500 hover:text-sage-800"
               >
-                Jeg hjelper gjerne til med å se på mulighetene.
+                Ta kontakt — jeg hjelper gjerne til med å se på mulighetene.
               </a>
             </p>
-          </div>
-        </section>
-
-        {/* Tech logos */}
-        <section className="my-24">
-          <div className="flex flex-wrap items-center justify-center gap-12 opacity-80">
-            {techLogos.map((t) => (
-              <a
-                key={t.name}
-                href={t.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="grayscale transition-all hover:grayscale-0"
-              >
-                <Image
-                  src={t.src}
-                  alt={t.name}
-                  width={200}
-                  height={60}
-                  className="h-6 w-auto"
-                />
-              </a>
-            ))}
           </div>
         </section>
       </div>

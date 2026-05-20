@@ -1,11 +1,12 @@
 'use client'
 
 import { SiteLayout } from "@/components/layout/site-layout"
+import Link from "next/link"
 import { Card } from "@/components/ui/card"
 import { ContrastButton } from "@/components/ui/button-variants"
 import { Upload, FileText, Loader2, Building2, CreditCard, Receipt } from 'lucide-react'
 import { useState } from 'react'
-import { ConfirmationModal } from "@/components/ui/confirmation-modal"
+import { ConfirmationModal } from "@/components/shared/confirmation-modal"
 
 interface InvoiceData {
   KID: number;
@@ -89,7 +90,7 @@ export default function PdfAnalysisPage() {
       formData.append('files', file)
 
       const attachmentResponse = await fetch(
-        'https://flowise-p9jk.onrender.com/api/v1/attachments/da6f6f1d-c43c-47d5-b54c-807b02c814c7/default-session',
+        '/api/flowise/api/v1/attachments/pdf/default-session',
         {
           method: 'POST',
           body: formData
@@ -117,7 +118,7 @@ export default function PdfAnalysisPage() {
       console.log('Sending prediction request...')
 
       const predictionResponse = await fetch(
-        'https://flowise-p9jk.onrender.com/api/v1/prediction/da6f6f1d-c43c-47d5-b54c-807b02c814c7',
+        '/api/flowise/api/v1/prediction/pdf',
         {
           method: 'POST',
           headers: {
@@ -341,11 +342,10 @@ export default function PdfAnalysisPage() {
               </div>
 
               <div className="pt-4">
-                <ContrastButton 
-                  onClick={() => window.location.href = 'mailto:even@evenlhovda.com'}
-                  className="w-full sm:w-auto"
-                >
-                  Ta kontakt for demo
+                <ContrastButton asChild className="w-full sm:w-auto">
+                  <Link href="/contact">
+                    Ta kontakt for demo
+                  </Link>
                 </ContrastButton>
               </div>
             </div>
