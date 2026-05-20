@@ -2,8 +2,8 @@ import React from 'react'
 
 export const ProjectDescriptions = {
   automatisering: (
-    <div className="prose prose-invert">
-      <div className="mb-2 text-slate-300">
+    <div className="prose">
+      <div className="mb-2 text-fg-2">
         Jeg ledet et strategisk prosjekt med mål om å gjøre data mer tilgjengelig for beslutningsgrunnlag og automatisering. Ved å sikre
          at ulike systemer deler data effektivt kan det tas bedre og mer informerte beslutninger 
         i vårt kommersielle arbeid. Dette innebærer å tilgjengeliggjøre relevant informasjon for prosesser 
@@ -55,7 +55,7 @@ export const ProjectDescriptions = {
         I dag har OwnersRoom flere tusen registrerte brukere, mer enn 200 kunder og har digitalisert kapitalutvidelser på ca 2 mrd NOK! Som forretningsutvikler var jeg med å bygge selskapet fra start og har bidratt til prototype-utvikling, kommersielle eksperimenter, brukerintervjuer, strategi-utvikling, rekruttering av pilotkunder, sikre finansiering ++.
       </div>
       <div>
-        For mer informasjon om OwnersRoom, se <a href="https://ownersroom.com" className="text-blue-400 hover:text-blue-300">https://ownersroom.com</a>.
+        For mer informasjon om OwnersRoom, se <a href="https://ownersroom.com" className="border-b border-sage-300 text-sage-700 hover:border-sage-500 hover:text-sage-800">https://ownersroom.com</a>.
       </div>
     </div>
   ),

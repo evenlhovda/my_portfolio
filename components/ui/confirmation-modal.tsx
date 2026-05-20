@@ -19,7 +19,7 @@ export function ConfirmationModal({ isOpen, onClose }: ConfirmationModalProps) {
         <DialogHeader>
           <DialogTitle className="text-center">Takk for interessen!</DialogTitle>
         </DialogHeader>
-        <div className="text-center space-y-4 text-slate-300">
+        <div className="text-center space-y-4 text-fg-2">
           <p>
             Takk for at du tester denne flyten! Denne demoen stopper dessverre her. Ingen data blir lagret eller sendt til noe sted, men det kunne vært interessant å se hvordan dette kunne vært implementert.
           </p>

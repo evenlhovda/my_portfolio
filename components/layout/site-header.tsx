@@ -7,7 +7,7 @@ import { EHMonogram } from "@/components/ui/eh-monogram"
 const links = [
   { href: "/",         label: "Hjem" },
   { href: "/projects", label: "Prosjekter" },
-  { href: "/about",    label: "Om meg" },
+  { href: "/#about",   label: "Om meg" },
   { href: "/contact",  label: "Kontakt" },
 ]
 

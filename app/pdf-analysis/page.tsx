@@ -146,19 +146,19 @@ export default function PdfAnalysisPage() {
   return (
     <SiteLayout>
       <div className="container px-4 py-16 mx-auto space-y-12">
-        <h1 className="text-4xl font-bold tracking-tighter text-slate-100 sm:text-5xl">
+        <h1 className="text-4xl font-bold tracking-tighter text-fg-1 sm:text-5xl">
           Randi Fakturaansvarlig (demo)
         </h1>
 
         <div className="grid gap-8 md:grid-cols-2">
           {/* Upload Section */}
-          <Card className="p-6 bg-secondary border-secondary">
-            <h2 className="text-2xl font-semibold text-slate-100 mb-6">
+          <Card className="p-6 border-line-2">
+            <h2 className="text-2xl font-semibold text-fg-1 mb-6">
               Last opp faktura
             </h2>
             <div className="space-y-4">
               <div 
-                className="border-2 border-dashed border-accent rounded-lg p-8 text-center transition-colors duration-200 hover:bg-accent/5"
+                className="border-2 border-dashed border-line-2 rounded-lg p-8 text-center transition-colors duration-200 hover:bg-sage-50"
                 onDragOver={handleDragOver}
                 onDrop={handleDrop}
               >
@@ -173,25 +173,25 @@ export default function PdfAnalysisPage() {
                   htmlFor="pdf-upload"
                   className="cursor-pointer flex flex-col items-center gap-2"
                 >
-                  <Upload className="h-8 w-8 text-contrast" />
-                  <span className="text-slate-300">
+                  <Upload className="h-8 w-8 text-sage-700" />
+                  <span className="text-fg-2">
                     Test Randi ved å laste opp eller dra og slipp en faktura.
                   </span>
-                  <span className="text-sm text-slate-400">
+                  <span className="text-sm text-fg-3">
                     Kun PDF-filer
                   </span>
                 </label>
               </div>
 
               {file && (
-                <div className="flex items-center gap-2 text-slate-300">
+                <div className="flex items-center gap-2 text-fg-2">
                   <FileText className="h-4 w-4" />
                   <span>{file.name}</span>
                 </div>
               )}
 
               {error && (
-                <p className="text-red-400 text-sm">{error}</p>
+                <p className="text-danger text-sm">{error}</p>
               )}
 
               <ContrastButton
@@ -212,46 +212,46 @@ export default function PdfAnalysisPage() {
           </Card>
 
           {/* Results Section */}
-          <Card className="p-6 bg-secondary border-secondary">
-            <h2 className="text-2xl font-semibold text-slate-100 mb-6">
+          <Card className="p-6 border-line-2">
+            <h2 className="text-2xl font-semibold text-fg-1 mb-6">
               Fakturadetaljer
             </h2>
             {result ? (
               <div className="space-y-6">
                 {/* Sender Information */}
-                <div className="bg-accent/5 rounded-lg p-4">
-                  <div className="flex items-center gap-2 text-contrast mb-3">
+                <div className="bg-sage-50 rounded-lg p-4">
+                  <div className="flex items-center gap-2 text-sage-700 mb-3">
                     <Building2 className="h-4 w-4" />
                     <h3 className="text-sm font-medium">Avsender</h3>
                   </div>
                   <div className="grid gap-3">
                     <div className="flex justify-between">
-                      <span className="text-slate-300">Selskap</span>
-                      <span className="font-medium text-slate-200">{result.json.Avsender}</span>
+                      <span className="text-fg-2">Selskap</span>
+                      <span className="font-medium text-fg-1">{result.json.Avsender}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-300">MVA-nummer</span>
-                      <span className="font-medium text-slate-200">{result.json.Avsender_Mva_nr}</span>
+                      <span className="text-fg-2">MVA-nummer</span>
+                      <span className="font-medium text-fg-1">{result.json.Avsender_Mva_nr}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Payment Details (previously Financial Details) */}
-                <div className="bg-accent/5 rounded-lg p-4">
-                  <div className="flex items-center gap-2 text-contrast mb-3">
+                <div className="bg-sage-50 rounded-lg p-4">
+                  <div className="flex items-center gap-2 text-sage-700 mb-3">
                     <Receipt className="h-4 w-4" />
                     <h3 className="text-sm font-medium">Betaling</h3>
                   </div>
                   <div className="grid gap-3">
                     <div className="flex justify-between">
-                      <span className="text-slate-300">Beløp</span>
-                      <span className="font-medium text-slate-200">
+                      <span className="text-fg-2">Beløp</span>
+                      <span className="font-medium text-fg-1">
                         {result.json.Sum.toLocaleString('nb-NO')} {result.json.Valuta}
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-300">MVA</span>
-                      <span className="font-medium text-slate-200">
+                      <span className="text-fg-2">MVA</span>
+                      <span className="font-medium text-fg-1">
                         {result.json.MVA.toLocaleString('nb-NO')} {result.json.Valuta}
                       </span>
                     </div>
@@ -259,27 +259,27 @@ export default function PdfAnalysisPage() {
                 </div>
 
                 {/* Invoice Details (previously Payment Details) */}
-                <div className="bg-accent/5 rounded-lg p-4">
-                  <div className="flex items-center gap-2 text-contrast mb-3">
+                <div className="bg-sage-50 rounded-lg p-4">
+                  <div className="flex items-center gap-2 text-sage-700 mb-3">
                     <CreditCard className="h-4 w-4" />
                     <h3 className="text-sm font-medium">Fakturadetaljer</h3>
                   </div>
                   <div className="grid gap-3">
                     <div className="flex justify-between">
-                      <span className="text-slate-300">Kontonummer</span>
-                      <span className="font-medium text-slate-200">{result.json.Konto}</span>
+                      <span className="text-fg-2">Kontonummer</span>
+                      <span className="font-medium text-fg-1">{result.json.Konto}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-300">KID-nummer</span>
-                      <span className="font-medium text-slate-200">{result.json.KID}</span>
+                      <span className="text-fg-2">KID-nummer</span>
+                      <span className="font-medium text-fg-1">{result.json.KID}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-300">Fakturanummer</span>
-                      <span className="font-medium text-slate-200">{result.json.Fakturanummer}</span>
+                      <span className="text-fg-2">Fakturanummer</span>
+                      <span className="font-medium text-fg-1">{result.json.Fakturanummer}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-300">Forfallsdato</span>
-                      <span className="font-medium text-slate-200">
+                      <span className="text-fg-2">Forfallsdato</span>
+                      <span className="font-medium text-fg-1">
                         {new Date(result.json.Forfallsdato).toLocaleDateString('nb-NO', {
                           year: 'numeric',
                           month: 'long',
@@ -299,7 +299,7 @@ export default function PdfAnalysisPage() {
                 </ContrastButton>
               </div>
             ) : (
-              <div className="text-slate-300 text-center py-8">
+              <div className="text-fg-2 text-center py-8">
                 <FileText className="h-12 w-12 mx-auto mb-4 opacity-50" />
                 <p>Last opp en PDF og klikk analyser for å se fakturadetaljer her.</p>
               </div>
@@ -314,27 +314,27 @@ export default function PdfAnalysisPage() {
 
         {/* Info Section */}
         <div className="w-full">
-          <Card className="p-6 bg-secondary/50 border-secondary">
-            <h2 className="text-2xl font-semibold text-slate-100 mb-6">
+          <Card className="p-6 bg-tint-sage border-line-2">
+            <h2 className="text-2xl font-semibold text-fg-1 mb-6">
               Om Randi
             </h2>
-            <div className="prose prose-invert prose-sm max-w-none opacity-80 space-y-8">
+            <div className="prose prose-sm max-w-none opacity-80 space-y-8">
               <div>
-                <h3 className="text-lg font-medium text-slate-200 mb-2">Oppgave</h3>
+                <h3 className="text-lg font-medium text-fg-1 mb-2">Oppgave</h3>
                 <p>
                   Randi Fakturaansvarlig har i oppgave å ta i mot, lese ut bestemt info fra fakturaer og returnere denne informasjonen i format som er egnet for dele med andre tjenester, som feks et betalingssystem, en database eller lignende.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-medium text-slate-200 mb-2">Bruksområder</h3>
+                <h3 className="text-lg font-medium text-fg-1 mb-2">Bruksområder</h3>
                 <p>
                   Randi kan brukes som ett av flere ledd i en større organisasjon, feks kan Mina Mail-assistent ha i oppgave å lese mailer sendt til selskapet og sortere alle mailer som gjelder salg til Solveig Salgssjef, fakturaer til Randi og produkt-input til Pål Produktsjef.
                 </p>
               </div>
 
               <div>
-                <h3 className="text-lg font-medium text-slate-200 mb-2">Teknologi</h3>
+                <h3 className="text-lg font-medium text-fg-1 mb-2">Teknologi</h3>
                 <p>
                   Randi er bygget på LangChain-rammeverket med Flowise, og bruker for tiden språkmodellen &apos;gpt-4o-mini&apos; som sin hjerne. Dette er en billig modell, som har visse begrensninger. Ønsker du å teste Randi hva Randi kan få til når hun har den siste og beste språkmodellen fra Open AI, ta kontakt.
                 </p>

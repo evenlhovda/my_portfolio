@@ -119,7 +119,7 @@ export default function FlowiseChat() {
         apiHost: "https://flowise-p9jk.onrender.com",
         theme: {
           button: {
-            backgroundColor: '#374151',
+            backgroundColor: '#8FA77C',
             right: 20,
             bottom: 20,
             size: 58,
@@ -131,12 +131,12 @@ export default function FlowiseChat() {
               openDelay: 2,
               autoOpenOnMobile: false
             },
-            className: 'rounded-full shadow-lg transition-transform transform hover:scale-110 hover:bg-primary-hover'
+            className: 'rounded-full shadow-lg transition-transform transform hover:scale-110 hover:bg-brand-hover'
           },
           tooltip: {
             showTooltip: true,
             tooltipMessage: 'Heisann! 👋',
-            tooltipBackgroundColor: '#4F46E5',
+            tooltipBackgroundColor: '#8FA77C',
             tooltipTextColor: 'white',
             tooltipFontSize: 16
           },
@@ -147,59 +147,59 @@ export default function FlowiseChat() {
             titleAvatarSrc: '/icons/bot-icon.svg',
             welcomeMessage: 'Hei! Jeg er Rune, Evens AI-assistent som kan hjelpe deg med spørsmål om Even og hans prosjekter.',
             errorMessage: 'Beklager, noe gikk galt. Vennligst prøv igjen eller send en e-post direkte.',
-            backgroundColor: '#374151',
+            backgroundColor: '#FFFFFF',
             height: 600,
             width: 400,
             fontSize: 16,
-            fontFamily: 'var(--font-geist-sans)',
+            fontFamily: 'var(--font-inter)',
             starterPrompts: [
               "Hva slags prosjekter jobber du med?",
               "Hvordan kan jeg ta kontakt?"
             ],
             botMessage: {
-              backgroundColor: '#4338CA',
-              textColor: '#E2E8F0',
+              backgroundColor: '#E6EDDF',
+              textColor: '#232A2F',
               showAvatar: true,
               avatarSrc: '/icons/bot-icon.svg',
-              fontFamily: 'var(--font-geist-sans)'
+              fontFamily: 'var(--font-inter)'
             },
             userMessage: {
-              backgroundColor: '#4F46E5',
+              backgroundColor: '#8FA77C',
               textColor: '#ffffff',
               showAvatar: true,
               avatarSrc: '/icons/user-icon.svg',
-              fontFamily: 'var(--font-geist-sans)'
+              fontFamily: 'var(--font-inter)'
             },
             textInput: {
-              placeholder: 'Skriv din melding her...',
-              backgroundColor: '#1E293B',
-              textColor: '#E2E8F0',
-              sendButtonColor: '#F97316',
-              fontFamily: 'var(--font-geist-sans)'
+              placeholder: 'Skriv din melding her…',
+              backgroundColor: '#FAFBF8',
+              textColor: '#232A2F',
+              sendButtonColor: '#8FA77C',
+              fontFamily: 'var(--font-inter)'
             },
             feedback: {
-              color: '#1F2937'
+              color: '#5F6B73'
             },
             dateTimeToggle: {
               date: true,
               time: true
             },
             footer: {
-              textColor: '#1F2937',
+              textColor: '#5F6B73',
               text: 'Made by',
-              company: 'Even L Hovda',
+              company: 'Even L. Hovda',
               companyLink: 'https://www.evenlhovda.com'
             }
           },
           disclaimer: {
             title: 'Disclaimer',
             message: "Ved å bruke denne chatboten godtar du at svarene er AI-genererte og kan inneholde feil.",
-            textColor: '#E2E8F0',
-            buttonColor: '#F97316',
-            buttonText: 'Start Chat',
+            textColor: '#232A2F',
+            buttonColor: '#8FA77C',
+            buttonText: 'Start chat',
             buttonTextColor: 'white',
-            backgroundColor: '#1E293B',
-            fontFamily: 'var(--font-geist-sans)'
+            backgroundColor: '#FFFFFF',
+            fontFamily: 'var(--font-inter)'
           }
         }
       });

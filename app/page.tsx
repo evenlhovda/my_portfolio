@@ -120,7 +120,7 @@ export default function HomePage() {
         </section>
 
         {/* Om meg */}
-        <section className="mt-20">
+        <section id="about" className="mt-20 scroll-mt-24">
           <Divider>Om meg</Divider>
           <div className="mt-10 max-w-[680px]">
             <p className="mb-5 text-[17px] leading-[1.7] text-fg-1">

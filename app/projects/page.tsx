@@ -27,7 +27,7 @@ function ProjectTile({ project }: { project: Project }) {
             <Image
               src={project.image}
               alt={project.title}
-              className="object-cover"
+              className="object-contain"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />

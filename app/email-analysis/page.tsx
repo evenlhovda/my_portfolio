@@ -113,21 +113,21 @@ export default function EmailAnalysisPage() {
         <div className="max-w-7xl mx-auto space-y-8">
           <div className="space-y-4 md:grid md:grid-cols-[2fr,1fr] md:gap-8 md:items-center">
             <div className="space-y-4">
-              <h1 className="text-3xl font-bold tracking-tighter text-slate-100">
+              <h1 className="text-3xl font-bold tracking-tighter text-fg-1">
                 Mina Mailassistent
               </h1>
-              <p className="text-slate-300">
+              <p className="text-fg-2">
                 Mina leser innkommene mailer fra kunder, plukker ut supporthenvendelser og produkt-feedback og registrerer dette i selskapets dedikerte systemer. 
                 Prøv å sende henne mail og test selv! 👇
               </p>
-              <div className="text-slate-300">
+              <div className="text-fg-2">
                 Mina har foreløpig tilgang til følgende (fiktive) systemer:
               </div>
-              <ul className="list-disc pl-5 text-slate-300">
+              <ul className="list-disc pl-5 text-fg-2">
                 <li>Product Feedback System</li>
                 <li>Support System</li>
               </ul>
-              <p className="text-slate-300">
+              <p className="text-fg-2">
                 Bygget med Flowise.
               </p>
             </div>
@@ -136,14 +136,14 @@ export default function EmailAnalysisPage() {
                 src="/images/mina-mailassistent.jpg"
                 alt="Mina Mailassistent"
                 fill
-                className="object-cover border-4 border-accent/10"
+                className="object-cover border-4 border-line-2"
               />
             </div>
           </div>
 
-          <Card className="p-6 space-y-4 bg-secondary border-secondary">
+          <Card className="p-6 space-y-4 border-line-2">
             <div className="space-y-2">
-              <label htmlFor="title" className="block text-sm font-medium text-slate-300">
+              <label htmlFor="title" className="block text-sm font-medium text-fg-2">
                 Tittel
               </label>
               <input
@@ -151,13 +151,13 @@ export default function EmailAnalysisPage() {
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full p-2 rounded-md bg-secondary border border-accent/20 text-slate-100 focus:outline-none focus:ring-2 focus:ring-accent"
+                className="w-full rounded-md border border-line-2 bg-page p-2 text-fg-1 focus:border-sage-500 focus:shadow-focus focus:outline-none"
                 placeholder="Fantastisk lasersverd, men trenger litt veiledning"
               />
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="body" className="block text-sm font-medium text-slate-300">
+              <label htmlFor="body" className="block text-sm font-medium text-fg-2">
                 Tekst
               </label>
               <textarea
@@ -165,7 +165,7 @@ export default function EmailAnalysisPage() {
                 value={body}
                 onChange={(e) => setBody(e.target.value)}
                 rows={6}
-                className="w-full p-2 rounded-md bg-secondary border border-accent/20 text-slate-100 focus:outline-none focus:ring-2 focus:ring-accent"
+                className="w-full rounded-md border border-line-2 bg-page p-2 text-fg-1 focus:border-sage-500 focus:shadow-focus focus:outline-none"
                 placeholder="Kjære support-team,
 
 Kraften i deres lasersverd er virkelig imponerende, det er det beste verktøyet jeg noensinne har brukt! Spesielt liker jeg balansen i håndtaket og den strålende grønne lysstrålen – det føles som om sverdet er en forlengelse av min egen vilje. Imponerende håndverk, det er!
@@ -199,46 +199,46 @@ Yoda"
             <div ref={resultsRef} className="grid md:grid-cols-2 gap-8">
               {/* Product Feedback System */}
               {result.main_category.product_feedback.relevance_score >= 0.0 && (
-                <Card className="p-6 space-y-6 bg-secondary/50 border-accent/10">
+                <Card className="p-6 space-y-6 bg-tint-sage border-line-2">
                   <div className="space-y-6">
-                    <div className="flex items-center justify-between border-b border-accent/10 pb-4">
-                      <h2 className="text-xl font-semibold text-slate-100">
+                    <div className="flex items-center justify-between border-b border-line-2 pb-4">
+                      <h2 className="text-xl font-semibold text-fg-1">
                         Produkt Feedback System
                       </h2>
                     </div>
 
                     <div className="space-y-4">
                       {/* New feedback from email */}
-                      <div className="border-b border-accent/10 pb-4 bg-orange-500/5 -mx-6 -mt-6 p-6 rounded-t">
+                      <div className="border-b border-line-2 pb-4 bg-sage-50 -mx-6 -mt-6 p-6 rounded-t">
                         <div className="flex items-center justify-between mb-4">
-                          <span className="text-sm text-slate-400">
+                          <span className="text-sm text-fg-3">
                             {new Date().toLocaleDateString('no-NO')}
                           </span>
-                          <Badge variant="secondary" className="bg-accent/20">
+                          <Badge variant="secondary" className="bg-sage-100">
                             Relevans: {Math.round(result.main_category.product_feedback.relevance_score * 100)}%
                           </Badge>
                         </div>
-                        <h3 className="font-medium text-slate-200 mb-2">
+                        <h3 className="font-medium text-fg-1 mb-2">
                           {result.main_category.product_feedback.generated_header}
                         </h3>
-                        <p className="text-sm text-slate-300 mb-3">
+                        <p className="text-sm text-fg-2 mb-3">
                           &ldquo;{result.main_category.product_feedback.selected_content_snippet}&rdquo;
                         </p>
                         <div className="flex flex-wrap gap-2 mb-3">
                           {result.main_category.product_feedback.sub_categories.map((tag: string) => (
-                            <Badge key={tag} variant="outline" className="text-xs capitalize bg-orange-500/10 text-orange-200 border-orange-500/20">
+                            <Badge key={tag} variant="outline" className="text-xs capitalize bg-sage-100 text-sage-800 border-sage-200">
                               {tag}
                             </Badge>
                           ))}
                         </div>
                         <div className="flex items-center justify-between mt-4">
-                          <div className="flex items-center gap-2 text-sm text-slate-400">
+                          <div className="flex items-center gap-2 text-sm text-fg-3">
                             <User className="h-4 w-4" />
                             <span>Jens Jenssen, Daglig leder</span>
                           </div>
                           <button 
                             onClick={() => handleButtonClick("Link til idé-systemet")}
-                            className="text-sm px-3 py-1.5 rounded bg-orange-500/10 text-orange-200 hover:bg-orange-500/20 transition-colors"
+                            className="text-sm px-3 py-1.5 rounded bg-sage-100 text-sage-800 hover:bg-sage-200 transition-colors"
                           >
                             Link til Idé
                           </button>
@@ -247,22 +247,22 @@ Yoda"
 
                       {/* Previous feedback */}
                       {previousFeedback.map(feedback => (
-                        <div key={feedback.id} className="border-b border-accent/10 pb-4">
+                        <div key={feedback.id} className="border-b border-line-2 pb-4">
                           <div className="flex items-center gap-3 mb-4">
-                            <span className="text-sm text-slate-400">
+                            <span className="text-sm text-fg-3">
                               {new Date(feedback.date).toLocaleDateString('no-NO')}
                             </span>
                           </div>
-                          <h3 className="font-medium text-slate-200 mb-2">{feedback.title}</h3>
-                          <p className="text-sm text-slate-300 mb-3">&ldquo;{feedback.snippet}&rdquo;</p>
+                          <h3 className="font-medium text-fg-1 mb-2">{feedback.title}</h3>
+                          <p className="text-sm text-fg-2 mb-3">&ldquo;{feedback.snippet}&rdquo;</p>
                           <div className="flex flex-wrap gap-2 mb-3">
                             {feedback.tags.map(tag => (
-                              <Badge key={tag} variant="outline" className="text-xs capitalize bg-orange-500/10 text-orange-200 border-orange-500/20">
+                              <Badge key={tag} variant="outline" className="text-xs capitalize bg-sage-100 text-sage-800 border-sage-200">
                                 {tag}
                               </Badge>
                             ))}
                           </div>
-                          <div className="flex items-center gap-2 text-sm text-slate-400">
+                          <div className="flex items-center gap-2 text-sm text-fg-3">
                             <User className="h-4 w-4" />
                             <span>{feedback.sender}, {feedback.role}</span>
                           </div>
@@ -278,26 +278,26 @@ Yoda"
                 <Card className="p-6 space-y-6 bg-slate-900/50 border-red-500/10">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between border-b border-red-500/10 pb-4">
-                      <h2 className="text-xl font-semibold text-slate-100">
+                      <h2 className="text-xl font-semibold text-fg-1">
                         Support System
                       </h2>
                     </div>
 
                     <div className="space-y-4">
-                      <div className="flex items-center justify-between gap-3 text-sm text-slate-300">
+                      <div className="flex items-center justify-between gap-3 text-sm text-fg-2">
                         <div className="flex items-center gap-3">
                           <User className="h-4 w-4" />
                           <div>
                             <p className="font-medium">Jens Jenssen</p>
-                            <p className="text-slate-400">Daglig leder, Jenssen & Co AS</p>
-                            <p className="text-slate-400">jens@example.com</p>
+                            <p className="text-fg-3">Daglig leder, Jenssen & Co AS</p>
+                            <p className="text-fg-3">jens@example.com</p>
                           </div>
                         </div>
                         <Badge className="bg-green-500/20 text-green-200 border-0">Åpen</Badge>
                       </div>
 
                       <div className="p-4 rounded bg-slate-950 border border-red-500/10 space-y-3">
-                        <div className="text-sm text-slate-300 bg-slate-900/50 p-3 rounded border border-red-500/5">
+                        <div className="text-sm text-fg-2 bg-slate-900/50 p-3 rounded border border-red-500/5">
                           &ldquo;{result.main_category.support_inquiries.selected_content_snippet}&rdquo;
                         </div>
                         <div className="flex flex-wrap gap-2">
@@ -310,19 +310,19 @@ Yoda"
                       </div>
 
                       <Collapsible className="w-full">
-                        <CollapsibleTrigger className="flex items-center gap-2 text-sm text-slate-400 hover:text-slate-300">
+                        <CollapsibleTrigger className="flex items-center gap-2 text-sm text-fg-3 hover:text-fg-2">
                           <ChevronDown className="h-4 w-4" />
                           Vis original epost
                         </CollapsibleTrigger>
                         <CollapsibleContent className="mt-2">
                           <div className="p-3 rounded bg-slate-950 border border-red-500/10 space-y-2">
-                            <div className="text-sm text-slate-400">
+                            <div className="text-sm text-fg-3">
                               <p>Fra: Jens Jenssen</p>
                               <p>Daglig leder, Jenssen & Co AS</p>
                               <p>jens@example.com</p>
                             </div>
-                            <p className="font-medium text-slate-300">{result.metadata.original_title}</p>
-                            <p className="text-sm text-slate-400 whitespace-pre-line">{result.metadata.original_body}</p>
+                            <p className="font-medium text-fg-2">{result.metadata.original_title}</p>
+                            <p className="text-sm text-fg-3 whitespace-pre-line">{result.metadata.original_body}</p>
                           </div>
                         </CollapsibleContent>
                       </Collapsible>
@@ -336,7 +336,7 @@ Yoda"
                         </button>
                         <button 
                           onClick={() => handleButtonClick("Tildel ansvar-funksjonen")}
-                          className="text-sm px-4 py-2 rounded border border-slate-700 text-slate-300 hover:bg-slate-800 transition-colors"
+                          className="text-sm px-4 py-2 rounded border border-slate-700 text-fg-2 hover:bg-slate-800 transition-colors"
                         >
                           Tildel ansvar
                         </button>
