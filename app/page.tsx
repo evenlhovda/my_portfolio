@@ -3,6 +3,7 @@
 import { SiteLayout } from "@/components/layout/site-layout"
 import { Divider } from "@/components/ui/divider"
 import { PrimaryButton } from "@/components/ui/button-variants"
+import { MopeToggle } from "@/components/ui/mope-toggle"
 import { ArrowRight, Mail } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -110,6 +111,8 @@ export default function HomePage() {
 
         {/* Om meg fjernet etter ønske */}
       </div>
+
+      <MopeToggle />
     </SiteLayout>
   )
 }
