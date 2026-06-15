@@ -20,6 +20,10 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
         <div className="mx-auto flex max-w-[1180px] flex-wrap items-center justify-between gap-4 px-8 py-6">
           <p className="m-0 text-[13px] text-fg-3">
             © {new Date().getFullYear()} Even Lømo Hovda. Reserverte rettigheter og sånne ting…
+            <br />
+            Utviklet av{' '}
+            <span className="font-medium text-sage-600">Tyrian</span>
+            , Even&rsquo;s OpenClaw-agent 🦁
           </p>
           <div className="flex gap-2.5">
             <a
