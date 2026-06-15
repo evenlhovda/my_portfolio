@@ -108,34 +108,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Om meg */}
-        <section id="about" className="mt-20 scroll-mt-24 pb-24">
-          <Divider>Om meg</Divider>
-          <div className="mx-auto mt-10 max-w-[680px]">
-            <p className="mb-5 text-[17px] leading-[1.7] text-fg-1">
-              Jeg bygger broen mellom komplekse konsepter og operasjonell
-              virkelighet. Som leder for innovasjon spesialiserer jeg meg på
-              å omsette nye teknologier — fra AI-løsninger til smidige verktøy —
-              til praktiske systemer som faktisk skaper verdi.
-            </p>
-            <p className="mb-5 text-[17px] leading-[1.7] text-fg-1">
-              Jeg trives best i skjæringspunktet mellom teknologi, struktur og
-              mennesker, enten det handler om å lede globale &lsquo;proof of
-              concepts&rsquo; eller optimalisere eksisterende prosesser. Mitt
-              fokus er alltid på hva vi kan bygge for å gjøre driften mer
-              effektiv, skalerbar og brukervennlig.
-            </p>
-            <p className="mb-0 text-[17px] leading-[1.7] text-fg-1">
-              Har du et problem som du tror kunstig intelligens kan løse?{" "}
-              <a
-                href="mailto:evenlhovda+web@gmail.com"
-                className="border-b border-sage-300 text-sage-700 transition-colors hover:border-sage-500 hover:text-sage-800"
-              >
-                Ta kontakt — jeg hjelper gjerne til med å se på mulighetene.
-              </a>
-            </p>
-          </div>
-        </section>
+        {/* Om meg fjernet etter ønske */}
       </div>
     </SiteLayout>
   )

@@ -137,12 +137,12 @@ export const projects: Project[] = [
   },
   {
     id: 13,
-    title: "VM Predictions Game",
-    description: "Et internt veldedighetsprosjekt rettet mot Belrons globale tech-miljø. Gjennom en engasjerende prediksjonsplattform samler vi inn midler for å finansiere teknologiutdanning for ungdom i Sør-Afrika. Jeg leder prosjektet fra idé til lansering, med ansvar for plattformutvikling, engasjement og drift.",
+    title: "World Cup Predictions Game",
+    description: "A social predictions game where friends compete in private leagues by predicting match outcomes and selected events during World Cups. What started as an Excel sheet has evolved into a full web app with APIs, live match data, and auto-synced scoring. Built and run for every World Cup since the idea first took shape.",
     image: "/images/vm_predictions_minimal.jpg",
-    tags: ["App", "Fundraising", "Gamification"],
+    tags: ["App", "Spill", "Webapp"],
     role: "Initiativtaker og utvikler",
     year: "2026",
-    client: "Belron Technical Team"
+    client: "Sideprosjekt"
   }
 ];
