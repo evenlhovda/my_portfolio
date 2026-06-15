@@ -10,7 +10,7 @@ import type { Project } from "@/lib/types"
 import { DemoButton } from "@/components/ui/demo-button"
 import { useState } from "react"
 
-const ids2026 = [3, 13, 14, 15]
+const ids2026 = [3, 13, 14, 15, 16]
 const ids2025 = [11, 12, 10, 9, 1, 7, 8]
 
 const projects2026 = projects
