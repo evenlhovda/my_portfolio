@@ -5,133 +5,133 @@ import { ProjectDescriptions } from '@/components/projects/project-descriptions'
 export const projects: Project[] = [
   {
     id: 1,
-    title: "Randi fakturaansvarlig AI agent",
-    description: "En AI-agent som automatisk prosesserer og analyserer fakturaer. Randi kan lese ut viktig informasjon som beløp, MVA, kontonummer og forfallsdato, og returnere dette i et format som enkelt kan deles med andre systemer. Dette er ett eksempel på hvordan AI kan effektivisere administrative oppgaver og inngå som ett ledd i en større automatisert prosess.",
+    title: "Randi — AI Invoice Agent",
+    description: "An AI agent that automatically processes and analyzes invoices. Randi extracts key information such as amounts, VAT, account numbers and due dates, returning it in a structured format ready for other systems. A practical example of how AI can streamline administrative tasks as part of a larger automated workflow.",
     image: "/images/randi-fakturatolk.png",
     tags: ["AI", "LangChain", "Flowise", "Next.js", "OCR", "Automation"],
-    role: "Utvikler",
+    role: "Developer",
     year: "2025",
     client: "Demo",
     demoUrl: "/pdf-analysis"
   },
   {
     id: 2,
-    title: "Privat investorportefølje",
-    description: "Som eier i unoterte selskaper som bruker OwnersRoom får du full kontroll på ditt eierskap og nyheter fra selskapene i porteføljen. Dette var et stort steg i å ta OwnersRoom fra å være et administrativt verktøy for selskapets ledelse, til en plattform for samhandling mellom selskaper og deres eiere.",
+    title: "Private Investor Portfolio",
+    description: "As a shareholder in unlisted companies using OwnersRoom, you get full control over your ownership and news from portfolio companies. This was a major step in transforming OwnersRoom from an administrative tool for company management into a platform for interaction between companies and their owners.",
     image: "/images/Portfolio.gif",
     tags: ["Product Management", "Scoping"],
-    role: "Produktleder",
+    role: "Product Manager",
     year: "2023-2024",
     client: "OwnersRoom AS"
   },
   {
     id: 4,
-    title: "Sosial betting-app for fotball-EM",
-    description: "En web-app der spillere kan tippe på utfallet av fotball-EM i lukkede grupper, bygget på lavkodeplattformen Bubble og lansert for bruk i til EM 2024.",
+    title: "Social Betting App — Football Euros",
+    description: "A web app where players predict football Euro Championship outcomes in private groups, built on the low-code platform Bubble and launched for the Euro 2024 tournament.",
     image: "/images/Fotball.jpg",
     tags: ["No Code", "Bubble.io", "Low Code", "Gaming", "REST API", "Backend"],
-    role: "Initiativtager og utvikler",
-    year: "Våren 2024",
-    client: "Sideprosjekt i pappaperm"
+    role: "Initiator & Developer",
+    year: "Spring 2024",
+    client: "Side project during parental leave"
   },
   {
     id: 5,
-    title: "Validering av idé: Digital investorportal",
+    title: "Idea Validation: Digital Investor Portal",
     description: ProjectDescriptions.investorportal,
     image: "/images/OwnersRoom_illustrasjon02.png",
     tags: ["Entrepreneurship", "Market Research", "Business Development", "SaaS"],
-    role: "Forretningsutvikler",
+    role: "Business Developer",
     year: "2018-2019",
     client: "OwnersRoom AS"
   },
   {
     id: 6,
-    title: "FOU-prosjekt: Investor Relationship Management og digitalt emisjonsverktøy",
+    title: "R&D Project: Investor Relationship Management & Digital Subscription Tool",
     description: ProjectDescriptions.fouProsjekt,
     image: "/images/OwnersRoom_illustrasjon01.png",
     tags: ["Project Management", "SkatteFunn", "Innovation Norway", "Grant Writing", "Innovation"],
-    role: "Prosjektleder",
+    role: "Project Manager",
     year: "2019-2020",
     client: "OwnersRoom AS"
   },
   {
     id: 7,
-    title: "AI-basert web-utvikling: Denne nettsiden",
-    description: "Denne nettsiden ble til som et resultat av ønsket om å mestre AI-basert utvikling. Den er utviklet ved bruk av AI-verktøyene V0 og Cursor, samt bug testing, bildegenerering og tekstbehandling med ChatGPT og Claude. ",
+    title: "AI-Powered Web Development: This Website",
+    description: "This website was born from a desire to master AI-driven development. Built using AI tools V0 and Cursor, with bug testing, image generation and text processing by ChatGPT and Claude.",
     image: "/images/AI_code_project.webp",
     tags: ["AI", "V0", "Cursor", "Next.JS", "Web Development"],
-    role: "Utvikler",
+    role: "Developer",
     year: "2025",
     client: "Me, Myself & I"
   },
   {
     id: 8,
-    title: "Rune AI-Assistent",
-    description: "Rune er en AI-assistent som er spesialisert på å svare på spørsmål om min erfaring. Ved å kombinere LangChain-rammeverket med en kunnskapsbase om min bakgrunn og erfaringer, kan Rune gi relevante og presise svar på henvendelser. Du kan snakke med Rune ved å klikke på chat-ikonet nederst til høyre på siden. Dette er et eksempel på hvordan AI kan brukes til å gi personlig tilpasset kundeservice og informasjon.",
+    title: "Rune — AI Assistant",
+    description: "Rune is an AI assistant specialized in answering questions about Even's experience. Combining the LangChain framework with a knowledge base about his background and expertise, Rune delivers relevant and precise responses. You can talk to Rune by clicking the chat icon in the bottom right corner. A showcase of how AI can deliver personalized customer service and information.",
     image: "/images/rune-avatar.png",
     tags: ["AI", "LangChain", "Flowise", "Next.js", "ChatBot", "Customer Service"],
-    role: "Utvikler",
+    role: "Developer",
     year: "2025",
     client: "Demo"
   },
   {
     id: 9,
-    title: "Mina Mailassistent",
-    description: "Mina leser innkommene mailer fra kunder, sorterer ut relevant info og legger det inn i selskapets interne support- og feedback-systemer. Bygget med Flowise.",
+    title: "Mina — Mail Assistant",
+    description: "Mina reads incoming customer emails, extracts relevant information and enters it into the company's internal support and feedback systems. Built with Flowise.",
     image: "/images/mina-mailassistent.jpg",
     year: "2025",
     client: "Demo",
-    role: "Utvikler",
+    role: "Developer",
     tags: ["AI", "Flowise", "LangChain", "Claude"],
     demoUrl: "/email-analysis"
   },
   {
     id: 11,
-    title: "Stemmestyrt forsikringsagent",
-    description: "En intelligent agent for skadebehandling av bilglassforsikring. Agenten kan via naturlig samtale svare på vanlige spørsmål, hente ut informasjon om kundens forsikring, verifisere viktige detaljer og booke verkstedstimer. Løsningen integrerer flere APIer og benytter OpenAI's API for sanntidsprosessering av tale. Dette pilotprosjektet demonstrerer hvordan taleteknologi kan effektivisere kundeservice i forsikringsbransjen.",
+    title: "Voice-Controlled Insurance Agent",
+    description: "An intelligent agent for auto glass insurance claims handling. Through natural conversation, the agent answers common questions, retrieves policy information, verifies details and books workshop appointments. The solution integrates multiple APIs and uses OpenAI's API for real-time speech processing. A pilot demonstrating how voice technology can streamline customer service in the insurance industry.",
     image: "/images/voice-insurance-agent.png",
     tags: ["AI", "Voice", "OpenAI", "Customer Service", "Insurance", "API Integration"],
-    role: "Utvikler",
+    role: "Developer",
     year: "2025",
     client: "Belron Solutions"
   },
   {
     id: 12,
-    title: "Integrert fakturaagent",
-    description: "En spesialisert fakturaagent som automatisk leser fakturaer, ekstraherer relevant informasjon og leverer dette i strukturert format. Dataene mates direkte inn i en automatisert prosessflyt som utfører priskontroll mot forsikringsselskapets tariffer. Ved hjelp av fine-tuning har agenten oppnådd ekstraordinær presisjon uten å påføre høye kostnader, noe som muliggjør skalerbar og pålitelig automatisering av fakturabehandling.",
+    title: "Integrated Invoice Agent",
+    description: "A specialized invoice agent that automatically reads invoices, extracts relevant information and delivers it in a structured format. The data feeds directly into an automated workflow that performs price verification against insurance company tariffs. Through fine-tuning, the agent achieves exceptional precision at low cost, enabling scalable and reliable invoice processing automation.",
     image: "/images/invoice_beaver.jpg",
     tags: ["AI", "Fine-tuning", "Document Analysis", "Automation", "Insurance", "Cost Control"],
-    role: "Utvikler",
+    role: "Developer",
     year: "2025",
     client: "Belron Solutions"
   },
   {
     id: 10,
-    title: "Innovasjonsagent",
-    description: "Belron Solutions er opptatt av innovasjon. Innovasjonsagentens rolle er å ta imot og tydeliggjøre nye idéer, før de lagres i idédatabasen for videre prioritering og utvikling. For å gjøre det så enkelt som mulig å dele idéer, er boten tilgjengelig for alle ansatte direkte i MS Teams. Ved å skrive til den får man hjelp til å definere idéen. Boten stiller spørsmål for å tydeliggjøre hvem som vil dra nytte av idéen, hvordan det vil være bedre enn dagens løsning etc og når idéen er tydelig definert, lagres den i selskapets idé-database, slik at den enkelt kan prioriteres for videre utvikling.",
+    title: "Innovation Agent",
+    description: "Belron Solutions values innovation. The Innovation Agent's role is to receive and clarify new ideas before storing them in the idea database for prioritization and development. Available to all employees directly in MS Teams, the bot guides users through defining their idea — asking who benefits, how it improves on existing solutions, and more. Once clearly defined, the idea is saved in the company's idea database for future development.",
     image: "/images/innovasjons-agent.jpg",
     year: "2025",
     client: "Belron Solutions",
-    role: "Utvikler",
+    role: "Developer",
     tags: ["AI", "Flowise", "LangChain", "MS Teams", "Innovation"]
   },
   {
     id: 15,
     title: "POC Voice AI",
-    description: "Et strategisk pilotprosjekt for å integrere stemmebasert kunstig intelligens i kundesenteret hos Carglass Hellas. Målet er å sikre 100 % svarrate, selv utenfor normal åpningstid og under trafikktopper. Som prosjektleder og utvikler av den tekniske løsningen, bygger jeg en agent som strukturerer informasjonsinnhenting slik at rådgiverne kan fokusere på verdiøkende kundebehandling i stedet for manuelle registreringer.",
+    description: "A strategic pilot project integrating voice-based AI into the customer service center at Carglass Greece. The goal: 100% answer rate, even outside opening hours and during traffic peaks. As project lead and developer, I built an agent that structures information gathering so advisors can focus on value-adding customer interactions instead of manual data entry.",
     image: "/images/voice_hare.jpg",
     tags: ["AI", "Voice", "POC", "Innovation"],
-    role: "Utvikler / Prosjektleder",
+    role: "Developer & Project Lead",
     year: "2026",
-    client: "Carglass Hellas"
+    client: "Carglass Greece"
   },
   {
     id: 14,
     title: "Rapid Repair",
-    description: "En nyskapende tilnærming til bilglassreparasjoner, utviklet som en 'Proof of Concept' for Belron globalt i samarbeid med Carglass Slovenia. Konseptet introduserer samme-dag-reparasjon via en fleksibel, scooter-basert utrykningsmodell – inspirert av moderne on-demand tjenester. Jeg leder prosjektgjennomføringen og sikrer at både tekniske verktøy og operasjonelle rutiner fungerer sømløst sammen i felten.",
+    description: "An innovative approach to auto glass repairs, developed as a Proof of Concept for Belron globally in collaboration with Carglass Slovenia. The concept introduces same-day repairs through a flexible, scooter-based mobile service model — inspired by modern on-demand services. I lead project execution, ensuring both technical tools and operational routines work seamlessly in the field.",
     image: "/images/rapid_repair_moose.jpg",
     tags: ["POC", "Business Development", "Innovation"],
-    role: "Prosjektleder",
+    role: "Project Manager",
     year: "2026",
     client: "Carglass Slovenia"
   },
@@ -141,9 +141,9 @@ export const projects: Project[] = [
     description: "A social predictions game where friends compete in private leagues by predicting match outcomes and selected events during World Cups. What started as an Excel sheet has evolved into a full web app with APIs, live match data, and auto-synced scoring. Built and run for every World Cup since the idea first took shape.",
     image: "/images/predictions_fox.jpg",
     tags: ["App", "Gaming", "Web App"],
-    role: "Initiativtaker og utvikler",
+    role: "Initiator & Developer",
     year: "2026",
-    client: "Sideprosjekt"
+    client: "Side project"
   },
   {
     id: 16,
@@ -162,9 +162,9 @@ export const projects: Project[] = [
     description:
       "Led the pro bono consulting team for the Prospera Foundation, partnering with the Association for Children with Heart Disease (FFHB) to design a digital version of their flagship member resource, the 'Hjerteperm' (Heart Binder). Over several months we mapped user needs across parents, teachers, and healthcare professionals, assessed privacy and security requirements, and delivered a concrete solution proposal including technical architecture (WordPress, CRM integration, AI chatbot), content strategy, and a funding application to Stiftelsen Dam. The project ensures critical medical information follows children with heart conditions from kindergarten through school.",
     image: "/images/prospera_squirrel.jpg",
-    tags: ["Prosjektledelse", "Digitalisering", "Pro Bono", "UX", "Strategi"],
-    role: "Prosjektleder",
+    tags: ["Project Management", "Digitalization", "Pro Bono", "UX", "Strategy"],
+    role: "Project Manager",
     year: "2026",
-    client: "Prosperastiftelsen / FFHB"
+    client: "Prospera Foundation / FFHB"
   }
 ];
