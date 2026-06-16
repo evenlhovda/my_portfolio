@@ -189,33 +189,44 @@ export default function MopePage() {
     const wovenLayout = () => {
       const h1R = h1.getBoundingClientRect()
       const cardR = card.getBoundingClientRect()
+      if (!h1R.height) return // layout ikke klar ennå
       const splitPct = Math.max(0, Math.min(100,
         ((cardR.top - h1R.top) / h1R.height) * 100))
       h1.style.clipPath = `inset(0 0 ${(100 - splitPct).toFixed(1)}% 0)`
       const fs = getComputedStyle(h1)
-      const parentR = (h1.offsetParent as HTMLElement).getBoundingClientRect()
+      // Posisjoner klonen relativt til SIN EGEN offsetParent, ikke h1-ens —
+      // ellers blandes to koordinatsystemer og klonen havner feil.
+      const ref = (h1Behind.offsetParent as HTMLElement) ?? document.body
+      const refR = ref.getBoundingClientRect()
       Object.assign(h1Behind.style, {
-        top: (h1R.top - parentR.top).toFixed(1) + 'px',
-        left: (h1R.left - parentR.left).toFixed(1) + 'px',
+        top: (h1R.top - refR.top).toFixed(1) + 'px',
+        left: (h1R.left - refR.left).toFixed(1) + 'px',
         width: h1R.width.toFixed(1) + 'px',
         fontSize: fs.fontSize,
         lineHeight: fs.lineHeight,
+        letterSpacing: fs.letterSpacing,
         clipPath: `inset(${splitPct.toFixed(1)}% 0 0 0)`,
       })
     }
     let layoutRAF = 0
     const scheduleLayout = () => {
+      // Kjør direkte (rAF kan throttles før første paint) + rAF for batching.
+      wovenLayout()
       cancelAnimationFrame(layoutRAF)
       layoutRAF = requestAnimationFrame(wovenLayout)
     }
     if (document.fonts?.ready) {
       document.fonts.ready.then(scheduleLayout)
-    } else {
-      scheduleLayout()
     }
-    // re-run a few times as fonts/layout settle
-    const t1 = setTimeout(scheduleLayout, 300)
-    const t2 = setTimeout(scheduleLayout, 900)
+    scheduleLayout()
+    // re-run a few ganger mens fonter/layout/bilde setter seg
+    const t1 = setTimeout(scheduleLayout, 120)
+    const t2 = setTimeout(scheduleLayout, 400)
+    const t3 = setTimeout(scheduleLayout, 1000)
+    const portraitImg = root.querySelector<HTMLImageElement>('.mope-portrait-img')
+    if (portraitImg && !portraitImg.complete) {
+      portraitImg.addEventListener('load', scheduleLayout, { once: true })
+    }
     window.addEventListener('resize', scheduleLayout)
     window.addEventListener('scroll', scheduleLayout, { passive: true })
 
@@ -264,7 +275,7 @@ export default function MopePage() {
       cancelAnimationFrame(ringRAF)
       cancelAnimationFrame(partRAF)
       cancelAnimationFrame(layoutRAF)
-      clearTimeout(t1); clearTimeout(t2)
+      clearTimeout(t1); clearTimeout(t2); clearTimeout(t3)
       buttons.forEach((b) => b.removeEventListener('click', onBtnClick))
       magHandlers.forEach(([m, move, leave]) => {
         m.removeEventListener('mousemove', move)
@@ -468,9 +479,9 @@ export default function MopePage() {
         .mope-header { text-align: center; position: relative; z-index: 3; }
         .mope-h1 {
           font-family: var(--font-syne), sans-serif; font-weight: 800;
-          font-size: clamp(2.6rem, 7vw, 5.4rem); letter-spacing: -0.03em;
+          font-size: clamp(2rem, 6.4vw, 5rem); letter-spacing: -0.03em;
           line-height: 1; color: var(--text); position: relative;
-          display: inline-block; margin: 0;
+          display: inline-block; margin: 0; white-space: nowrap;
         }
         .mope-h1::before, .mope-h1::after {
           content: attr(data-text); position: absolute; inset: 0; pointer-events: none;
@@ -500,7 +511,7 @@ export default function MopePage() {
           position: absolute; pointer-events: none; z-index: 1;
           font-family: var(--font-syne), sans-serif; font-weight: 800;
           letter-spacing: -0.03em; line-height: 1; color: var(--text);
-          text-align: center;
+          text-align: center; white-space: nowrap;
         }
 
         .mope-main { position: relative; z-index: 2; margin-top: -2.6rem; }
@@ -511,7 +522,7 @@ export default function MopePage() {
           backdrop-filter: blur(48px) saturate(130%) brightness(1.1);
           -webkit-backdrop-filter: blur(48px) saturate(130%) brightness(1.1);
           border: 1px solid rgba(255,255,255,0.07);
-          border-radius: 28px; position: relative;
+          border-radius: 46% 54% 52% 48% / 55% 50% 50% 45%; position: relative;
           animation: mopeMorph 14s ease-in-out infinite;
           will-change: transform, border-radius;
         }
@@ -523,14 +534,16 @@ export default function MopePage() {
           transition: transform 0.12s ease-out;
         }
         .mope-card-inner { flex: 1; position: relative; z-index: 2; }
+        /* Aldri tilbake til en rektangulær container-look — alle steg holder
+           seg i et organisk, blobbete radius-område (38–66%). */
         @keyframes mopeMorph {
-          0%, 100% { border-radius: 28px; }
-          15% { border-radius: 55% 45% 48% 52% / 45% 55% 45% 55%; }
-          30% { border-radius: 40% 60% 65% 35% / 60% 40% 60% 40%; }
-          45% { border-radius: 62% 38% 32% 68% / 55% 60% 40% 45%; }
-          60% { border-radius: 35% 65% 55% 45% / 48% 52% 55% 45%; }
-          75% { border-radius: 50% 40% 60% 50% / 38% 62% 38% 62%; }
-          90% { border-radius: 44% 56% 42% 58% / 60% 40% 58% 42%; }
+          0%, 100% { border-radius: 46% 54% 52% 48% / 55% 50% 50% 45%; }
+          15% { border-radius: 58% 42% 48% 52% / 45% 58% 42% 55%; }
+          30% { border-radius: 42% 58% 64% 36% / 60% 42% 58% 40%; }
+          45% { border-radius: 64% 36% 40% 60% / 56% 60% 40% 44%; }
+          60% { border-radius: 38% 62% 56% 44% / 48% 52% 56% 44%; }
+          75% { border-radius: 52% 48% 60% 40% / 40% 62% 38% 60%; }
+          90% { border-radius: 46% 54% 44% 56% / 60% 42% 58% 40%; }
         }
         .mope-card::before {
           content: ''; position: absolute; top: 0; left: 8%; right: 8%; height: 1px;
